@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">188219766773-4r8jhmgec3ku0741ini7ti04jfplrfe6.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://fundoonotes-f6d37.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">188219766773</string>
+    <string name="google_api_key" translatable="false">AIzaSyABOrBTRwPLXCGFdJgk2Te-9K1DjwOG-w0</string>
+    <string name="google_app_id" translatable="false">1:188219766773:android:59a760f6324be0a1</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyABOrBTRwPLXCGFdJgk2Te-9K1DjwOG-w0</string>
+    <string name="google_storage_bucket" translatable="false">fundoonotes-f6d37.appspot.com</string>
+    <string name="project_id" translatable="false">fundoonotes-f6d37</string>
+</resources>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "188219766773",
+    "firebase_url": "https://fundoonotes-f6d37.firebaseio.com",
+    "project_id": "fundoonotes-f6d37",
+    "storage_bucket": "fundoonotes-f6d37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188219766773:android:59a760f6324be0a1",
+        "android_client_info": {
+          "package_name": "com.bridgelabz.fundonoteapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "188219766773-4r8jhmgec3ku0741ini7ti04jfplrfe6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABOrBTRwPLXCGFdJgk2Te-9K1DjwOG-w0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

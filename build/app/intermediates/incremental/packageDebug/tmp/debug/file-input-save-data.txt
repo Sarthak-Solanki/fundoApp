@@ -1,15 +1,15 @@
 #Internal package file, do not edit.
-#Tue Nov 27 19:04:32 IST 2018
+#Wed Nov 28 14:13:22 IST 2018
 4.path=classes.dex
 13.baseType=DIRECTORY
-8.set=DEX
+8.set=NATIVE_RESOURCE
 6.path=flutter_assets/LICENSE
 0.baseType=DIRECTORY
-10.path=flutter_assets/fonts/MaterialIcons-Regular.ttf
+10.path=flutter_assets/FontManifest.json
 5.baseType=DIRECTORY
 1.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/assets/debug
-8.path=classes3.dex
-12.path=lib/armeabi-v7a/libflutter.so
+8.path=lib/arm64-v8a/libflutter.so
+12.path=flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
 3.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/assets/debug
 14.path=lib/x86/libflutter.so
 15.set=NATIVE_RESOURCE
@@ -17,7 +17,7 @@
 5.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/assets/debug
 7.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/assets/debug
 11.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/assets/debug
-9.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/assets/debug
+9.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/transforms/dexMerger/debug/0
 13.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/assets/debug
 1.baseType=DIRECTORY
 11.set=ASSET
@@ -38,8 +38,8 @@
 5.path=flutter_assets/vm_snapshot_data
 0.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/transforms/dexMerger/debug/0
 7.path=flutter_assets/isolate_snapshot_data
-11.path=flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
-9.path=flutter_assets/FontManifest.json
+11.path=flutter_assets/fonts/MaterialIcons-Regular.ttf
+9.path=classes3.dex
 6.set=ASSET
 2.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/assets/debug
 13.path=flutter_assets/platform_strong.dill
@@ -50,18 +50,18 @@
 6.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/assets/debug
 10.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/assets/debug
 13.set=ASSET
-8.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/transforms/dexMerger/debug/0
+8.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/transforms/stripDebugSymbol/debug/0
 2.set=ASSET
 8.baseType=DIRECTORY
-12.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/transforms/stripDebugSymbol/debug/0
+12.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/assets/debug
 14.base=/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/transforms/stripDebugSymbol/debug/0
-9.set=ASSET
+9.set=DEX
 count=16
 12.baseType=DIRECTORY
 4.baseType=DIRECTORY
 5.set=ASSET
 9.baseType=DIRECTORY
 0.path=classes2.dex
-12.set=NATIVE_RESOURCE
+12.set=ASSET
 1.set=ASSET
 2.path=flutter_assets/assets/login.png

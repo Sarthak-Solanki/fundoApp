@@ -15,8 +15,8 @@ List<StaggeredTile> _staggeredTiles = const <StaggeredTile>[
 ];
 
 List<Widget> _tiles = const <Widget>[
-  const _Example01Tile(Colors.green, FlatButton()),
-  const _Example01Tile(Colors.lightBlue, FlatButton()),
+  const _Example01Tile(Colors.green,FlatButton(onPressed:null,child: null,)),
+  const _Example01Tile(Colors.lightBlue, FlatButton(onPressed:null,child: null,),),
   /*const _Example01Tile(Colors.amber, Icons.panorama_wide_angle),
   const _Example01Tile(Colors.brown, Icons.map),
   const _Example01Tile(Colors.deepOrange, Icons.send),
@@ -59,6 +59,7 @@ class _Example01Tile extends StatelessWidget {
     return new Card(
       color: backgroundColor,
       child: new FlatButton(
+        child: null,
         onPressed: ()=>print("zz"),
       ),
     );

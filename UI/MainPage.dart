@@ -11,26 +11,99 @@ class _MainState extends State<MainPage>{
     return new AppBar(
       title: new Text("Hello Notes"),
       actions: <Widget>[
+         new IconButton(icon: new Icon(Icons.arrow_drop_down), onPressed: signOut),
+
       ],
     );
   }
   drawer(){
     return new Drawer(
       child: new ListView(
-        children: <Widget>[
-          Container(
-            height:70.0,
-            child:DrawerHeader(
-              child: Text("FunDoo Notes",style: new TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20.0),),
+         padding: const EdgeInsets.only(top: 0.0),
+          children: <Widget>[
+            new UserAccountsDrawerHeader(
+              accountName: Text(""),
+              accountEmail: Text(LoginPageState.email),
               decoration: BoxDecoration(
-                color: Colors.grey.shade400,
+                                color: Colors.grey.shade400,
               ),
+              currentAccountPicture: new CircleAvatar(
+                backgroundColor: Colors.brown,
+                child: new Text(""),
+              ),
+              otherAccountsPictures: <Widget>[
+                new GestureDetector(
+                  onTap: () => print(""),
+                  child: new Semantics(
+                    label: 'Switch Account',
+                    child: new CircleAvatar(
+                      backgroundColor: Colors.brown,
+                      child: new Text('SA'),
+                    ),
+                  ),
+                )
+	            ]
             ),
-          ),
-        ],
-      ),
-
-    );
+            new ListTile(
+              leading: new Icon(Icons.lightbulb_outline),
+              title: new Text('Notes'),
+              //onTap: () => _onListTileTap(context),
+            ),
+            new Divider(),
+            new ListTile(
+              leading: new Text('Label'),
+              trailing: new Text('Edit'),
+              //onTap: () => _onListTileTap(context),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.label),
+              title: new Text('Expense'),
+              //onTap: () => _onListTileTap(context),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.label),
+              title: new Text('Inspiration'),
+              //onTap: () => _onListTileTap(context),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.label),
+              title: new Text('Personal'),
+             // onTap: () => _onListTileTap(context),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.label),
+              title: new Text('Work'),
+              //onTap: () => _onListTileTap(context),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.add),
+              title: new Text('Create new label'),
+              //onTap: () => _onListTileTap(context),
+            ),
+            new Divider(),
+            new ListTile(
+              leading: new Icon(Icons.archive),
+              title: new Text('Archive'),
+              //onTap: () => _onListTileTap(context),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.delete),
+              title: new Text('Trash'),
+              //onTap: () => _onListTileTap(context),
+            ),
+            new Divider(),
+            new ListTile(
+              leading: new Icon(Icons.settings),
+              title: new Text('Settings'),
+              //onTap: () => _onListTileTap(context),
+            ),
+            new ListTile(
+              leading: new Icon(Icons.help),
+              title: new Text('Help & feedback'),
+              //onTap: () => _onListTileTap(context),
+            )
+          ]
+    ),);
   }
   bottomNaviBar(){
     return BottomAppBar(
@@ -42,6 +115,7 @@ class _MainState extends State<MainPage>{
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

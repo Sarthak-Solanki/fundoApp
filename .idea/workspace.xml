@@ -9,427 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1aee869-809a-4e63-9cbb-72bec157b0a0" name="Default" comment="28nov">
-      <change beforePath="$PROJECT_DIR$/../FundoFull/AttendancePopUp.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Calender.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/CellView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/CellView.xib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo-Bridging-Header.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcodeproj/project.pbxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcodeproj/project.xcworkspace/xcuserdata/bridgeit.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcodeproj/project.xcworkspace/xcuserdata/bridgelabz.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/Fundo.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/Fundo.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcworkspace/xcuserdata/bridgeit.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcworkspace/xcuserdata/bridgeit.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcworkspace/xcuserdata/bridgelabz.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo.xcworkspace/xcuserdata/bridgelabz.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/AppDelegate.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/C.imageset/C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/C.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/L.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/L.imageset/L.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/Screen Shot 2016-12-07 at 5.29.54 PM.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/Screen Shot 2016-12-07 at 5.29.54 PM.imageset/Screen Shot 2016-12-07 at 5.29.54 PM.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/Unknown.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/Unknown.imageset/Unknown.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/button.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/button.imageset/Screen Shot 2016-12-07 at 5.15.18 PM.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/editbtn.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/editbtn.imageset/.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/images.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/images.imageset/images.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/ion-alert - Ionicons.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/ion-alert - Ionicons.imageset/ion-alert - Ionicons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/ion-checkmark-round - Ionicons.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/ion-checkmark-round - Ionicons.imageset/ion-checkmark-round - Ionicons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/logo-2.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/logo-2.imageset/logo-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/logout1.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/logout1.imageset/logout1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/menu.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/menu.imageset/menu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/mode_edit - material.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/mode_edit - material.imageset/mode_edit - material.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/more_vert - material.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/more_vert - material.imageset/more_vert - material.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/user.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Assets.xcassets/user.imageset/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Base.lproj/Main.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Fundo.xcdatamodeld/.xccurrentversion" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Fundo.xcdatamodeld/Fundo.xcdatamodel/contents" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/ViewController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Fundo/profileView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/FundoTests/FundoTests.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/FundoTests/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/FundoUITests/FundoUITests.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/FundoUITests/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/HRDataView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/MGCollapsingHeaderView.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/MGCollapsingHeaderView.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Podfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Podfile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/AFError.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/Alamofire.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/DispatchQueue+Alamofire.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/MultipartFormData.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/NetworkReachabilityManager.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/Notifications.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/ParameterEncoding.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/Request.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/Response.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/ResponseSerialization.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/Result.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/ServerTrustPolicy.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/SessionDelegate.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/SessionManager.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/TaskDelegate.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/Timeline.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Alamofire/Source/Validation.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/CalendarEnums.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/CalendarStructs.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/GlobalFunctionsAndExtensions.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/JTAppleCalendarDelegateProtocol.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/JTAppleCalendarLayout.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/JTAppleCalendarLayoutProtocol.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/JTAppleCalendarView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/JTAppleCollectionReusableView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/JTAppleDayCell.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/JTAppleReusableViewProtocol.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/JTAppleViews.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/JTCalendarProtocols.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/UICollectionViewDelegates.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/UIScrollViewDelegates.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/JTAppleCalendar/Sources/UserInteractionFunctions.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Manifest.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Pods.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/Alamofire.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Pods.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/JTAppleCalendar.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Pods.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/Pods-Fundo.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Pods.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/Pods-FundoTests.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Pods.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/Pods-FundoUITests.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Pods.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Pods.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/JTAppleCalendar.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Pods.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/Pods-Fundo.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Pods.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/Pods-FundoTests.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Pods.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/Pods-FundoUITests.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Pods.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Alamofire/Alamofire-dummy.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Alamofire/Alamofire-prefix.pch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Alamofire/Alamofire.modulemap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Alamofire/Alamofire.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Alamofire/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/JTAppleCalendar/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar-dummy.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar-prefix.pch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar-umbrella.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar.modulemap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-Fundo/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-Fundo/Pods-Fundo-acknowledgements.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-Fundo/Pods-Fundo-acknowledgements.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-Fundo/Pods-Fundo-dummy.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-Fundo/Pods-Fundo-frameworks.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-Fundo/Pods-Fundo-resources.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-Fundo/Pods-Fundo-umbrella.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-Fundo/Pods-Fundo.debug.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-Fundo/Pods-Fundo.modulemap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-Fundo/Pods-Fundo.release.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoTests/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests-acknowledgements.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests-acknowledgements.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests-dummy.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests-frameworks.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests-resources.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests-umbrella.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests.debug.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests.modulemap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests.release.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoUITests/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests-acknowledgements.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests-acknowledgements.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests-dummy.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests-frameworks.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests-resources.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests-umbrella.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests.debug.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests.modulemap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests.release.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/SWRevealViewController.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/SWRevealViewController.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/TestViewController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/attendanceCollectionViewCell.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/attendanceView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/bankDataController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/bankDataModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/bankDataServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/bankProtocal.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/bankView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/bankViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/dashBoardViewController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/dashboardCollectionViewCell.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/enggInfoController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/enggInfoModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/enggInfoProtocal.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/enggInfoServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/enggInfoViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/engineerInfoView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/hrDataController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/hrDataModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/hrDataServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/hrDataViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/loginViewController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/personalDataController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/personalDataModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/personalDataServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/personalProtocols.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/personalView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/personalViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/profileDataController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/profileDataModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/profileDataProtocals.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/profileDataServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/profileDataViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/profileProtocols.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/protocols.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/sideMenu.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/sideMenuTableViewCell.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/trackindgServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/trackingController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/trackingDataModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/trackingDataViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/trackingProtocol.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundoFull/trackingView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/AttendancePopUp.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Calender.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/CellView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/CellView.xib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo-Bridging-Header.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcodeproj/project.pbxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcodeproj/project.xcworkspace/xcuserdata/bridgeit.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcodeproj/project.xcworkspace/xcuserdata/bridgelabz.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/Fundo.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/Fundo.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcworkspace/xcuserdata/bridgeit.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcworkspace/xcuserdata/bridgeit.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcworkspace/xcuserdata/bridgelabz.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo.xcworkspace/xcuserdata/bridgelabz.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/AppDelegate.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/C.imageset/C.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/C.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/L.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/L.imageset/L.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/Screen Shot 2016-12-07 at 5.29.54 PM.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/Screen Shot 2016-12-07 at 5.29.54 PM.imageset/Screen Shot 2016-12-07 at 5.29.54 PM.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/Unknown.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/Unknown.imageset/Unknown.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/button.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/button.imageset/Screen Shot 2016-12-07 at 5.15.18 PM.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/editbtn.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/editbtn.imageset/.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/images.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/images.imageset/images.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/ion-alert - Ionicons.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/ion-alert - Ionicons.imageset/ion-alert - Ionicons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/ion-checkmark-round - Ionicons.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/ion-checkmark-round - Ionicons.imageset/ion-checkmark-round - Ionicons.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/logo-2.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/logo-2.imageset/logo-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/logout1.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/logout1.imageset/logout1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/menu.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/menu.imageset/menu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/mode_edit - material.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/mode_edit - material.imageset/mode_edit - material.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/more_vert - material.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/more_vert - material.imageset/more_vert - material.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/user.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Assets.xcassets/user.imageset/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Base.lproj/Main.storyboard" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Fundo.xcdatamodeld/.xccurrentversion" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Fundo.xcdatamodeld/Fundo.xcdatamodel/contents" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/ViewController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Fundo/profileView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/FundoTests/FundoTests.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/FundoTests/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/FundoUITests/FundoUITests.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/FundoUITests/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/HRDataView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/MGCollapsingHeaderView.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/MGCollapsingHeaderView.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Podfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Podfile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/AFError.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/Alamofire.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/DispatchQueue+Alamofire.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/MultipartFormData.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/NetworkReachabilityManager.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/Notifications.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/ParameterEncoding.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/Request.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/Response.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/ResponseSerialization.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/Result.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/ServerTrustPolicy.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/SessionDelegate.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/SessionManager.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/TaskDelegate.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/Timeline.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Alamofire/Source/Validation.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/CalendarEnums.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/CalendarStructs.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/GlobalFunctionsAndExtensions.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/JTAppleCalendarDelegateProtocol.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/JTAppleCalendarLayout.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/JTAppleCalendarLayoutProtocol.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/JTAppleCalendarView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/JTAppleCollectionReusableView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/JTAppleDayCell.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/JTAppleReusableViewProtocol.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/JTAppleViews.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/JTCalendarProtocols.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/UICollectionViewDelegates.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/UIScrollViewDelegates.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/JTAppleCalendar/Sources/UserInteractionFunctions.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Manifest.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Pods.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/Alamofire.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Pods.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/JTAppleCalendar.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Pods.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/Pods-Fundo.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Pods.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/Pods-FundoTests.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Pods.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/Pods-FundoUITests.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Pods.xcodeproj/xcuserdata/bridgeit.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Pods.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/JTAppleCalendar.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Pods.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/Pods-Fundo.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Pods.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/Pods-FundoTests.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Pods.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/Pods-FundoUITests.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Pods.xcodeproj/xcuserdata/bridgelabz.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Alamofire/Alamofire-dummy.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Alamofire/Alamofire-prefix.pch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Alamofire/Alamofire.modulemap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Alamofire/Alamofire.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Alamofire/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/JTAppleCalendar/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar-dummy.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar-prefix.pch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar-umbrella.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar.modulemap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/JTAppleCalendar/JTAppleCalendar.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-Fundo/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-Fundo/Pods-Fundo-acknowledgements.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-Fundo/Pods-Fundo-acknowledgements.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-Fundo/Pods-Fundo-dummy.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-Fundo/Pods-Fundo-frameworks.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-Fundo/Pods-Fundo-resources.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-Fundo/Pods-Fundo-umbrella.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-Fundo/Pods-Fundo.debug.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-Fundo/Pods-Fundo.modulemap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-Fundo/Pods-Fundo.release.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoTests/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests-acknowledgements.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests-acknowledgements.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests-dummy.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests-frameworks.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests-resources.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests-umbrella.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests.debug.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests.modulemap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoTests/Pods-FundoTests.release.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoUITests/Info.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests-acknowledgements.markdown" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests-acknowledgements.plist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests-dummy.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests-frameworks.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests-resources.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests-umbrella.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests.debug.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests.modulemap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/Pods/Target Support Files/Pods-FundoUITests/Pods-FundoUITests.release.xcconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/SWRevealViewController.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/SWRevealViewController.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/TestViewController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/attendanceCollectionViewCell.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/attendanceController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/attendanceModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/attendancePopUpModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/attendanceProtocols.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/attendanceServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/attendanceView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/attendanceViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/bankDataController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/bankDataModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/bankDataServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/bankProtocal.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/bankView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/bankViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/dashBoardViewController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/dashboardCollectionViewCell.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/enggInfoController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/enggInfoModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/enggInfoProtocal.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/enggInfoServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/enggInfoViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/engineerInfoView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/hrDataController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/hrDataModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/hrDataProtocols.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/hrDataServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/hrDataViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/loginViewController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/personalDataController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/personalDataModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/personalDataServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/personalProtocols.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/personalView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/personalViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/profileDataController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/profileDataModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/profileDataProtocals.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/profileDataServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/profileDataViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/profileProtocols.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/sideMenu.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/sideMenuTableViewCell.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/trackindgServices.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/trackingController.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/trackingDataModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/trackingDataViewModel.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/trackingProtocol.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FundooHR-admin-github/trackingView.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GitDemo/sample.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../swati/ReactJsFundooNotes/README.md" beforeDir="false" />
-    </list>
+    <list default="true" id="a1aee869-809a-4e63-9cbb-72bec157b0a0" name="Default" comment="28nov" />
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
     <ignored path="$PROJECT_DIR$/.pub/" />
@@ -443,25 +23,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Login_Page.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Login_Page.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UI/Login_Page.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="30" column="38" lean-forward="true" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+            <state relative-caret-position="40">
+              <caret line="110" column="16" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="16" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/main.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -470,8 +38,8 @@
       <file leaf-file-name="SignUpPage.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UI/SignUpPage.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="39" column="27" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="27" />
+            <state relative-caret-position="114">
+              <caret line="46" column="19" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="19" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -482,8 +50,8 @@
       <file leaf-file-name="GridView.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Example/GridView.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="370">
+              <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -491,11 +59,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TakeNotes.dart" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/main.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TakeNotes.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Example/TakeNotes.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="77" selection-start-line="40" selection-start-column="77" selection-end-line="40" selection-end-column="77" />
+            <state relative-caret-position="175">
+              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="icon.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/flutter/packages/flutter/lib/src/widgets/icon.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -503,8 +92,8 @@
       <file leaf-file-name="MainPage.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UI/MainPage.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+            <state relative-caret-position="114">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -551,10 +140,16 @@
       <find>login</find>
       <find>sign</find>
       <find>validate</find>
+      <find>email</find>
+      <find>Edge</find>
+      <find>elevat</find>
+      <find>_select</find>
+      <find>Ink</find>
+      <find>ink</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -566,21 +161,22 @@
         <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/android/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/UI/Runner.dart" />
-        <option value="$PROJECT_DIR$/UI/MainPage.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/UI/SignUpPage.dart" />
         <option value="$PROJECT_DIR$/Example/StateLessNotes.dart" />
-        <option value="$PROJECT_DIR$/Example/TakeNotes.dart" />
-        <option value="$PROJECT_DIR$/Example/GridView.dart" />
-        <option value="$PROJECT_DIR$/test/main.dart" />
         <option value="$PROJECT_DIR$/UI/Login_Page.dart" />
+        <option value="$PROJECT_DIR$/test/main.dart" />
+        <option value="$PROJECT_DIR$/UI/MainPage.dart" />
+        <option value="$PROJECT_DIR$/Example/GridView.dart" />
+        <option value="$USER_HOME$/Downloads/flutter/packages/flutter/lib/src/material/constants.dart" />
+        <option value="$PROJECT_DIR$/Example/TakeNotes.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="692" />
+    <option name="height" value="685" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -588,13 +184,25 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="fun_do_note_app" type="b2602c69:ProjectViewProjectNode" />
               <item name="fun_do_note_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fun_do_note_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fun_do_note_app" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fun_do_note_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fun_do_note_app" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fun_do_note_app" type="b2602c69:ProjectViewProjectNode" />
@@ -616,8 +224,7 @@
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -653,7 +260,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flutter.Runner.dart">
+  <component name="RunManager" selected="Flutter.TakeNotes.dart">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -724,11 +331,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter.Runner.dart" />
-        <item itemvalue="Flutter Test.tests in main.dart" />
         <item itemvalue="Flutter.TakeNotes.dart" />
-        <item itemvalue="Flutter.StateLessNotes.dart" />
+        <item itemvalue="Flutter.Runner.dart" />
         <item itemvalue="Flutter.GridView.dart" />
+        <item itemvalue="Flutter Test.tests in main.dart" />
+        <item itemvalue="Flutter.StateLessNotes.dart" />
       </list>
     </recent_temporary>
   </component>
@@ -795,7 +402,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="692" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="685" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3282572" />
@@ -803,11 +411,11 @@
       <window_info id="Image Layers" order="7" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.3723748" side_tool="true" visible="true" weight="0.3277311" />
-      <window_info anchor="bottom" id="Dart Analysis" order="7" weight="0.3277311" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.30252102" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.3723748" side_tool="true" weight="0.32554257" />
+      <window_info anchor="bottom" id="Dart Analysis" order="7" weight="0.32656515" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.2772109" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49919224" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.6276252" visible="true" weight="0.3277311" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.6276252" weight="0.32656515" />
       <window_info anchor="right" id="Flutter Outline" order="5" />
       <window_info anchor="bottom" id="Logcat" order="10" weight="0.3282572" />
       <window_info id="Captures" order="4" />
@@ -841,32 +449,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="19" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/UI/Login_Page.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2190">
-          <caret line="146" column="38" selection-start-line="146" selection-start-column="38" selection-end-line="146" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/gradlew">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -984,11 +570,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$USER_HOME$/Downloads/flutter/packages/flutter/lib/src/material/app_bar.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -1132,6 +714,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Example/StateLessNotes.dart" />
+    <entry file="file://$USER_HOME$/Downloads/flutter/packages/flutter/lib/src/painting/alignment.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="190" selection-start-line="190" selection-end-line="190" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/UI/Runner.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1142,28 +732,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Example/StateLessNotes.dart" />
-    <entry file="file://$USER_HOME$/Downloads/flutter/packages/flutter/lib/src/painting/alignment.dart">
+    <entry file="file://$PROJECT_DIR$/test/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="190" selection-start-line="190" selection-end-line="190" />
+        <state relative-caret-position="165">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/flutter/packages/flutter/lib/src/material/circle_avatar.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UI/MainPage.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="114">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/UI/Login_Page.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="110" column="16" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/flutter/packages/flutter/lib/src/material/constants.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/flutter/packages/flutter/lib/src/widgets/icon.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Example/GridView.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="370">
+          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI/SignUpPage.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="46" column="19" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="19" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -1172,38 +805,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Example/TakeNotes.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="77" selection-start-line="40" selection-start-column="77" selection-end-line="40" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/SignUpPage.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UI/Login_Page.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="30" column="38" lean-forward="true" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="175">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -206,6 +206,10 @@ com/google/errorprone/annotations/concurrent/UnlockMethod.class
 com/google/firebase/annotations/PublicApi.class
 com/google/firebase/auth/ActionCodeResult$ActionDataKey.class
 com/google/firebase/auth/ActionCodeResult$Operation.class
+com/google/firebase/database/Exclude.class
+com/google/firebase/database/IgnoreExtraProperties.class
+com/google/firebase/database/PropertyName.class
+com/google/firebase/database/ThrowOnExtraProperties.class
 com/google/firebase/firestore/Exclude.class
 com/google/firebase/firestore/IgnoreExtraProperties.class
 com/google/firebase/firestore/PropertyName.class

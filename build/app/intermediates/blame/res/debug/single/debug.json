@@ -824,6 +824,10 @@
         "source": "/Users/bridgeit/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/3b35a46221482e3e1f2d81ddc963840d/res/drawable-mdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
+        "merged": "/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/res/merged/debug/xml_flutter_image_picker_file_paths.xml.flat",
+        "source": "/Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/packaged_res/debug/xml/flutter_image_picker_file_paths.xml"
+    },
+    {
         "merged": "/Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
         "source": "/Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },

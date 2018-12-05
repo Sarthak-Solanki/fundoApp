@@ -13,11 +13,16 @@ environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
 
 dependencies:
-  flutter_staggered_grid_view:
+  #camera:
+  image_picker:
+  path_provider:
+  firebase_database:
+  firebase_core:
+  flutter_staggered_grid_view: "^0.2.4"
   firebase_auth:
   google_sign_in:
-  flutter_facebook_login: "^1.1.1"
-  cloud_firestore:
+  flutter_facebook_login:
+  cloud_firestore: ^0.8.2+3
   flutter:
     sdk: flutter
   # The following adds the Cupertino Icons font to your application.

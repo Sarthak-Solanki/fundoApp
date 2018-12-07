@@ -1,4 +1,6 @@
 
+import 'dart:io';
+
 ////THIS IS JUST FOR TEST WILL USE LATER IN UI
 
 
@@ -38,6 +40,10 @@ class TakeNotesState extends State<TakeNotes> {
   final  DocumentReference documentRef = Firestore.instance.document("mydata/dummy");
   static String title;
   static String Note;
+  static File _image;
+  static  File image;
+  static File clickimage;
+  static File Galleryimage;
   final _scaffoldKey  = new GlobalKey<ScaffoldState>();
   VoidCallback _showPersBottomSheetCallBack;
   VoidCallback _showPlusButtonCallBack;
@@ -48,10 +54,20 @@ class TakeNotesState extends State<TakeNotes> {
   }
   gallery() async{
     print("picker is called");
-    var Galleryimage  = await ImagePicker.pickImage(source: ImageSource.gallery);
+    Galleryimage  = await ImagePicker.pickImage(source: ImageSource.gallery);
+    _image = Galleryimage;
+    setState(() {
+
+    });
+
   }
-  camera() {
-    var clickimage =  ImagePicker.pickImage(source: ImageSource.camera);
+  camera() async{
+    clickimage =  await ImagePicker.pickImage(source: ImageSource.camera);
+    image = clickimage;
+        setState(() {
+
+    });
+
   }
   void _showPlusBottomSheet(){
     showModalBottomSheet (context: context,builder: (builder){return new Container(
@@ -282,7 +298,16 @@ class TakeNotesState extends State<TakeNotes> {
           decoration: new InputDecoration(labelText: "Title",
               contentPadding: EdgeInsets.all(10.0)),
         ),
-        SizedBox(height: 10.0,),
+        /*new Flex(
+          direction: Axis.vertical,
+          children: <Widget>[*/
+        new Container(
+          child: new Center(
+            child: _image == null ? new Text(""): new Image.file(_image),
+            //    ),)],
+          ),
+        ),
+        //SizedBox(height: 10.0,),
         new Expanded(
           child: new TextField(
             style: new TextStyle(fontWeight: FontWeight.w400,
@@ -297,7 +322,6 @@ class TakeNotesState extends State<TakeNotes> {
               contentPadding: EdgeInsets.all(10.0),
             ),
           ),
-
         ),
       ],
     );
@@ -333,12 +357,7 @@ class TakeNotesState extends State<TakeNotes> {
         new FlatButton.icon(onPressed: (){
           //Navigator.of(context).pop();
           Map <String,String> keepData = <String,String>{"title" : title, "note": Note};
-          /*print("Datassssssss******************************* $keepData");
-          documentRef.setData(keepData).whenComplete((){
-            print("successfully updated");
-          }).catchError((e){
-            print("##########################################$e");
-          });*/
+          //
           crudObj.addData(keepData).then((result){
             print("success");
           }).catchError((e){
@@ -464,3 +483,9 @@ main() => runApp(new Test());
 
   }
  */
+/*print("Datassssssss******************************* $keepData");
+          documentRef.setData(keepData).whenComplete((){
+            print("successfully updated");
+          }).catchError((e){
+            print("##########################################$e");
+          });*/

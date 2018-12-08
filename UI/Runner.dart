@@ -1,6 +1,7 @@
 import 'Login_Page.dart';
 import 'MainPage.dart';
 import 'SignUpPage.dart';
+import 'TakeNotes.dart';
 import 'package:flutter/material.dart';
 
 void main()=> runApp(new MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget{
       '/LandingPage': (BuildContext context) => new MyApp(),
       '/SignUp': (BuildContext context) => new SignUpPage(),
       '/MainPage': (BuildContext context) => new MainPage(),
+      '/NotePage':  (BuildContext context) => new TakeNotes(),
     },
    );
   }

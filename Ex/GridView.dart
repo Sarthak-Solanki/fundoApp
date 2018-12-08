@@ -1,59 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
-List<StaggeredTile> _staggeredTiles = const <StaggeredTile>[
-  const StaggeredTile.count(2, 2),
-  const StaggeredTile.count(2, 1),
-  const StaggeredTile.count(1, 2),
-  const StaggeredTile.count(1, 1),
-  const StaggeredTile.count(2, 2),
-  const StaggeredTile.count(1, 2),
-  const StaggeredTile.count(1, 1),
-  const StaggeredTile.count(3, 1),
-  const StaggeredTile.count(1, 1),
-  const StaggeredTile.count(4, 1),
-];
-
-List<Widget> _tiles = const <Widget>[
-  const _Example01Tile(Colors.green,FlatButton(onPressed:null,child: null,)),
-  const _Example01Tile(Colors.lightBlue, FlatButton(onPressed:null,child: null,),),
-  /*const _Example01Tile(Colors.amber, Icons.panorama_wide_angle),
-  const _Example01Tile(Colors.brown, Icons.map),
-  const _Example01Tile(Colors.deepOrange, Icons.send),
-  const _Example01Tile(Colors.indigo, Icons.airline_seat_flat),
-  const _Example01Tile(Colors.red, Icons.bluetooth),
-  const _Example01Tile(Colors.pink, Icons.battery_alert),
-  const _Example01Tile(Colors.purple, Icons.desktop_windows),
-  const _Example01Tile(Colors.blue, Icons.radio),
-*/];
+import '../UI/TakeNotes.dart';
 
 class Example01 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Example 01'),
-
-        ),
-        body: new Padding(
-            padding: const EdgeInsets.only(top: 12.0),
-            child: new StaggeredGridView.count(
-              crossAxisCount: 4,
-              staggeredTiles: _staggeredTiles,
-              children: _tiles,
-              mainAxisSpacing: 4.0,
-              crossAxisSpacing: 4.0,
-              padding: const EdgeInsets.all(4.0),
-            )));
+      appBar: new AppBar(
+        title: new Text('Example 01'),
+      ),
+      body: new StaggeredGridView.countBuilder(
+        crossAxisCount: 4,
+        itemCount: 5,
+        itemBuilder: (BuildContext context, int index) => new Container(
+            color: Colors.green,
+            child: new Center(
+              // child: new Text(Example01Tile.note.substring(0,(Example01Tile.note.length/10).toInt())+"...."),
+              //child: new Text(Example01Tile.note.substring(0,(Example01Tile.note2.length/2).toInt())+"...."),
+            )),
+        staggeredTileBuilder: (int index) =>
+        new StaggeredTile.count(2,4),
+        mainAxisSpacing: 4.0,
+        crossAxisSpacing: 4.0,
+      ),
+    );
   }
 }
-
-class _Example01Tile extends StatelessWidget {
-  const _Example01Tile(this.backgroundColor, this.flatButton);
-
+/*class Example01Tile extends StatelessWidget {
+  static String note = "Sarthjabnsdkjhghhdsglkjfhdskjgjgkhgkjdfjhsdgfkgdsg ksdfgkjgdsfkgks";
+  static String note2 = "Sarthjabnsdkjhghhdsglkjfhdskjgjgkhgkjdfjhsdgfkgdsg ksdfgkjgdsfkgkhdkshdkjhfdkjshfkhksfhskhfkjshfkjhsfkjhfkssljkdjsfhlsd";
+  const Example01Tile(this.backgroundColor, this.flatButton);
   final Color backgroundColor;
   final FlatButton flatButton;
-
   @override
   Widget build(BuildContext context) {
     return new Card(
@@ -64,13 +42,13 @@ class _Example01Tile extends StatelessWidget {
       ),
     );
   }
-}
+}*/
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Title',
-     // theme: kThemeData,
+      // theme: kThemeData,
       home: Example01(),
     );
   }

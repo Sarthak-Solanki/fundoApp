@@ -3,12 +3,18 @@ import 'Login_Page.dart';
 import 'TakeNotes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class MainPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new _MainState();
 }
 class _MainState extends State<MainPage>{
+  List l;
+  int size;
+  String title;
+  String note;
+
   var Stagg;
   appBar(){
     return new AppBar(
@@ -107,37 +113,72 @@ class _MainState extends State<MainPage>{
           ]
       ),);
   }
-  bottomNaviBar(){
+  bottomNaviBar(context){
     return BottomAppBar(
       elevation: 20.0,
       child: new RaisedButton(
           color: Colors.white,
           child: new Text("Add Note"),
           onPressed: () {
-            Stagg =   createStaggered();
             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => TakeNotes()));
-
           }
       ),
     );
   }
-  body(){
-    return Stagg;
-   // createStaggered();
+  body(context){
+
+
+    // createStaggered();
   }
 
-  createStaggered(){
+  createStaggered(context){
+    int count = 0;
+    int count2 = 0;
     return new StaggeredGridView.countBuilder(
       crossAxisCount: 4,
-      itemCount: 5,
-      itemBuilder: (BuildContext context, int index) => new Container(
+      itemCount: l.length,
+      itemBuilder: (BuildContext context, int index) =>
+          GestureDetector(
+            onTap: () {
+            },
+            onLongPress: (){
+
+            },
+            child: Container(
+              padding: EdgeInsets.all(24.0),
+              decoration: BoxDecoration(
+                border: Border.all(width: 1.3,color: Colors.grey.shade200),
+                color: TakeNotesState.value,
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: new Column(
+                children: <Widget>[
+                  new Text(l[count++].data['Title'],style: TextStyle(fontWeight: FontWeight.bold,)),
+                  new Text("\n"),
+                  new Text(l[count2++].data['Note']),
+                ],
+              ),
+            ),
+          ),
+
+
+
+
+
+      /*new Container(
           color: Colors.green,
-          child: new Center(
-             child: new Text(TakeNotesState.Note ),
-            // child: new Text(Example01Tile.note.substring(0,(Example01Tile.note2.length/2).toInt())+"...."),
-          )),
+            child: new Column(
+              //mainAxisAlignment:MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                new Text(l[count++].data['Title'],style: TextStyle(fontWeight: FontWeight.bold,)),
+                new Text(l[count2++].data['Note']),
+              ],
+            )
+      //      child: new Text(title  + "\n" +note ),
+          ),*/
       staggeredTileBuilder: (int index) =>
-      new StaggeredTile.count(2,4),
+      new StaggeredTile.fit(2),
+      padding: EdgeInsets.all(7.0),
       mainAxisSpacing: 4.0,
       crossAxisSpacing: 4.0,
     );
@@ -145,10 +186,21 @@ class _MainState extends State<MainPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: appBar(),
       drawer: drawer(),
-      body:body(),
-      bottomNavigationBar:bottomNaviBar(),
+      body:new StreamBuilder<QuerySnapshot>(
+          stream: Firestore.instance.collection('KeepData').snapshots(),
+          builder: (context, snapshot) {
+            if (!snapshot.hasData) return new Text("Please wait");
+            l = snapshot.data.documents;
+            title = snapshot.data.documents[0].data['Title'];
+            note = snapshot.data.documents[0].data['Note'];
+            return new Container(
+              child: createStaggered(context),
+            );}
+      ),
+      bottomNavigationBar:bottomNaviBar(context),
     );
   }
 

@@ -38,7 +38,7 @@ class TakeNotesState extends State<TakeNotes> {
   crudMethod crudObj = new crudMethod();
   Color _selectedChoice;
   final  DocumentReference documentRef = Firestore.instance.document("mydata/dummy");
-  static String title;
+  static String Title;
   static String Note;
   static File _image;
   static  File image;
@@ -283,6 +283,7 @@ class TakeNotesState extends State<TakeNotes> {
     });
   }
   static Body() {
+
     return new Column(
       children: <Widget>[
         new TextField(
@@ -291,9 +292,9 @@ class TakeNotesState extends State<TakeNotes> {
               fontSize: 22.4),
           maxLines: null,
           onChanged:(String tempTitile){
-            title = tempTitile;
-            print("Title is here$title");
-            print("temptitle is $tempTitile");
+            Title = tempTitile;
+            //print("Title is here$title");
+            //print("temptitle is $tempTitile");
           },
           decoration: new InputDecoration(labelText: "Title",
               contentPadding: EdgeInsets.all(10.0)),
@@ -356,7 +357,7 @@ class TakeNotesState extends State<TakeNotes> {
       actions: <Widget>[
         new FlatButton.icon(onPressed: (){
           //Navigator.of(context).pop();
-          Map <String,String> keepData = <String,String>{"title" : title, "note": Note};
+          Map <String,String> keepData = <String,String>{"Note" : Note, "Title": Title};
           //
           crudObj.addData(keepData).then((result){
             print("success");
@@ -367,7 +368,7 @@ class TakeNotesState extends State<TakeNotes> {
       ],
     );
   }
-  Color value = Colors.white;
+  static Color value = Colors.white;
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

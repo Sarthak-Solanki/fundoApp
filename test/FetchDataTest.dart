@@ -1,3 +1,4 @@
+/*
 import 'package:test/test.dart';
 
 import '../UI/crud.dart';
@@ -10,4 +11,13 @@ void main(context){
     //expect(result, true);
   });
 
+}*/
+import 'package:test/test.dart';
+import '/Users/bridgeit/Desktop/fun_do_note_app/UI/crud.dart';
+void main(context) async{
+  crudMethod crud = new crudMethod();
+  test("fetch", (){
+   // Future<List> l = crud.fetchData(context);
+   // print(l);
+     });
 }

@@ -7,15 +7,19 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class MainPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => new _MainState();
+  State<StatefulWidget> createState() => new MainState();
 }
-class _MainState extends State<MainPage>{
-  List l;
+
+class MainState extends State<MainPage>{
+  static List l;
   int size;
   String title;
   String note;
 
   var Stagg;
+  void search(){
+
+  }
   appBar(){
     return new AppBar(
       title: new Text("Hello Notes"),
@@ -120,7 +124,7 @@ class _MainState extends State<MainPage>{
           color: Colors.white,
           child: new Text("Add Note"),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => TakeNotes()));
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => TakeNotes(index: -1) ));
           }
       ),
     );
@@ -140,7 +144,10 @@ class _MainState extends State<MainPage>{
       itemBuilder: (BuildContext context, int index) =>
           GestureDetector(
             onTap: () {
-            },
+              print("index is $index");
+              var route = new MaterialPageRoute(builder: (BuildContext context)=>new TakeNotes(index: index));
+              Navigator.of(context).push(route);
+              },
             onLongPress: (){
 
             },
@@ -153,29 +160,13 @@ class _MainState extends State<MainPage>{
               ),
               child: new Column(
                 children: <Widget>[
-                  new Text(l[count++].data['Title'],style: TextStyle(fontWeight: FontWeight.bold,)),
+                  new Text(l[index ].data['Title'],style: TextStyle(fontWeight: FontWeight.bold,)),
                   new Text("\n"),
-                  new Text(l[count2++].data['Note']),
+                  new Text(l[index].data['Note']),
                 ],
               ),
             ),
           ),
-
-
-
-
-
-      /*new Container(
-          color: Colors.green,
-            child: new Column(
-              //mainAxisAlignment:MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                new Text(l[count++].data['Title'],style: TextStyle(fontWeight: FontWeight.bold,)),
-                new Text(l[count2++].data['Note']),
-              ],
-            )
-      //      child: new Text(title  + "\n" +note ),
-          ),*/
       staggeredTileBuilder: (int index) =>
       new StaggeredTile.fit(2),
       padding: EdgeInsets.all(7.0),
@@ -192,14 +183,18 @@ class _MainState extends State<MainPage>{
       body:new StreamBuilder<QuerySnapshot>(
           stream: Firestore.instance.collection('KeepData').snapshots(),
           builder: (context, snapshot) {
-            if (!snapshot.hasData) return new Text("Please wait");
+            if (!snapshot.hasData)
+              return new Text("No Notes");
+            else{
             l = snapshot.data.documents;
             title = snapshot.data.documents[0].data['Title'];
             note = snapshot.data.documents[0].data['Note'];
             return new Container(
               child: createStaggered(context),
             );}
+          }
       ),
+
       bottomNavigationBar:bottomNaviBar(context),
     );
   }

@@ -24,7 +24,10 @@ class crudMethod{
       Firestore.instance.collection('KeepData').add(keepData).catchError((e){print("eroee is************** $e");});
     //}
   }
+  void updateData(id,newValues){
+    Firestore.instance.collection('KeepData').document(id).updateData(newValues).catchError((e)=>print("Update error $e"));
 
+  }
 }
 class test1 extends StatefulWidget{
 
@@ -52,7 +55,6 @@ class DataFetch extends State<test1> {
           String title = snapshot.data.documents[0].data['title'];
           String note = snapshot.data.documents[0].data['note'];
           print("Lenght is ${l.length}");
-          //print(note);
            new Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -67,8 +69,6 @@ class DataFetch extends State<test1> {
           //}
         }
     );
-    print(l.length);
-     //return l.length;
   }
   @override
   Widget build(BuildContext context) {
@@ -90,12 +90,3 @@ class App extends StatelessWidget {
   }
 }
 main()=> runApp(new App());
-
-/*var mytext;
-    Firestore.instance.collection('KeepData').document('LT6v9xuv9mH-6kmKJbL').get().then((snapshot){
-    mytext = snapshot.data['note'];
-    print("this is data$mytext");
-    });
-    return mytext;
-    *//*
- //print(result.data['title']);*/

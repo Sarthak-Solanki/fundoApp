@@ -8,7 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'crud.dart';
+import 'MainPage.dart';
 class TakeNotes extends StatefulWidget {
+  final int index;
+  TakeNotes({Key key,this.index}):super(key:key);
+  // TakeNotes():super(key:key);
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -37,7 +41,7 @@ List<ColorSelect> choices = <ColorSelect>[
 class TakeNotesState extends State<TakeNotes> {
   crudMethod crudObj = new crudMethod();
   Color _selectedChoice;
-  final  DocumentReference documentRef = Firestore.instance.document("mydata/dummy");
+ // final  DocumentReference documentRef = Firestore.instance.document("mydata/dummy");
   static String Title;
   static String Note;
   static File _image;
@@ -47,10 +51,24 @@ class TakeNotesState extends State<TakeNotes> {
   final _scaffoldKey  = new GlobalKey<ScaffoldState>();
   VoidCallback _showPersBottomSheetCallBack;
   VoidCallback _showPlusButtonCallBack;
+  static TextEditingController _titleController;
+  static TextEditingController _noteController;
+
   void initState(){
     super.initState();
     _showPersBottomSheetCallBack = _showBottomSheet;
     _showPlusButtonCallBack = _showPlusBottomSheet;
+    if(widget.index!=-1)
+    {_titleController = new TextEditingController(text: MainState.l[widget.index].data['Title']);}
+    else{
+      _titleController = new TextEditingController(text: "");
+    }
+    if(widget.index!=-1)
+    { _noteController = new TextEditingController(text: MainState.l[widget.index].data['Note']);}
+else{
+
+      _noteController = new TextEditingController(text: "");
+    }
   }
   gallery() async{
     print("picker is called");
@@ -64,10 +82,9 @@ class TakeNotesState extends State<TakeNotes> {
   camera() async{
     clickimage =  await ImagePicker.pickImage(source: ImageSource.camera);
     image = clickimage;
-        setState(() {
+    setState(() {
 
     });
-
   }
   void _showPlusBottomSheet(){
     showModalBottomSheet (context: context,builder: (builder){return new Container(
@@ -282,41 +299,44 @@ class TakeNotesState extends State<TakeNotes> {
       _selectedChoice = choice;
     });
   }
-  static Body() {
+  Body() {
 
     return new Column(
       children: <Widget>[
         new TextField(
+          //if()
+          controller: TakeNotesState._titleController,
           style: new TextStyle(fontWeight: FontWeight.w400,
               color: Colors.black87,
               fontSize: 22.4),
           maxLines: null,
-          onChanged:(String tempTitile){
-            Title = tempTitile;
-            //print("Title is here$title");
-            //print("temptitle is $tempTitile");
+          onChanged:(_titleController){
+            print("AA$_titleController");
+            setState(() {
+              Title = _titleController;
+            });
+
           },
           decoration: new InputDecoration(labelText: "Title",
               contentPadding: EdgeInsets.all(10.0)),
         ),
-        /*new Flex(
-          direction: Axis.vertical,
-          children: <Widget>[*/
+
         new Container(
           child: new Center(
             child: _image == null ? new Text(""): new Image.file(_image),
             //    ),)],
           ),
         ),
-        //SizedBox(height: 10.0,),
         new Expanded(
           child: new TextField(
+            controller: TakeNotesState._noteController,
+
             style: new TextStyle(fontWeight: FontWeight.w400,
                 color: Colors.black87,
                 fontSize: 18.4),
             maxLines: null,
-            onChanged: (tempNote){
-              Note = tempNote;
+            onChanged: (_noteController){
+              Note = _noteController;
             },
             decoration: new InputDecoration(
               border: InputBorder.none,
@@ -359,11 +379,17 @@ class TakeNotesState extends State<TakeNotes> {
           //Navigator.of(context).pop();
           Map <String,String> keepData = <String,String>{"Note" : Note, "Title": Title};
           //
+          if(widget.index==-1){
           crudObj.addData(keepData).then((result){
             print("success");
           }).catchError((e){
             print(e);
           });
+          }
+          else{
+         crudObj.updateData(MainState.l[widget.index].documentId, keepData);
+         print("id is dfgjksdgfkgdsfkjgdskjhfgkdsfgjsdgfjkhgd ${MainState.l[widget.index].documentId}");
+          }
         }, icon: Icon(Icons.save), label: new Text("Save")),
       ],
     );

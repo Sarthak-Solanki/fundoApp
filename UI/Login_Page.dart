@@ -4,22 +4,19 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'SignUpPage.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'MainPage.dart';
-
+import 'crud.dart';
 class Login_Page extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new LoginPageState();
 }
-
 class LoginPageState extends State<Login_Page> {
+  static crudMethod crudObj = new crudMethod();
   static String email;
   static String _password;
   static final formKey = new GlobalKey<FormState>();
-
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googlesignin = new GoogleSignIn();
-
   final FacebookLogin fbLogin = new FacebookLogin();
-
   Future<FirebaseUser> _signIn() async {
     GoogleSignInAccount googleSignInAccount = await googlesignin.signIn();
     GoogleSignInAuthentication gsa = await googleSignInAccount.authentication;
@@ -30,18 +27,14 @@ class LoginPageState extends State<Login_Page> {
         MaterialPageRoute(builder: (BuildContext context) => MainPage()));
     return user;
   }
-
   static bool validateAndSave() {
     final form = formKey.currentState;
-
     if (form.validate()) {
       form.save();
       return true;
     }
-
     return false;
   }
-
   static Future<void> validateAndSubmit(context) {
     if (validateAndSave()) {
       try {
@@ -58,7 +51,6 @@ class LoginPageState extends State<Login_Page> {
       }
     }
   }
-
   imgLogin() {
     return new Center(
       child: new Image.asset(
@@ -67,7 +59,6 @@ class LoginPageState extends State<Login_Page> {
       ),
     );
   }
-
   TFemail() {
     return new TextFormField(
         decoration: new InputDecoration(

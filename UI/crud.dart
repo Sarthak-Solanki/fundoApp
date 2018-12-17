@@ -1,9 +1,7 @@
 import 'dart:async';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'Login_Page.dart';
 class crudMethod{
   //final documentref = Firestore.instance.document(path)
 
@@ -20,73 +18,21 @@ class crudMethod{
   }
   var keepData;
   Future<void> addData(keepData) async{
-    //if(isLogin()){
-      Firestore.instance.collection('KeepData').add(keepData).catchError((e){print("eroee is************** $e");});
-    //}
+     Firestore.instance.document('${LoginPageState.email}/myData').collection("KeepData").add(keepData).catchError((e)=> print(e));
   }
   void updateData(id,newValues){
-    Firestore.instance.collection('KeepData').document(id).updateData(newValues).catchError((e)=>print("Update error $e"));
-
+    //Firestore.instance.collection(LoginPageState.email).document(id).updateData(newValues).catchError((e)=>print("Update error $e"));
+Firestore.instance.collection(LoginPageState.email).
+document('myData').collection('KeepData').
+  document(id).updateData(newValues).catchError((e)=>print("Update error $e"));
+  }
+  void deleteData(id){
+    Firestore.instance.collection(LoginPageState.email).document('myData').collection('KeepData').document(id).delete().catchError((e)=> print(e));
+  }
+  void fetchData() async{
+    //var data = Firestore.instance;
+    //var collection = data.collection(LoginPageState.email);
+    var f = await Firestore.instance.collection(LoginPageState.email).document('myData').collection('KeepData').getDocuments();
+          //print(f.documents[0].data['Note']);
   }
 }
-class test1 extends StatefulWidget{
-
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return new DataFetch();
-  }
-
-}
-
-
-class DataFetch extends State<test1> {
-
-
-  static List l;
-
- static body(context){
-   return new StreamBuilder<QuerySnapshot>(
-        stream: Firestore.instance.collection('KeepData').snapshots(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) return new Text("Please wait");
-          //else{
-          l = snapshot.data.documents;
-          String title = snapshot.data.documents[0].data['title'];
-          String note = snapshot.data.documents[0].data['note'];
-          print("Lenght is ${l.length}");
-           new Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              new Container(
-                child: new Center(
-                  child:  Text(snapshot.data.documents.length.toString()),
-                ),
-              ),
-            ],
-          );
-          //}
-        }
-    );
-  }
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      body:body(context),
-    );
-  }
-
-}
-
-class App extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Title',
-      // theme: kThemeData,
-      home: test1(),
-    );
-  }
-}
-main()=> runApp(new App());

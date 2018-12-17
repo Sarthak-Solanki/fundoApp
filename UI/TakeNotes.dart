@@ -6,7 +6,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'crud.dart';
 import 'MainPage.dart';
 class TakeNotes extends StatefulWidget {
@@ -41,7 +40,6 @@ List<ColorSelect> choices = <ColorSelect>[
 class TakeNotesState extends State<TakeNotes> {
   crudMethod crudObj = new crudMethod();
   Color _selectedChoice;
- // final  DocumentReference documentRef = Firestore.instance.document("mydata/dummy");
   static String Title;
   static String Note;
   static File _image;
@@ -311,11 +309,7 @@ else{
               fontSize: 22.4),
           maxLines: null,
           onChanged:(_titleController){
-            print("AA$_titleController");
-            setState(() {
               Title = _titleController;
-            });
-
           },
           decoration: new InputDecoration(labelText: "Title",
               contentPadding: EdgeInsets.all(10.0)),
@@ -374,23 +368,27 @@ else{
       iconTheme: IconThemeData(
         color: Colors.black54,
       ),
+
       actions: <Widget>[
         new FlatButton.icon(onPressed: (){
-          //Navigator.of(context).pop();
+          crudObj.deleteData(MainState.l[widget.index].documentID);
+          Navigator.of(context).pop();
+        }, icon: Icon(Icons.delete),label: Text('Delete'),),
+        new FlatButton.icon(onPressed: (){
           Map <String,String> keepData = <String,String>{"Note" : Note, "Title": Title};
-          //
           if(widget.index==-1){
           crudObj.addData(keepData).then((result){
             print("success");
+            Navigator.of(context).pop();
           }).catchError((e){
             print(e);
           });
           }
           else{
-         crudObj.updateData(MainState.l[widget.index].documentId, keepData);
-         print("id is dfgjksdgfkgdsfkjgdskjhfgkdsfgjsdgfjkhgd ${MainState.l[widget.index].documentId}");
+           crudObj.updateData(MainState.l[widget.index].documentID, keepData);
+            Navigator.of(context).pop();
           }
-        }, icon: Icon(Icons.save), label: new Text("Save")),
+        }, icon: Icon(Icons.save),label: new Text("Save")),
       ],
     );
   }

@@ -4,28 +4,35 @@ import 'TakeNotes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'crud.dart';
 class MainPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new MainState();
 }
-
 class MainState extends State<MainPage>{
+  crudMethod crudObj = new crudMethod();
   static List l;
   int size;
   String title;
   String note;
-
   var Stagg;
-  void search(){
-
-  }
   appBar(){
     return new AppBar(
       title: new Text("Hello Notes"),
       actions: <Widget>[
         new IconButton(icon: new Icon(Icons.arrow_drop_down), onPressed: signOut),
       ],
+    );
+  }
+  makeContainer(){
+     new Container(
+      height: 24.0,
+      child: new Column(
+        children: <Widget>[
+          new Icon(Icons.close),
+          new Icon(Icons.delete),
+        ],
+      ),
     );
   }
   drawer(){
@@ -124,6 +131,7 @@ class MainState extends State<MainPage>{
           color: Colors.white,
           child: new Text("Add Note"),
           onPressed: () {
+           // crudObj.fetchData();
             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => TakeNotes(index: -1) ));
           }
       ),
@@ -136,20 +144,17 @@ class MainState extends State<MainPage>{
   }
 
   createStaggered(context){
-    int count = 0;
-    int count2 = 0;
     return new StaggeredGridView.countBuilder(
       crossAxisCount: 4,
       itemCount: l.length,
       itemBuilder: (BuildContext context, int index) =>
           GestureDetector(
             onTap: () {
-              print("index is $index");
               var route = new MaterialPageRoute(builder: (BuildContext context)=>new TakeNotes(index: index));
               Navigator.of(context).push(route);
-              },
-            onLongPress: (){
+            },
 
+            onLongPress: (){
             },
             child: Container(
               padding: EdgeInsets.all(24.0),
@@ -181,17 +186,15 @@ class MainState extends State<MainPage>{
       appBar: appBar(),
       drawer: drawer(),
       body:new StreamBuilder<QuerySnapshot>(
-          stream: Firestore.instance.collection('KeepData').snapshots(),
+          stream: Firestore.instance.collection(LoginPageState.email).document('myData').collection('KeepData').snapshots(),
           builder: (context, snapshot) {
             if (!snapshot.hasData)
-              return new Text("No Notes");
+              return CircularProgressIndicator();
             else{
-            l = snapshot.data.documents;
-            title = snapshot.data.documents[0].data['Title'];
-            note = snapshot.data.documents[0].data['Note'];
-            return new Container(
-              child: createStaggered(context),
-            );}
+              l = snapshot.data.documents;//data.documents;
+              return new Container(
+                child: createStaggered(context),
+              );}
           }
       ),
 

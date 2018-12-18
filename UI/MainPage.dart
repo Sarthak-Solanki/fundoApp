@@ -12,8 +12,9 @@ class MainPage extends StatefulWidget {
 class MainState extends State<MainPage>{
   crudMethod crudObj = new crudMethod();
   static List l;
-  var view = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
+  var snapshot = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
   int size;
+  static String directory;
   int num = 2;
   String title;
   String note;
@@ -89,7 +90,8 @@ class MainState extends State<MainPage>{
                 leading: new Icon(Icons.lightbulb_outline),
                 title: new Text('Notes'),
                 onTap: (){
-                  view  = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
+                  directory = "Note";
+                  snapshot  = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
                   setState(() {
                   });
                 }
@@ -135,7 +137,8 @@ class MainState extends State<MainPage>{
                 leading: new Icon(Icons.delete),
                 title: new Text('Trash'),
                 onTap: (){
-                  view  = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Delete').snapshots();
+                  directory = "Delete";
+                  snapshot  = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Delete').snapshots();
                   setState(() {
 
                   });
@@ -168,11 +171,10 @@ class MainState extends State<MainPage>{
       ),
     );
   }
-  body(context){
+ // body(context){
 
 
-    // createStaggered();
-  }
+    // createStaggered();}
 
   createStaggered(context){
     return new StaggeredGridView.countBuilder(
@@ -184,7 +186,6 @@ class MainState extends State<MainPage>{
               var route = new MaterialPageRoute(builder: (BuildContext context)=>new TakeNotes(index: index));
               Navigator.of(context).push(route);
             },
-
             onLongPress: (){
             },
             child: Container(
@@ -218,7 +219,7 @@ class MainState extends State<MainPage>{
       appBar: appBar(),
       drawer: drawer(),
       body:new StreamBuilder<QuerySnapshot>(
-          stream: view,
+          stream: snapshot,
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
               return new Center(

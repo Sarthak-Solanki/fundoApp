@@ -1,9 +1,5 @@
 
 import 'dart:io';
-
-////THIS IS JUST FOR TEST WILL USE LATER IN UI
-
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'crud.dart';
@@ -371,15 +367,16 @@ class TakeNotesState extends State<TakeNotes> {
       backgroundColor: value,
       elevation: 0.0,
       iconTheme: IconThemeData(
-        color: Colors.black54,
+        color: Colors.black,
       ),
 
       actions: <Widget>[
-        new FlatButton.icon(onPressed: (){
+
+        new IconButton(icon: Icon(Icons.delete), onPressed: (){
           crudObj.deleteData(MainState.l[widget.index].documentID);
           Navigator.of(context).pop();
-        }, icon: Icon(Icons.delete),label: Text('Delete'),),
-        new FlatButton.icon(onPressed: (){
+        }),
+        new IconButton(icon: Icon(Icons.save), onPressed: (){
           Map <String,String> keepData = <String,String>{"Note" : Note, "Title": Title};
           if(widget.index==-1){
           crudObj.addData(keepData).then((result){
@@ -393,8 +390,12 @@ class TakeNotesState extends State<TakeNotes> {
            crudObj.updateData(MainState.l[widget.index].documentID, keepData);
             Navigator.of(context).pop();
           }
-        }, icon: Icon(Icons.save),label: new Text("Save")),
-      ],
+        },),
+        new IconButton(icon: Icon(Icons.archive), onPressed: (){
+
+        }),
+
+        ],
     );
   }
   static Color value = Colors.white;
@@ -518,3 +519,29 @@ main() => runApp(new Test());
           }).catchError((e){
             print("##########################################$e");
           });*/
+
+
+
+//FLATBUTTON ICON CHANGED TO ICONS.BUTTON ===>
+
+
+
+
+// WAS EARLY LIKE THIS>>
+/*new FlatButton.icon(
+            onPressed: (){
+          Map <String,String> keepData = <String,String>{"Note" : Note, "Title": Title};
+          if(widget.index==-1){
+          crudObj.addData(keepData).then((result){
+            print("success");
+            Navigator.of(context).pop();
+          }).catchError((e){
+            print(e);
+          });
+          }
+          else{
+           crudObj.updateData(MainState.l[widget.index].documentID, keepData);
+            Navigator.of(context).pop();
+          }
+        }, icon: Icon(Icons.save),label: new Text("")),
+      */

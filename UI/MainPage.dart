@@ -12,20 +12,42 @@ class MainPage extends StatefulWidget {
 class MainState extends State<MainPage>{
   crudMethod crudObj = new crudMethod();
   static List l;
+  var view = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
   int size;
+  int num = 2;
   String title;
   String note;
   var Stagg;
+  var iconView = Icon(Icons.dehaze);
   appBar(){
     return new AppBar(
-      title: new Text("Hello Notes"),
+      //title: new Text("Hello Notes"),
       actions: <Widget>[
+        new IconButton(icon: iconView, onPressed:
+            (){
+          if(iconView.toString() == Icon(Icons.dehaze).toString()){
+            num = 4;
+            iconView = Icon(Icons.border_all);
+            setState(() {
+            });
+            //break;
+          }
+          else {
+            iconView = Icon(Icons.dehaze);
+            num = 2;
+            setState(() {
+            });
+          }
+          setState(() {
+          });
+
+            }),
         new IconButton(icon: new Icon(Icons.arrow_drop_down), onPressed: signOut),
       ],
     );
   }
   makeContainer(){
-     new Container(
+    new Container(
       height: 24.0,
       child: new Column(
         children: <Widget>[
@@ -64,9 +86,13 @@ class MainState extends State<MainPage>{
                 ]
             ),
             new ListTile(
-              leading: new Icon(Icons.lightbulb_outline),
-              title: new Text('Notes'),
-              //onTap: () => _onListTileTap(context),
+                leading: new Icon(Icons.lightbulb_outline),
+                title: new Text('Notes'),
+                onTap: (){
+                  view  = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
+                  setState(() {
+                  });
+                }
             ),
             new Divider(),
             new ListTile(
@@ -106,9 +132,14 @@ class MainState extends State<MainPage>{
               //onTap: () => _onListTileTap(context),
             ),
             new ListTile(
-              leading: new Icon(Icons.delete),
-              title: new Text('Trash'),
-              //onTap: () => _onListTileTap(context),
+                leading: new Icon(Icons.delete),
+                title: new Text('Trash'),
+                onTap: (){
+                  view  = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Delete').snapshots();
+                  setState(() {
+
+                  });
+                }
             ),
             new Divider(),
             new ListTile(
@@ -131,7 +162,7 @@ class MainState extends State<MainPage>{
           color: Colors.white,
           child: new Text("Add Note"),
           onPressed: () {
-           // crudObj.fetchData();
+            // crudObj.fetchData();
             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => TakeNotes(index: -1) ));
           }
       ),
@@ -163,6 +194,7 @@ class MainState extends State<MainPage>{
                 color: TakeNotesState.value,
                 borderRadius: BorderRadius.circular(8.0),
               ),
+
               child: new Column(
                 children: <Widget>[
                   new Text(l[index ].data['Title'],style: TextStyle(fontWeight: FontWeight.bold,)),
@@ -172,8 +204,8 @@ class MainState extends State<MainPage>{
               ),
             ),
           ),
-      staggeredTileBuilder: (int index) =>
-      new StaggeredTile.fit(2),
+      staggeredTileBuilder: (int index) => 
+      new StaggeredTile.fit(num),
       padding: EdgeInsets.all(7.0),
       mainAxisSpacing: 4.0,
       crossAxisSpacing: 4.0,
@@ -186,11 +218,12 @@ class MainState extends State<MainPage>{
       appBar: appBar(),
       drawer: drawer(),
       body:new StreamBuilder<QuerySnapshot>(
-          stream: Firestore.instance.collection(LoginPageState.email).document('myData').collection('KeepData').snapshots(),
+          stream: view,
           builder: (context, snapshot) {
-            if (!snapshot.hasData)
-              return CircularProgressIndicator();
-            else{
+            if (!snapshot.hasData) {
+              return new Center(
+                child: CircularProgressIndicator(),);
+            }else{
               l = snapshot.data.documents;//data.documents;
               return new Container(
                 child: createStaggered(context),

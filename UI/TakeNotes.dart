@@ -57,14 +57,19 @@ class TakeNotesState extends State<TakeNotes> {
     _showPersBottomSheetCallBack = _showBottomSheet;
     _showPlusButtonCallBack = _showPlusBottomSheet;
     if(widget.index!=-1)
-    {_titleController = new TextEditingController(text: MainState.l[widget.index].data['Title']);}
+    {
+      _titleController = new TextEditingController(text: MainState.l[widget.index].data['Title']);
+    Title = MainState.l[widget.index].data['Title'];
+    }
     else{
       _titleController = new TextEditingController(text: "");
     }
     if(widget.index!=-1)
-    { _noteController = new TextEditingController(text: MainState.l[widget.index].data['Note']);}
-else{
-
+    {
+      _noteController = new TextEditingController(text: MainState.l[widget.index].data['Note']);
+    Note = MainState.l[widget.index].data['Note'];
+    }
+   else{
       _noteController = new TextEditingController(text: "");
     }
   }
@@ -509,7 +514,6 @@ main() => runApp(new Test());
   }
  */
 /*print("Datassssssss******************************* $keepData");
-          documentRef.setData(keepData).whenComplete((){
             print("successfully updated");
           }).catchError((e){
             print("##########################################$e");

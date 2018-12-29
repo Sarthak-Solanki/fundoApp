@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -6,8 +5,9 @@ import 'crud.dart';
 import 'MainPage.dart';
 class TakeNotes extends StatefulWidget {
   final int index;
-  TakeNotes({Key key,this.index}):super(key:key);
-  // TakeNotes():super(key:key);
+  String color;
+  bool isPin;
+  TakeNotes({Key key,this.index,this.color,this.isPin}):super(key:key);
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -35,13 +35,17 @@ List<ColorSelect> choices = <ColorSelect>[
 ];
 class TakeNotesState extends State<TakeNotes> {
   crudMethod crudObj = new crudMethod();
-  Color _selectedChoice;
+  //static bool isPinned = false;
   static String Title;
   static String Note;
   static File _image;
-  static  File image;
+  static File image;
+  static Color color;
   static File clickimage;
   static File Galleryimage;
+  Icon pinIcon;
+  DateTime _date = new DateTime.now();
+  TimeOfDay _time = new TimeOfDay.now();
   final _scaffoldKey  = new GlobalKey<ScaffoldState>();
   VoidCallback _showPersBottomSheetCallBack;
   VoidCallback _showPlusButtonCallBack;
@@ -50,12 +54,15 @@ class TakeNotesState extends State<TakeNotes> {
 
   void initState(){
     super.initState();
+    String valueString = widget.color.split('(0x')[1].split(')')[0]; // kind of hacky..
+    int value = int.parse(valueString, radix: 16);
+    color = new Color(value);
     _showPersBottomSheetCallBack = _showBottomSheet;
     _showPlusButtonCallBack = _showPlusBottomSheet;
     if(widget.index!=-1)
     {
       _titleController = new TextEditingController(text: MainState.l[widget.index].data['Title']);
-    Title = MainState.l[widget.index].data['Title'];
+      Title = MainState.l[widget.index].data['Title'];
     }
     else{
       _titleController = new TextEditingController(text: "");
@@ -63,12 +70,99 @@ class TakeNotesState extends State<TakeNotes> {
     if(widget.index!=-1)
     {
       _noteController = new TextEditingController(text: MainState.l[widget.index].data['Note']);
-    Note = MainState.l[widget.index].data['Note'];
+      Note = MainState.l[widget.index].data['Note'];
     }
-   else{
+    else{
       _noteController = new TextEditingController(text: "");
     }
   }
+   appBar(context) {
+    if(widget.isPin==true){
+      pinIcon = Icon(Icons.pined);
+    }
+    else{
+      pinIcon = Icon(Icons.unpinned);
+    }
+    return new AppBar(
+      backgroundColor: color,//color as Color,
+      elevation: 0.0,
+      iconTheme: IconThemeData(
+        color: Colors.black,
+      ),
+      actions: <Widget>[
+
+        new IconButton(icon: pinIcon, onPressed: (){
+          if(pinIcon.toString()==Icon(Icons.unpinned).toString()){
+          widget.isPin = true;
+          pinIcon = Icon(Icons.pined);
+          setState(() {
+          });
+        }
+        else{
+          widget.isPin = false;
+          pinIcon = Icon(Icons.unpinned);
+          setState(() {
+          });
+          }
+        }
+
+        ),
+
+        new IconButton(icon: Icon(Icons.delete), onPressed: (){
+          crudObj.deleteData(MainState.l[widget.index].documentID);
+          Navigator.of(context).pop();
+        }),
+        new IconButton(icon: Icon(Icons.add_alert), onPressed: (){
+          return showDialog<void>(
+            context: context,
+            barrierDismissible: false, // user must tap button!
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('Add Reminder'),
+                content: SingleChildScrollView(
+                  child: ListBody(
+                    children: <Widget>[
+                      new FlatButton(onPressed:()=> _selectDate(context),
+                          child: new Text("Set Date",textAlign: TextAlign.left,)),
+                      new FlatButton(onPressed:()=> _selectTime(context),
+                          child: new Text("Set Time",textAlign: TextAlign.left,))
+                    ],
+                  ),
+                ),
+                actions: <Widget>[
+                  FlatButton(
+                    child: Text('Regret'),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              );
+            },
+          );
+        }),
+        new IconButton(icon: Icon(Icons.save), onPressed: (){
+          Map <dynamic,dynamic> keepData = <String,dynamic>{"Note" : Note, "Title": Title,"Color":color.toString(),"Pin":widget.isPin};
+          if(widget.index==-1){
+            crudObj.addData(keepData).then((result){
+              print("success");
+              Navigator.of(context).pop();
+            }).catchError((e){
+              print(e);
+            });
+          }
+          else{
+            crudObj.updateData(MainState.l[widget.index].documentID, keepData);
+            Navigator.of(context).pop();
+          }
+        },),
+        new IconButton(icon: Icon(Icons.archive), onPressed: (){
+          crudObj.toArchive(MainState.l[widget.index].documentID);
+        }),
+      ],
+    );
+  }
+
   gallery() async{
     print("picker is called");
     Galleryimage  = await ImagePicker.pickImage(source: ImageSource.gallery);
@@ -102,14 +196,13 @@ class TakeNotesState extends State<TakeNotes> {
     );
     });
   }
-  _showBottomSheet(){
-    setState(() {
-      _showPersBottomSheetCallBack = null;
-    });
-    _scaffoldKey.currentState.showBottomSheet((context){
+  void _showBottomSheet(){
+    showModalBottomSheet(context: context, builder:(builder){
       return new Container(
-          color: value,
-          height: 300.0,
+          color: color, //Color(0xffef9a9a) as Color,
+          //  color,
+          height: 250.0,
+          width: 400.0,
           child: new Column(
             children: <Widget>[
               new SingleChildScrollView(
@@ -118,8 +211,9 @@ class TakeNotesState extends State<TakeNotes> {
                   children: <Widget>[
                     new InkWell(
                       onTap: () {
-                        value = choices[0].icon.color;
-                        _select(value) ;
+                        color = choices[0].icon.color;
+                        _select(color) ;
+
                       },
                       child: new Container(
                         width: 35.0,
@@ -133,8 +227,8 @@ class TakeNotesState extends State<TakeNotes> {
                     ),
                     new InkWell(
                       onTap: () {
-                        value = choices[1].icon.color;
-                        _select(value) ;
+                        color = choices[1].icon.color;
+                        _select(color);
                       },
                       child: new Container(
                         width: 40.0,
@@ -148,8 +242,8 @@ class TakeNotesState extends State<TakeNotes> {
                     ),
                     new InkWell(
                       onTap: () {
-                        value = choices[2].icon.color;
-                        _select(value) ;
+                        color = choices[2].icon.color;
+                        _select(color) ;
                       },
                       child: new Container(
                         width: 40.0,
@@ -163,8 +257,8 @@ class TakeNotesState extends State<TakeNotes> {
                     ),
                     new InkWell(
                       onTap: (){
-                        value = choices[3].icon.color;
-                        _select(value) ;
+                        color = choices[3].icon.color;
+                        //_select(value) ;
                       },
                       child: new Container(
                         width: 40.0,
@@ -178,8 +272,8 @@ class TakeNotesState extends State<TakeNotes> {
                     ),
                     new InkWell(
                       onTap: () {
-                        value = choices[4].icon.color;
-                        _select(value) ;
+                        color = choices[4].icon.color;
+                        //_select(value) ;
                       },
                       child: new Container(
                         width: 40.0,
@@ -193,8 +287,8 @@ class TakeNotesState extends State<TakeNotes> {
                     ),
                     new InkWell(
                       onTap: () {
-                        value = choices[5].icon.color;
-                        _select(value) ;
+                        color= choices[5].icon.color;
+                        //_select(value) ;
                       },
                       child: new Container(
                         width: 40.0,
@@ -208,8 +302,8 @@ class TakeNotesState extends State<TakeNotes> {
                     ),
                     new InkWell(
                       onTap: (){
-                        value = choices[6].icon.color;
-                        _select(value) ;
+                        color = choices[6].icon.color;
+                        //_select(value) ;
                       },
                       child: new Container(
                         width: 40.0,
@@ -223,8 +317,8 @@ class TakeNotesState extends State<TakeNotes> {
                     ),
                     new InkWell(
                       onTap: (){
-                        value = choices[7].icon.color;
-                        _select(value) ;
+                        color = choices[7].icon.color;
+                        //  _select(value) ;
                       },
                       child: new Container(
                         width: 40.0,
@@ -238,8 +332,8 @@ class TakeNotesState extends State<TakeNotes> {
                     ),
                     new InkWell(
                       onTap: () {
-                        value = choices[8].icon.color;
-                        _select(value) ;
+                        color = choices[8].icon.color;
+                        //_select(value) ;
                       },
                       child: new Container(
                         width: 40.0,
@@ -252,8 +346,8 @@ class TakeNotesState extends State<TakeNotes> {
                       ),
                     ),new InkWell(
                       onTap: (){
-                        value = choices[9].icon.color;
-                        _select(value) ;
+                        color = choices[9].icon.color;
+                        //_select(value) ;
                       },
                       child: new Container(
                         width:40.0,
@@ -267,8 +361,8 @@ class TakeNotesState extends State<TakeNotes> {
                     ),
                     new InkWell(
                       onTap: () {
-                        value = choices[10].icon.color;
-                        _select(value) ;
+                        color= choices[10].icon.color;
+                        //_select(value) ;
                       },
                       child: new Container(
                         width: 40.0,
@@ -285,6 +379,14 @@ class TakeNotesState extends State<TakeNotes> {
               ),
             ],
           ));
+    });
+  }
+  /*_showBottomSheet(){
+    setState(() {
+      _showPersBottomSheetCallBack = null;
+    });
+    _scaffoldKey.currentState.showBottomSheet((context){
+
     }).closed.whenComplete((){
       if(mounted){
         setState(() {
@@ -292,14 +394,13 @@ class TakeNotesState extends State<TakeNotes> {
         });
       }
     });
-  }
+  }*/
   void _select(Color choice){
     setState(() {
-      _selectedChoice = choice;
+      // _selectedChoice = choice;
     });
   }
   Body() {
-
     return new Column(
       children: <Widget>[
         new TextField(
@@ -310,7 +411,7 @@ class TakeNotesState extends State<TakeNotes> {
               fontSize: 22.4),
           maxLines: null,
           onChanged:(_titleController){
-              Title = _titleController;
+            Title = _titleController;
           },
           decoration: new InputDecoration(labelText: "Title",
               contentPadding: EdgeInsets.all(10.0)),
@@ -362,52 +463,16 @@ class TakeNotesState extends State<TakeNotes> {
         }
     );
   }
-  appBar() {
-    return new AppBar(
-      backgroundColor: value,
-      elevation: 0.0,
-      iconTheme: IconThemeData(
-        color: Colors.black,
-      ),
 
-      actions: <Widget>[
-
-        new IconButton(icon: Icon(Icons.delete), onPressed: (){
-          crudObj.deleteData(MainState.l[widget.index].documentID);
-          Navigator.of(context).pop();
-        }),
-        new IconButton(icon: Icon(Icons.save), onPressed: (){
-          Map <String,String> keepData = <String,String>{"Note" : Note, "Title": Title};
-          if(widget.index==-1){
-          crudObj.addData(keepData).then((result){
-            print("success");
-            Navigator.of(context).pop();
-          }).catchError((e){
-            print(e);
-          });
-          }
-          else{
-           crudObj.updateData(MainState.l[widget.index].documentID, keepData);
-            Navigator.of(context).pop();
-          }
-        },),
-        new IconButton(icon: Icon(Icons.archive), onPressed: (){
-
-        }),
-
-        ],
-    );
-  }
-  static Color value = Colors.white;
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       key: _scaffoldKey,
-      backgroundColor:value,
-      appBar: appBar(),
+      backgroundColor:color,//color as Color,
+      appBar: appBar(context),
       body: Body(),
       bottomNavigationBar: BottomAppBar(
-        color:value,
+        color:color,
         elevation: 0.0,
         child:new Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -425,8 +490,34 @@ class TakeNotesState extends State<TakeNotes> {
     );
   }
 
+  Future<Null> _selectDate(context) async{
+    final DateTime picked = await showDatePicker(
+      context: context,
+      firstDate:DateTime.now(),
+      initialDate: DateTime.now(),
+      lastDate:DateTime(3000),
+    );
+    if(picked!=null&&picked!=_date){
+      // String _date;
+      setState(() {
+        _date = picked;
 
-}
+      });
+      print('Date Selected$_date');
+    }
+  }
+
+
+
+
+  Future<Null>  _selectTime(BuildContext context) async{
+    final TimeOfDay picked = await showTimePicker(context: context, initialTime:TimeOfDay.now());
+    if(picked!=null&& picked!=_time){
+      setState(() {
+        _time = picked;
+      });
+    }
+  }}
 class Test extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

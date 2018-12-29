@@ -13,7 +13,6 @@ class LoginPageState extends State<Login_Page> {
   static crudMethod crudObj = new crudMethod();
   static String email;
   static String _password;
-
   static final formKey = new GlobalKey<FormState>();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn googlesignin = new GoogleSignIn();

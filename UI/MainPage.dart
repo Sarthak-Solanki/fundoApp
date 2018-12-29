@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'Login_Page.dart';
-import 'TakeNotes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'Login_Page.dart';
+import 'TakeNotes.dart';
 import 'crud.dart';
 class MainPage extends StatefulWidget {
   @override
@@ -15,26 +15,30 @@ class MainState extends State<MainPage>{
   var snapshot = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
   int size;
   static String directory;
+  //String value1 = TakeNotesState.value;
   int num = 2;
   String title;
   String note;
   var Stagg;
-  var iconView = Icon(Icons.dehaze);
+  var iconView = Icon(Icons.view_agenda,color: Colors.black,);
   appBar(){
     return new AppBar(
       //title: new Text("Hello Notes"),
+      backgroundColor: Colors.grey.shade200,
+      elevation: 0.0,
       actions: <Widget>[
+
         new IconButton(icon: iconView, onPressed:
             (){
-          if(iconView.toString() == Icon(Icons.dehaze).toString()){
+          if(iconView.toString() == Icon(Icons.view_agenda,color: Colors.black,).toString()){
             num = 4;
-            iconView = Icon(Icons.border_all);
+            iconView = Icon(Icons.dashboard,color: Colors.black,);
             setState(() {
             });
             //break;
           }
           else {
-            iconView = Icon(Icons.dehaze);
+            iconView = Icon(Icons.view_agenda,color: Colors.black,);
             num = 2;
             setState(() {
             });
@@ -42,8 +46,9 @@ class MainState extends State<MainPage>{
           setState(() {
           });
 
-            }),
-        new IconButton(icon: new Icon(Icons.arrow_drop_down), onPressed: signOut),
+        }),
+        new IconButton(icon: new Icon(Icons.arrow_left,color: Colors.black,semanticLabel:"Logout"), onPressed: signOut),
+
       ],
     );
   }
@@ -94,6 +99,7 @@ class MainState extends State<MainPage>{
                   snapshot  = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
                   setState(() {
                   });
+                  Navigator.pop(context);
                 }
             ),
             new Divider(),
@@ -131,7 +137,12 @@ class MainState extends State<MainPage>{
             new ListTile(
               leading: new Icon(Icons.archive),
               title: new Text('Archive'),
-              //onTap: () => _onListTileTap(context),
+              onTap: () {
+                snapshot  = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Delete').snapshots();
+                setState(() {
+                });
+                Navigator.pop(context);
+              },
             ),
             new ListTile(
                 leading: new Icon(Icons.delete),
@@ -140,8 +151,8 @@ class MainState extends State<MainPage>{
                   directory = "Delete";
                   snapshot  = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Delete').snapshots();
                   setState(() {
-
                   });
+                  Navigator.pop(context);
                 }
             ),
             new Divider(),
@@ -160,30 +171,34 @@ class MainState extends State<MainPage>{
   }
   bottomNaviBar(context){
     return BottomAppBar(
+      color: Colors.grey.shade200,
       elevation: 20.0,
       child: new RaisedButton(
-          color: Colors.white,
-          child: new Text("Add Note"),
+          color: Colors.grey.shade200,
+
+          child: new Text("Take a note...",textAlign: TextAlign.start,),
           onPressed: () {
-            // crudObj.fetchData();
-            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => TakeNotes(index: -1) ));
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => TakeNotes(index: -1,color:Colors.white.toString()) ));
           }
       ),
     );
   }
- // body(context){
-
-
-    // createStaggered();}
-
+  getColor(int index){
+    String valueString = l[index].data["Color"].split('(0x')[1].split(')')[0]; // kind of hacky..
+    int value = int.parse(valueString, radix: 16);
+    Color color = new Color(value);
+    return color;
+  }
   createStaggered(context){
     return new StaggeredGridView.countBuilder(
       crossAxisCount: 4,
       itemCount: l.length,
-      itemBuilder: (BuildContext context, int index) =>
-          GestureDetector(
+      itemBuilder: (BuildContext context, int index) {
+        if(l[index]!="Pinned"&&l[index]!="Other"){
+          return GestureDetector(
             onTap: () {
-              var route = new MaterialPageRoute(builder: (BuildContext context)=>new TakeNotes(index: index));
+              var route = new MaterialPageRoute(builder: (BuildContext context)=>
+              new TakeNotes(index: index,color:l[index++].data["Color"],isPin: l[index++].data["Pin"],));
               Navigator.of(context).push(route);
             },
             onLongPress: (){
@@ -192,30 +207,48 @@ class MainState extends State<MainPage>{
               padding: EdgeInsets.all(24.0),
               decoration: BoxDecoration(
                 border: Border.all(width: 1.3,color: Colors.grey.shade200),
-                color: TakeNotesState.value,
+                color: getColor(index),
                 borderRadius: BorderRadius.circular(8.0),
               ),
-
               child: new Column(
                 children: <Widget>[
-                  new Text(l[index ].data['Title'],style: TextStyle(fontWeight: FontWeight.bold,)),
+                  new Text(l[index].data['Title'],style: TextStyle(fontWeight: FontWeight.bold,)),
                   new Text("\n"),
                   new Text(l[index].data['Note']),
                 ],
               ),
             ),
-          ),
-      staggeredTileBuilder: (int index) => 
+          );
+        }
+        else{
+          return new GestureDetector(
+            child: new Container(
+             // color: Colo,
+              child: new Column(
+              children: <Widget>[
+                new Text(l[index],
+                 ),
+                //new Text("\n"),
+              ],
+              ),
+            ),
+          );
+        }
+
+      },
+      staggeredTileBuilder: (int index) =>
       new StaggeredTile.fit(num),
-      padding: EdgeInsets.all(7.0),
-      mainAxisSpacing: 4.0,
-      crossAxisSpacing: 4.0,
+      padding:EdgeInsets.all(7.0),
+      mainAxisSpacing:
+      4.0,
+      crossAxisSpacing:
+      4.0,
     );
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey.shade200,
       appBar: appBar(),
       drawer: drawer(),
       body:new StreamBuilder<QuerySnapshot>(
@@ -224,18 +257,37 @@ class MainState extends State<MainPage>{
             if (!snapshot.hasData) {
               return new Center(
                 child: CircularProgressIndicator(),);
-            }else{
-              l = snapshot.data.documents;//data.documents;
+            }else {
+              l = snapshot.data.documents; //data.documents;
+              List z = l;
+              l = null;
+              List pList = new List();
+              List unpList = new List();
+              for (int i = 0; i < z.length; i++) {
+                if (z[i].data['Pin'] == true) {
+                  pList.add(z[i]);
+                }
+                else {
+                  unpList.add(z[i]);
+                }
+              }
+              // Tags Pinned = new Tags();
+              if(pList.isEmpty==false){
+                pList.insert(0,"Pinned");
+                unpList.insert(0,"Other");
+              }
+              l = pList +unpList;
+              //l.add("Pinned");
               return new Container(
                 child: createStaggered(context),
-              );}
+              );
+            }
           }
       ),
 
       bottomNavigationBar:bottomNaviBar(context),
     );
   }
-
   Future <Login_Page> signOut()  async{
     await FirebaseAuth.instance.signOut().then((_){
       Navigator.of(context).pop();
@@ -243,4 +295,3 @@ class MainState extends State<MainPage>{
     }).catchError((e)=>print(e));
   }
 }
-

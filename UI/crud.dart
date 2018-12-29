@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'Login_Page.dart';
 import 'MainPage.dart';
 class crudMethod{
@@ -10,10 +9,24 @@ class crudMethod{
     Firestore.instance.document('${LoginPageState.email}/myData').collection("Note").add(keepData).catchError((e)=> print(e));
   }
   void updateData(id,newValues){
-    //Firestore.instance.collection(LoginPageState.email).document(id).updateData(newValues).catchError((e)=>print("Update error $e"));
     Firestore.instance.collection(LoginPageState.email).
     document('myData').collection('Note').
     document(id).updateData(newValues).catchError((e)=>print("Update error $e"));
+  }
+
+  void toArchive(id) async{
+    var test =  await Firestore.instance.document('${LoginPageState.email}/myData').collection('Note').document(id).get();
+    Map m = test.data;
+    Firestore.instance.document('${LoginPageState.email}/myData').collection("Archive").add(m).catchError((e)=> print(e));
+    Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').document(id).delete().catchError((e)=> print(e));
+  }
+  void unArchive(id) async{
+    var test =  await Firestore.instance.document('${LoginPageState.email}/myData').collection('Archive').document(id).get();
+    Map m = test.data;
+
+    Firestore.instance.document('${LoginPageState.email}/myData').collection("Note").add(m).catchError((e)=> print(e));
+    Firestore.instance.collection(LoginPageState.email).document('myData').collection('Archive').document(id).delete().catchError((e)=> print(e));
+
   }
   Future<void> deleteData(id) async{
     var test =  await Firestore.instance.document('${LoginPageState.email}/myData').collection('Note').document(id).get();

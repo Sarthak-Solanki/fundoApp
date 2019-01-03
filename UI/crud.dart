@@ -9,9 +9,15 @@ class crudMethod{
     Firestore.instance.document('${LoginPageState.email}/myData').collection("Note").add(keepData).catchError((e)=> print(e));
   }
   void updateData(id,newValues){
-    Firestore.instance.collection(LoginPageState.email).
-    document('myData').collection('Note').
-    document(id).updateData(newValues).catchError((e)=>print("Update error $e"));
+    if(MainState.directory=="Note"){
+      Firestore.instance.collection(LoginPageState.email).
+      document('myData').collection('Note').
+      document(id).updateData(newValues).catchError((e)=>print("Update error $e"));}
+    else if(MainState.directory=="Archive"){
+      Firestore.instance.collection(LoginPageState.email).
+      document('myData').collection(MainState.directory).
+      document(id).updateData(newValues).catchError((e)=>print("Update error $e"));}
+
   }
 
   void toArchive(id) async{
@@ -23,18 +29,46 @@ class crudMethod{
   void unArchive(id) async{
     var test =  await Firestore.instance.document('${LoginPageState.email}/myData').collection('Archive').document(id).get();
     Map m = test.data;
-
     Firestore.instance.document('${LoginPageState.email}/myData').collection("Note").add(m).catchError((e)=> print(e));
     Firestore.instance.collection(LoginPageState.email).document('myData').collection('Archive').document(id).delete().catchError((e)=> print(e));
-
   }
   Future<void> deleteData(id) async{
-    var test =  await Firestore.instance.document('${LoginPageState.email}/myData').collection('Note').document(id).get();
-    Map m = test.data;
-    Firestore.instance.document('${LoginPageState.email}/myData').collection("Delete").add(m).catchError((e)=> print(e));
-    Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').document(id).delete().catchError((e)=> print(e));
-    if(MainState.directory == "Delete"){
-    Firestore.instance.collection(LoginPageState.email).document('myData').collection(MainState.directory).document(id).delete().catchError((e)=> print(e));
+    if(MainState.directory=='Note') {
+      print("Note");
+      var test = await Firestore.instance.document(
+          '${LoginPageState.email}/myData').collection('Note')
+          .document(id)
+          .get();
+      Map m = test.data;
+      Firestore.instance.document('${LoginPageState.email}/myData').collection(
+          "Delete").add(m).catchError((e) => print(e));
+      Firestore.instance.collection(LoginPageState.email).document('myData')
+          .collection('Note').document(id).delete()
+          .catchError((e) => print(e));
+    }
+    else if(MainState.directory == "Delete"){
+      print("delete");
+      Firestore.instance.collection(LoginPageState.email).document('myData').collection(MainState.directory).document(id).delete().catchError((e)=> print(e));
+    }
+    else if(MainState.directory=="Archive"){
+      print("archive");
+      var test =  await Firestore.instance.document('${LoginPageState.email}/myData').collection('Archive').document(id).get();
+      Map m = test.data;
+      Firestore.instance.document('${LoginPageState.email}/myData').collection("Delete").add(m).catchError((e)=> print(e));
+      Firestore.instance.collection(LoginPageState.email).document('myData').collection('Archive').document(id).delete().catchError((e)=> print(e));
+    }
+    else{
+       var test = await Firestore.instance.document(
+          '${LoginPageState.email}/myData').collection('Note')
+          .document(id)
+          .get();
+      Map m = test.data;
+      Firestore.instance.document('${LoginPageState.email}/myData').collection(
+          "Delete").add(m).catchError((e) => print(e));
+      Firestore.instance.collection(LoginPageState.email).document('myData')
+          .collection('Note').document(id).delete()
+          .catchError((e) => print(e));
+
     }
   }
   void fetchData() async{

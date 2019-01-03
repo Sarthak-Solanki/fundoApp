@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'crud.dart';
 import 'MainPage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'Login_Page.dart';
 class TakeNotes extends StatefulWidget {
   final int index;
   String color;
-  bool isPin;
-  TakeNotes({Key key,this.index,this.color,this.isPin}):super(key:key);
+  bool isPin ;
+  bool isArchive;
+  List l;
+  TakeNotes({Key key,this.l,this.index,this.color,this.isPin,this.isArchive}):super(key:key);
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -35,7 +39,6 @@ List<ColorSelect> choices = <ColorSelect>[
 ];
 class TakeNotesState extends State<TakeNotes> {
   crudMethod crudObj = new crudMethod();
-  //static bool isPinned = false;
   static String Title;
   static String Note;
   static File _image;
@@ -43,7 +46,8 @@ class TakeNotesState extends State<TakeNotes> {
   static Color color;
   static File clickimage;
   static File Galleryimage;
-  Icon pinIcon;
+  Icon pinIcon = Icon(Icons.pined);
+  Icon archiveIcon = Icon(Icons.archive);
   DateTime _date = new DateTime.now();
   TimeOfDay _time = new TimeOfDay.now();
   final _scaffoldKey  = new GlobalKey<ScaffoldState>();
@@ -61,27 +65,33 @@ class TakeNotesState extends State<TakeNotes> {
     _showPlusButtonCallBack = _showPlusBottomSheet;
     if(widget.index!=-1)
     {
-      _titleController = new TextEditingController(text: MainState.l[widget.index].data['Title']);
-      Title = MainState.l[widget.index].data['Title'];
+      _titleController = new TextEditingController(text: widget.l[widget.index].data['Title']);
+      Title = widget.l[widget.index].data['Title'];
     }
     else{
       _titleController = new TextEditingController(text: "");
     }
     if(widget.index!=-1)
     {
-      _noteController = new TextEditingController(text: MainState.l[widget.index].data['Note']);
-      Note = MainState.l[widget.index].data['Note'];
+      _noteController = new TextEditingController(text: widget.l[widget.index].data['Note']);
+      Note = widget.l[widget.index].data['Note'];
     }
     else{
       _noteController = new TextEditingController(text: "");
     }
   }
-   appBar(context) {
+  appBar(context) {
     if(widget.isPin==true){
       pinIcon = Icon(Icons.pined);
     }
     else{
       pinIcon = Icon(Icons.unpinned);
+    }
+    if(widget.isArchive==true){
+      archiveIcon = Icon(Icons.unarchive);
+    }
+    else {
+      archiveIcon = Icon(Icons.archive);
     }
     return new AppBar(
       backgroundColor: color,//color as Color,
@@ -90,26 +100,23 @@ class TakeNotesState extends State<TakeNotes> {
         color: Colors.black,
       ),
       actions: <Widget>[
-
         new IconButton(icon: pinIcon, onPressed: (){
           if(pinIcon.toString()==Icon(Icons.unpinned).toString()){
-          widget.isPin = true;
-          pinIcon = Icon(Icons.pined);
-          setState(() {
-          });
-        }
-        else{
-          widget.isPin = false;
-          pinIcon = Icon(Icons.unpinned);
-          setState(() {
-          });
+            widget.isPin = true;
+            pinIcon = Icon(Icons.pined);
+            setState(() {
+            });
+          }
+          else{
+            widget.isPin = false;
+            pinIcon = Icon(Icons.unpinned);
+            setState(() {
+            });
           }
         }
-
         ),
-
         new IconButton(icon: Icon(Icons.delete), onPressed: (){
-          crudObj.deleteData(MainState.l[widget.index].documentID);
+          crudObj.deleteData(widget.l[widget.index].documentID);
           Navigator.of(context).pop();
         }),
         new IconButton(icon: Icon(Icons.add_alert), onPressed: (){
@@ -142,33 +149,48 @@ class TakeNotesState extends State<TakeNotes> {
           );
         }),
         new IconButton(icon: Icon(Icons.save), onPressed: (){
-          Map <dynamic,dynamic> keepData = <String,dynamic>{"Note" : Note, "Title": Title,"Color":color.toString(),"Pin":widget.isPin};
+          Map <dynamic,dynamic> keepData = <String,dynamic>{"Note" : Note, "Title": Title,"Color":color.toString(),"Pin":widget.isPin,"isArchive":widget.isArchive};
           if(widget.index==-1){
             crudObj.addData(keepData).then((result){
-              print("success");
               Navigator.of(context).pop();
             }).catchError((e){
               print(e);
             });
           }
           else{
-            crudObj.updateData(MainState.l[widget.index].documentID, keepData);
+            crudObj.updateData(widget.l[widget.index].documentID, keepData);
             Navigator.of(context).pop();
           }
         },),
-        new IconButton(icon: Icon(Icons.archive), onPressed: (){
-          crudObj.toArchive(MainState.l[widget.index].documentID);
-        }),
+        new IconButton(icon: archiveIcon,
+            onPressed: (){
+              if(MainState.directory=="Archive"){
+                widget.isArchive = false;
+                archiveIcon = Icon(Icons.archive);
+                Map <dynamic,dynamic> keepData = <String,dynamic>{"Note" : Note, "Title": Title,"Color":color.toString(),"Pin":widget.isPin,"isArchive":widget.isArchive};
+                crudObj.updateData(widget.l[widget.index].documentID, keepData);
+                crudObj.unArchive(widget.l[widget.index].documentID);
+                Navigator.of(context).pop();
+              }
+              else {
+                widget.isArchive = true;
+                archiveIcon = Icon(Icons.unarchive);
+                Map <dynamic,dynamic> keepData = <String,dynamic>{"Note" : Note, "Title": Title,"Color":color.toString(),"Pin":widget.isPin,"isArchive":widget.isArchive};
+                crudObj.updateData(widget.l[widget.index].documentID, keepData);
+                crudObj.toArchive(widget.l[widget.index].documentID);
+               // Navigator.of(context).pop();
+                Navigator.of(context).pushReplacementNamed('/MainPage');
+              }
+            }
+        ),
       ],
     );
   }
-
   gallery() async{
     print("picker is called");
     Galleryimage  = await ImagePicker.pickImage(source: ImageSource.gallery);
     _image = Galleryimage;
     setState(() {
-
     });
 
   }
@@ -176,7 +198,6 @@ class TakeNotesState extends State<TakeNotes> {
     clickimage =  await ImagePicker.pickImage(source: ImageSource.camera);
     image = clickimage;
     setState(() {
-
     });
   }
   void _showPlusBottomSheet(){
@@ -318,7 +339,6 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: (){
                         color = choices[7].icon.color;
-                        //  _select(value) ;
                       },
                       child: new Container(
                         width: 40.0,
@@ -333,7 +353,6 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: () {
                         color = choices[8].icon.color;
-                        //_select(value) ;
                       },
                       child: new Container(
                         width: 40.0,
@@ -347,7 +366,6 @@ class TakeNotesState extends State<TakeNotes> {
                     ),new InkWell(
                       onTap: (){
                         color = choices[9].icon.color;
-                        //_select(value) ;
                       },
                       child: new Container(
                         width:40.0,
@@ -381,20 +399,6 @@ class TakeNotesState extends State<TakeNotes> {
           ));
     });
   }
-  /*_showBottomSheet(){
-    setState(() {
-      _showPersBottomSheetCallBack = null;
-    });
-    _scaffoldKey.currentState.showBottomSheet((context){
-
-    }).closed.whenComplete((){
-      if(mounted){
-        setState(() {
-          _showPersBottomSheetCallBack = _showBottomSheet;
-        });
-      }
-    });
-  }*/
   void _select(Color choice){
     setState(() {
       // _selectedChoice = choice;
@@ -463,7 +467,6 @@ class TakeNotesState extends State<TakeNotes> {
         }
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -489,7 +492,6 @@ class TakeNotesState extends State<TakeNotes> {
       ),
     );
   }
-
   Future<Null> _selectDate(context) async{
     final DateTime picked = await showDatePicker(
       context: context,
@@ -506,10 +508,6 @@ class TakeNotesState extends State<TakeNotes> {
       print('Date Selected$_date');
     }
   }
-
-
-
-
   Future<Null>  _selectTime(BuildContext context) async{
     final TimeOfDay picked = await showTimePicker(context: context, initialTime:TimeOfDay.now());
     if(picked!=null&& picked!=_time){
@@ -631,8 +629,26 @@ main() => runApp(new Test());
           });
           }
           else{
-           crudObj.updateData(MainState.l[widget.index].documentID, keepData);
+           crudObj.updateData(widget.l[widget.index].documentID, keepData);
             Navigator.of(context).pop();
           }
         }, icon: Icon(Icons.save),label: new Text("")),
       */
+
+
+
+
+/*_showBottomSheet(){
+    setState(() {
+      _showPersBottomSheetCallBack = null;
+    });
+    _scaffoldKey.currentState.showBottomSheet((context){
+
+    }).closed.whenComplete((){
+      if(mounted){
+        setState(() {
+          _showPersBottomSheetCallBack = _showBottomSheet;
+        });
+      }
+    });
+  }*/

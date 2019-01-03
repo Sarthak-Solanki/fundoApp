@@ -134,6 +134,7 @@ class LoginPageState extends State<Login_Page> {
             key: formKey,
             child: new Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
+              verticalDirection: VerticalDirection.down,
               children: <Widget>[
                 Container(child: imgLogin()),
                 TFemail(),

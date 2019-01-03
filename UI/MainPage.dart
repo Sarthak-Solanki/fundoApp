@@ -12,7 +12,7 @@ class MainPage extends StatefulWidget {
 class MainState extends State<MainPage>{
   crudMethod crudObj = new crudMethod();
   static List l;
-  var snapshot = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
+  var snapshot =  Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
   int size;
   static String directory;
   //String value1 = TakeNotesState.value;
@@ -104,31 +104,6 @@ class MainState extends State<MainPage>{
             ),
             new Divider(),
             new ListTile(
-              leading: new Text('Label'),
-              trailing: new Text('Edit'),
-              //onTap: () => _onListTileTap(context),
-            ),
-            new ListTile(
-              leading: new Icon(Icons.label),
-              title: new Text('Expense'),
-              //onTap: () => _onListTileTap(context),
-            ),
-            new ListTile(
-              leading: new Icon(Icons.label),
-              title: new Text('Inspiration'),
-              //onTap: () => _onListTileTap(context),
-            ),
-            new ListTile(
-              leading: new Icon(Icons.label),
-              title: new Text('Personal'),
-              // onTap: () => _onListTileTap(context),
-            ),
-            new ListTile(
-              leading: new Icon(Icons.label),
-              title: new Text('Work'),
-              //onTap: () => _onListTileTap(context),
-            ),
-            new ListTile(
               leading: new Icon(Icons.add),
               title: new Text('Create new label'),
               //onTap: () => _onListTileTap(context),
@@ -138,7 +113,8 @@ class MainState extends State<MainPage>{
               leading: new Icon(Icons.archive),
               title: new Text('Archive'),
               onTap: () {
-                snapshot  = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Delete').snapshots();
+                directory = "Archive";
+                snapshot  = Firestore.instance.collection(LoginPageState.email).document('myData').collection('Archive').snapshots();
                 setState(() {
                 });
                 Navigator.pop(context);
@@ -155,17 +131,6 @@ class MainState extends State<MainPage>{
                   Navigator.pop(context);
                 }
             ),
-            new Divider(),
-            new ListTile(
-              leading: new Icon(Icons.settings),
-              title: new Text('Settings'),
-              //onTap: () => _onListTileTap(context),
-            ),
-            new ListTile(
-              leading: new Icon(Icons.help),
-              title: new Text('Help & feedback'),
-              //onTap: () => _onListTileTap(context),
-            )
           ]
       ),);
   }
@@ -175,7 +140,6 @@ class MainState extends State<MainPage>{
       elevation: 20.0,
       child: new RaisedButton(
           color: Colors.grey.shade200,
-
           child: new Text("Take a note...",textAlign: TextAlign.start,),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => TakeNotes(index: -1,color:Colors.white.toString()) ));
@@ -189,7 +153,7 @@ class MainState extends State<MainPage>{
     Color color = new Color(value);
     return color;
   }
-  createStaggered(context){
+  createStaggered(contex,l){
     return new StaggeredGridView.countBuilder(
       crossAxisCount: 4,
       itemCount: l.length,
@@ -198,7 +162,7 @@ class MainState extends State<MainPage>{
           return GestureDetector(
             onTap: () {
               var route = new MaterialPageRoute(builder: (BuildContext context)=>
-              new TakeNotes(index: index,color:l[index++].data["Color"],isPin: l[index++].data["Pin"],));
+              new TakeNotes(l:l,index: index,color:l[index].data["Color"],isPin: l[index].data["Pin"],isArchive: l[index].data["isArchive"]));
               Navigator.of(context).push(route);
             },
             onLongPress: (){
@@ -221,28 +185,27 @@ class MainState extends State<MainPage>{
           );
         }
         else{
-          return new GestureDetector(
-            child: new Container(
-             // color: Colo,
-              child: new Column(
-              children: <Widget>[
-                new Text(l[index],
-                 ),
-                //new Text("\n"),
-              ],
-              ),
-            ),
+            return new Container(
+              alignment: Alignment.topLeft,
+               child:new Text(l[index],
+                  ),
           );
+        }
+      },
+      staggeredTileBuilder: (int index) {
+        if(l[index]=="Pinned"||l[index]=="Other"){
+          return StaggeredTile.fit(4);
+        } else {
+          return StaggeredTile.fit(num);
         }
 
       },
-      staggeredTileBuilder: (int index) =>
-      new StaggeredTile.fit(num),
+
       padding:EdgeInsets.all(7.0),
-      mainAxisSpacing:
-      4.0,
-      crossAxisSpacing:
-      4.0,
+      mainAxisSpacing: 4.0,
+      crossAxisSpacing: 4.0,
+
+
     );
   }
   @override
@@ -275,11 +238,14 @@ class MainState extends State<MainPage>{
               if(pList.isEmpty==false){
                 pList.insert(0,"Pinned");
                 unpList.insert(0,"Other");
+                l = pList +unpList;
               }
-              l = pList +unpList;
+              else{
+                l = z;
+              }
               //l.add("Pinned");
               return new Container(
-                child: createStaggered(context),
+                child: createStaggered(context,l),
               );
             }
           }

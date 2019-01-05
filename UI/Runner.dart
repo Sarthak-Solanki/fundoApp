@@ -3,7 +3,7 @@ import 'MainPage.dart';
 import 'SignUpPage.dart';
 import 'TakeNotes.dart';
 import 'package:flutter/material.dart';
-
+import 'AddLabel.dart';
 void main()=> runApp(new MyApp());
 
 class MyApp extends StatelessWidget{
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget{
       '/SignUp': (BuildContext context) => new SignUpPage(),
       '/MainPage': (BuildContext context) => new MainPage(),
       '/NotePage':  (BuildContext context) => new TakeNotes(),
+        '/AddLabel':(BuildContext context)=> new LabelForm(),
     },
    );
   }

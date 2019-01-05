@@ -12,6 +12,7 @@ MERGED from [:flutter_local_notifications] /Users/bridgeit/Desktop/fun_do_note_a
 MERGED from [:cloud_firestore] /Users/bridgeit/Desktop/fun_do_note_app/build/cloud_firestore/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:firebase_database] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_database/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-23:12
+MERGED from [:share] /Users/bridgeit/Desktop/fun_do_note_app/build/share/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:firebase_core] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_core/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:firebase_auth] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_auth/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-core:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.4.aar/c721556828f3729bc3e35181dcf04050/AndroidManifest.xml:2:1-9:12
@@ -238,6 +239,8 @@ MERGED from [:firebase_database] /Users/bridgeit/Desktop/fun_do_note_app/build/f
 MERGED from [:firebase_database] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_database/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
 MERGED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
 MERGED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:share] /Users/bridgeit/Desktop/fun_do_note_app/build/share/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:share] /Users/bridgeit/Desktop/fun_do_note_app/build/share/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_core/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_core/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_auth/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44

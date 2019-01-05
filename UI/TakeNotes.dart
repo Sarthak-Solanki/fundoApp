@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'crud.dart';
 import 'MainPage.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'Login_Page.dart';
+import 'package:share/share.dart';
 class TakeNotes extends StatefulWidget {
   final int index;
   String color;
@@ -178,7 +177,7 @@ class TakeNotesState extends State<TakeNotes> {
                 Map <dynamic,dynamic> keepData = <String,dynamic>{"Note" : Note, "Title": Title,"Color":color.toString(),"Pin":widget.isPin,"isArchive":widget.isArchive};
                 crudObj.updateData(widget.l[widget.index].documentID, keepData);
                 crudObj.toArchive(widget.l[widget.index].documentID);
-               // Navigator.of(context).pop();
+                // Navigator.of(context).pop();
                 Navigator.of(context).pushReplacementNamed('/MainPage');
               }
             }
@@ -226,6 +225,24 @@ class TakeNotesState extends State<TakeNotes> {
           width: 400.0,
           child: new Column(
             children: <Widget>[
+              new Container(
+                  alignment: Alignment.topLeft,
+                  child: new FlatButton.icon(onPressed: (){
+                    crudObj.deleteData(widget.l[widget.index].documentID);
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pop();
+                  }, icon: Icon(Icons.delete_outline), label: new Text("      Delete",style:TextStyle(fontSize: 15.0,),))
+              ),
+              new Container(
+                alignment: Alignment.topLeft,
+                child: new FlatButton.icon(onPressed:Note.isEmpty?null: (){
+                  final RenderBox box = context.findRenderObject();
+                        Share.share(Note,
+                            sharePositionOrigin:
+                            box.localToGlobal(Offset.zero) &
+                            box.size);
+                }, icon: Icon(Icons.share), label: new Text("      Send",style: TextStyle(fontSize: 15.0),)),
+              ),
               new SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: new Row(

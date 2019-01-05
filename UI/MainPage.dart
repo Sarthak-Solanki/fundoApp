@@ -10,10 +10,16 @@ class MainPage extends StatefulWidget {
   State<StatefulWidget> createState() => new MainState();
 }
 class MainState extends State<MainPage>{
+  List label = ["One","Two"];
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   crudMethod crudObj = new crudMethod();
   static List l;
   var snapshot =  Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
   int size;
+  var _searchview = new TextEditingController();
+  bool _firstSearch  = true;
+  String _query = "";
+  List _filterList = new List();
   static String directory;
   //String value1 = TakeNotesState.value;
   int num = 2;
@@ -21,13 +27,47 @@ class MainState extends State<MainPage>{
   String note;
   var Stagg;
   var iconView = Icon(Icons.view_agenda,color: Colors.black,);
-  appBar(){
-    return new AppBar(
-      //title: new Text("Hello Notes"),
-      backgroundColor: Colors.grey.shade200,
-      elevation: 0.0,
-      actions: <Widget>[
 
+  MainState() {
+    _searchview.addListener(() {
+      if (_searchview.text.isEmpty) {
+        //Notify the framework that the internal state of this object has changed.
+        setState(() {
+          _firstSearch = true;
+          _query = "";
+        });
+      } else {
+        setState(() {
+          _firstSearch = false;
+          _query = _searchview.text;
+        });
+      }
+    });
+  }
+  appBar(context){
+    return new AppBar(
+      backgroundColor: Colors.white,
+      elevation: 1.0,
+      actions: <Widget>[
+        new Container(
+          child: IconButton(
+            icon: new Icon(Icons.menu,color: Colors.black54,),
+            onPressed: () => _scaffoldKey.currentState.openDrawer(),
+          ),
+        ),
+        new Expanded(
+          child: new TextField(
+            controller: _searchview,
+            autofocus: true,
+            // focusNode: ,
+            decoration: InputDecoration(
+              fillColor: Colors.black54,
+              hintText: "Search Your Notes",
+              hintStyle: new TextStyle(color: Colors.grey),
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ),
         new IconButton(icon: iconView, onPressed:
             (){
           if(iconView.toString() == Icon(Icons.view_agenda,color: Colors.black,).toString()){
@@ -35,7 +75,6 @@ class MainState extends State<MainPage>{
             iconView = Icon(Icons.dashboard,color: Colors.black,);
             setState(() {
             });
-            //break;
           }
           else {
             iconView = Icon(Icons.view_agenda,color: Colors.black,);
@@ -45,10 +84,8 @@ class MainState extends State<MainPage>{
           }
           setState(() {
           });
-
         }),
         new IconButton(icon: new Icon(Icons.arrow_left,color: Colors.black,semanticLabel:"Logout"), onPressed: signOut),
-
       ],
     );
   }
@@ -63,7 +100,15 @@ class MainState extends State<MainPage>{
       ),
     );
   }
-  drawer(){
+  makeLabel(context){
+    return ListView.builder(
+        itemCount: label.length,
+        itemBuilder: (context,index){
+          final item = label[index];
+          return FlatButton(onPressed: ()=>print("Nothing"), child: new Text(item));
+        });
+  }
+  drawer(context){
     return new Drawer(
       child: new ListView(
           padding: const EdgeInsets.only(top: 0.0),
@@ -103,6 +148,20 @@ class MainState extends State<MainPage>{
                 }
             ),
             new Divider(),
+            new Container(
+              child:  new  ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: label.length,
+                  itemBuilder: (context,index){
+                    final item = label[index];
+                    return  new ListTile(
+                      leading: new Icon(Icons.label),
+                      title: new Text(item),
+                      onTap: () => print("s"),
+                    );
+
+                  }),
+            ),
             new ListTile(
               leading: new Icon(Icons.add),
               title: new Text('Create new label'),
@@ -136,15 +195,16 @@ class MainState extends State<MainPage>{
   }
   bottomNaviBar(context){
     return BottomAppBar(
-      color: Colors.grey.shade200,
-      elevation: 20.0,
-      child: new RaisedButton(
-          color: Colors.grey.shade200,
-          child: new Text("Take a note...",textAlign: TextAlign.start,),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => TakeNotes(index: -1,color:Colors.white.toString()) ));
-          }
-      ),
+      color: Colors.white,
+      elevation: 0.0,
+      child: new Container(
+        child: new FlatButton(
+            color: Colors.grey.shade100,
+            child: new Text("Take a note..."),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => TakeNotes(index: -1,color:Colors.white.toString()) ));
+            }
+        ),),
     );
   }
   getColor(int index){
@@ -153,6 +213,7 @@ class MainState extends State<MainPage>{
     Color color = new Color(value);
     return color;
   }
+
   createStaggered(contex,l){
     return new StaggeredGridView.countBuilder(
       crossAxisCount: 4,
@@ -166,6 +227,7 @@ class MainState extends State<MainPage>{
               Navigator.of(context).push(route);
             },
             onLongPress: (){
+
             },
             child: Container(
               padding: EdgeInsets.all(24.0),
@@ -185,10 +247,10 @@ class MainState extends State<MainPage>{
           );
         }
         else{
-            return new Container(
-              alignment: Alignment.topLeft,
-               child:new Text(l[index],
-                  ),
+          return new Container(
+            alignment: Alignment.topLeft,
+            child:new Text(l[index],
+            ),
           );
         }
       },
@@ -208,13 +270,40 @@ class MainState extends State<MainPage>{
 
     );
   }
+  Widget _performSearch(context,l) {
+    _filterList = new List();
+    for (int i = 0; i < l.length; i++) {
+      var searchnote = l[i].data['Note'];
+      var searchtitle = l[i].data['Title'];
+      if (searchnote.toLowerCase().contains(_query.toLowerCase())||searchtitle.toLowerCase().contains(_query.toLowerCase())) {
+        _filterList.add(l[i]);
+      }
+    }
+    return createStaggered(context,_filterList);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
-      appBar: appBar(),
-      drawer: drawer(),
-      body:new StreamBuilder<QuerySnapshot>(
+      key: _scaffoldKey,
+      backgroundColor: Colors.white,
+      drawer: drawer(context),
+      appBar: appBar(context),
+      body:
+      /* new Container(
+        color: Colors.white,
+        padding: EdgeInsets.all(8.0),
+        child: new Container(
+          decoration: new BoxDecoration(
+              border: new Border.all(color: Colors.grey,width: 0.5),
+              borderRadius: new BorderRadius.only(
+                  topLeft:  const  Radius.circular(10.0),
+                  topRight: const  Radius.circular(10.0),
+                bottomLeft: const  Radius.circular(10.0),
+                bottomRight: const  Radius.circular(10.0),
+              ),
+          ),
+        padding: EdgeInsets.all(2.0),
+        child:*/ new StreamBuilder<QuerySnapshot>(
           stream: snapshot,
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
@@ -245,11 +334,12 @@ class MainState extends State<MainPage>{
               }
               //l.add("Pinned");
               return new Container(
-                child: createStaggered(context,l),
+                child:  _firstSearch ? createStaggered(context, l) : _performSearch(context,l),
               );
             }
           }
       ),
+      //),),
 
       bottomNavigationBar:bottomNaviBar(context),
     );

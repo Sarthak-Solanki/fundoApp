@@ -23,6 +23,9 @@ dependencies:
   flutter_facebook_login:
   cloud_firestore: ^0.8.2+3
   flutter_local_notifications:
+  share:
+  material_search:
+  flutter_list_drag_and_drop:
   flutter:
     sdk: flutter
   # The following adds the Cupertino Icons font to your application.

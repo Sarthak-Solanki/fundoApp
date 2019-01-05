@@ -111,6 +111,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.1"
+  flutter_list_drag_and_drop:
+    dependency: "direct main"
+    description:
+      name: flutter_list_drag_and_drop
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.6"
   flutter_local_notifications:
     dependency: "direct main"
     description:
@@ -228,6 +235,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.3+1"
+  material_search:
+    dependency: "direct main"
+    description:
+      name: material_search
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.8"
   meta:
     dependency: transitive
     description:
@@ -242,6 +256,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.9.6+2"
+  mockito:
+    dependency: transitive
+    description:
+      name: mockito
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.2"
   multi_server_socket:
     dependency: transitive
     description:
@@ -319,6 +340,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0+1"
+  share:
+    dependency: "direct main"
+    description:
+      name: share
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.3"
   shelf:
     dependency: transitive
     description:
@@ -458,5 +486,5 @@ packages:
     source: hosted
     version: "2.1.15"
 sdks:
-  dart: ">=2.0.0-dev.68.0 <3.0.0"
+  dart: ">=2.0.0 <3.0.0"
   flutter: ">=0.2.4 <2.0.0"

@@ -18,15 +18,6 @@ class MainState extends State<MainPage>{
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   static List l;
   var snapshot =  Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
-  @override
-  void initState() {
-       crudObj.fetchData().then((result){
-      QSlabels =result;
-      labels = QSlabels.documents;
-    });
- // TODO: implement initState
-    super.initState();
-  }
   var _searchview = new TextEditingController();
   bool _firstSearch  = true;
   String _query = "";
@@ -121,9 +112,9 @@ class MainState extends State<MainPage>{
         });
   }
   drawer(context){
-
-    setState(() {
-
+    crudObj.fetchData().then((result){
+      QSlabels =result;
+      labels = QSlabels.documents;
     });
     return new Drawer(
       child: new ListView(
@@ -232,6 +223,7 @@ class MainState extends State<MainPage>{
   }
 
   createStaggered(context,l){
+
     return new StaggeredGridView.countBuilder(
       crossAxisCount: 4,
       itemCount: l.length,

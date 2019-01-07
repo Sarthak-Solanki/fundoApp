@@ -176,8 +176,12 @@ class LabelFormState extends State<LabelForm> {
 		//setState(() {
 			if(_controller.text.isNotEmpty) {
 					Map <dynamic,dynamic> labelData = <String,dynamic>{"Label":_controller.text};
-					offlineLabel.add(labelData);
+					//offlineLabel.add(labelData);
 					crudObj.addLabel(labelData);
+					//widget.labels = crudObj.fetchData();
+				crudObj.fetchData().then((result){
+					widget.labels = result.documents;
+				});
 				_controller.clear();
 				error = null;
 				_buildLabels(null);

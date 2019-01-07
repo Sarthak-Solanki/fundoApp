@@ -533,6 +533,7 @@ class TakeNotesState extends State<TakeNotes> {
       });
     }
   }}
+/*
 class Test extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -542,6 +543,7 @@ class Test extends StatelessWidget {
   }
 }
 main() => runApp(new Test());
+*/
 
 
 

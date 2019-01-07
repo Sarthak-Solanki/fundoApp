@@ -4,18 +4,29 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'Login_Page.dart';
 import 'TakeNotes.dart';
+import 'AddLabel.dart';
 import 'crud.dart';
 class MainPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new MainState();
 }
 class MainState extends State<MainPage>{
-  List label = ["One","Two"];
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   crudMethod crudObj = new crudMethod();
+  static QuerySnapshot QSlabels ;
+  static List labels;
+
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   static List l;
   var snapshot =  Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
-  int size;
+  @override
+  void initState() {
+       crudObj.fetchData().then((result){
+      QSlabels =result;
+      labels = QSlabels.documents;
+    });
+ // TODO: implement initState
+    super.initState();
+  }
   var _searchview = new TextEditingController();
   bool _firstSearch  = true;
   String _query = "";
@@ -27,7 +38,6 @@ class MainState extends State<MainPage>{
   String note;
   var Stagg;
   var iconView = Icon(Icons.view_agenda,color: Colors.black,);
-
   MainState() {
     _searchview.addListener(() {
       if (_searchview.text.isEmpty) {
@@ -102,13 +112,19 @@ class MainState extends State<MainPage>{
   }
   makeLabel(context){
     return ListView.builder(
-        itemCount: label.length,
+        itemCount: labels.length,
         itemBuilder: (context,index){
-          final item = label[index];
+          final item = labels[index];
+
           return FlatButton(onPressed: ()=>print("Nothing"), child: new Text(item));
+
         });
   }
   drawer(context){
+
+    setState(() {
+
+    });
     return new Drawer(
       child: new ListView(
           padding: const EdgeInsets.only(top: 0.0),
@@ -151,21 +167,22 @@ class MainState extends State<MainPage>{
             new Container(
               child:  new  ListView.builder(
                   shrinkWrap: true,
-                  itemCount: label.length,
+                  itemCount: labels.length,
                   itemBuilder: (context,index){
-                    final item = label[index];
+                    final item = labels[index].data['Label'];
                     return  new ListTile(
                       leading: new Icon(Icons.label),
                       title: new Text(item),
                       onTap: () => print("s"),
                     );
-
                   }),
             ),
             new ListTile(
               leading: new Icon(Icons.add),
               title: new Text('Create new label'),
-              //onTap: () => _onListTileTap(context),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => LabelForm(labels: labels,)));
+              },
             ),
             new Divider(),
             new ListTile(
@@ -214,7 +231,7 @@ class MainState extends State<MainPage>{
     return color;
   }
 
-  createStaggered(contex,l){
+  createStaggered(context,l){
     return new StaggeredGridView.countBuilder(
       crossAxisCount: 4,
       itemCount: l.length,
@@ -283,6 +300,7 @@ class MainState extends State<MainPage>{
   }
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Colors.white,

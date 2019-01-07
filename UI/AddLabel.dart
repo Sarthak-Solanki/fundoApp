@@ -1,20 +1,32 @@
 import 'package:flutter/material.dart';
+import 'crud.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 class LabelForm extends StatefulWidget {
-	static final String routeName = '/labelForm';
+	List labels = [];
+ //QuerySnapshot labels;
+	LabelForm({Key key,this.labels}):super(key:key);
 
 	@override
 	State<StatefulWidget> createState() => new LabelFormState();
 }
 
 class LabelFormState extends State<LabelForm> {
-	final List<String> labels = [
-		'Expense', 'Inspiration', 'Personal', 'Work'
-	];
+	crudMethod crudObj = new crudMethod();
 	final _scaffoldKey = new GlobalKey<ScaffoldState>();
 	final formKey = new GlobalKey<FormState>();
 	String error;
 	String updateError;
 	List<Widget> labelList = [];
+	List offlineLabel;
+
+	@override
+  void initState() {
+
+    offlineLabel = widget.labels;
+		_buildLabels(null);
+ // TODO: implement initState
+    super.initState();
+  }
 	final TextEditingController _controller = new TextEditingController();
 	TextEditingController _updateController = new TextEditingController();
 
@@ -44,13 +56,18 @@ class LabelFormState extends State<LabelForm> {
 		return scaffold;
 	}
 
-	@override
-	void initState() {
-		super.initState();
-		_buildLabels(null);
-	}
 
+	/*addLabel(){
+		for(int i = 0;i<widget.labels.length;i++){
+			Map <dynamic,dynamic> labelData = <String,dynamic>{"Label":widget.labels[i]};
+			crudObj.addLabel(labelData);
+		}
+	}*/
 	_closeLabelForm(BuildContext context) {
+		//addLabel();
+		setState(() {
+
+		});
 		Navigator.of(context).pop();
 	}
 
@@ -90,10 +107,10 @@ class LabelFormState extends State<LabelForm> {
 				)
 		);
 
-		for(int index=0; index<labels.length;index++) {
+		for(int index=0; index<offlineLabel.length;index++) {
 			if(editIndex != null && editIndex == index){
 				if(updateError == null || updateError.isEmpty)
-					_updateController = new TextEditingController(text: labels[index]);
+					_updateController = new TextEditingController(text: offlineLabel[index].data['Label']);
 				labelList.add(
 						new ListTile(
 							leading: new IconButton(
@@ -114,7 +131,7 @@ class LabelFormState extends State<LabelForm> {
 										decoration: new InputDecoration(
 												border: null,
 												errorText: updateError,
-												counterText: labels[index]
+												counterText: offlineLabel[index].data['Label']
 										)
 								),
 							),
@@ -132,7 +149,7 @@ class LabelFormState extends State<LabelForm> {
 									icon: const Icon(Icons.delete),
 									onPressed: () => _removeLabelAt(index)
 							),
-							title: new Text(labels[index]),
+							title: new Text(offlineLabel[index].data['Label']),
 							trailing: new IconButton(
 									icon: const Icon(Icons.edit),
 									onPressed: () => _editLabelAt(index)
@@ -141,6 +158,9 @@ class LabelFormState extends State<LabelForm> {
 				);
 			}
 		}
+		setState(() {
+
+		});
 		return labelList;
 	}
 
@@ -153,32 +173,43 @@ class LabelFormState extends State<LabelForm> {
 	}
 
 	_onSave() {
-		setState(() {
+		//setState(() {
 			if(_controller.text.isNotEmpty) {
-				labels.add(_controller.text);
+					Map <dynamic,dynamic> labelData = <String,dynamic>{"Label":_controller.text};
+					offlineLabel.add(labelData);
+					crudObj.addLabel(labelData);
 				_controller.clear();
 				error = null;
 				_buildLabels(null);
+				setState(() {
+
+				});
 			} else{
 				error = 'Enter valid name!';
 				_buildLabels(null);
 			}
-		});
+			setState(() {
+
+			});
+		//});
 	}
 
 	_removeLabelAt(int index) {
-		setState((){
-			if(labels.length > 1) {
-				labels.removeAt(index);
+		//setState((){
+			//if(offlineLabel.length > 1) {
+			crudObj.deleteLabel(offlineLabel[index].data['Label'].documentID);
 				_buildLabels(null);
-			} else {
-				_scaffoldKey.currentState.showSnackBar(
-						new SnackBar(
-							content: new Text('Cannot Delete!'),
-						)
-				);
-			}
-		});
+				setState(() {
+
+				});
+		//	} else {
+			//	_scaffoldKey.currentState.showSnackBar(
+				//		new SnackBar(
+					//		content: new Text('Cannot Delete!'),
+						//)
+				//);
+			//}
+		//});
 	}
 
 	_editLabelAt(index) {
@@ -192,7 +223,7 @@ class LabelFormState extends State<LabelForm> {
 	_onUpdateAt(index) {
 		setState(() {
 			if(_updateController.text.isNotEmpty){
-				labels[index] = _updateController.text;
+				offlineLabel[index].data['Label'] = _updateController.text;
 				_updateController.clear();
 				_buildLabels(null);
 			} else {

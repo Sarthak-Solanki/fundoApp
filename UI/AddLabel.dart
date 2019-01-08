@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'crud.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-class LabelForm extends StatefulWidget {
-	List labels = [];
+class AddLabels extends StatefulWidget {
+	List labels = [""];
  //QuerySnapshot labels;
-	LabelForm({Key key,this.labels}):super(key:key);
+	AddLabels({Key key,this.labels}):super(key:key);
 
 	@override
 	State<StatefulWidget> createState() => new LabelFormState();
 }
 
-class LabelFormState extends State<LabelForm> {
+class LabelFormState extends State<AddLabels> {
 	crudMethod crudObj = new crudMethod();
 	final _scaffoldKey = new GlobalKey<ScaffoldState>();
 	final formKey = new GlobalKey<FormState>();
@@ -21,7 +21,6 @@ class LabelFormState extends State<LabelForm> {
 
 	@override
   void initState() {
-
     offlineLabel = widget.labels;
 		_buildLabels(null);
  // TODO: implement initState
@@ -72,7 +71,7 @@ class LabelFormState extends State<LabelForm> {
 	}
 
 	List<Widget> _buildLabels(int editIndex) {
-		labelList = [];
+	 	labelList = [];
 		labelList.add(
 				new ListTile(
 					leading: new IconButton(
@@ -106,6 +105,7 @@ class LabelFormState extends State<LabelForm> {
 					),
 				)
 		);
+ if(offlineLabel!=null&&widget.labels!=null){
 
 		for(int index=0; index<offlineLabel.length;index++) {
 			if(editIndex != null && editIndex == index){
@@ -158,11 +158,11 @@ class LabelFormState extends State<LabelForm> {
 				);
 			}
 		}
-		setState(() {
-
-		});
+ }
 		return labelList;
+
 	}
+
 
 	_clearText() {
 		setState((){
@@ -181,13 +181,15 @@ class LabelFormState extends State<LabelForm> {
 					//widget.labels = crudObj.fetchData();
 				crudObj.fetchData().then((result){
 					widget.labels = result.documents;
-				});
+					offlineLabel = widget.labels;
 				_controller.clear();
 				error = null;
 				_buildLabels(null);
 				setState(() {
 
 				});
+				});
+
 			} else{
 				error = 'Enter valid name!';
 				_buildLabels(null);
@@ -201,11 +203,14 @@ class LabelFormState extends State<LabelForm> {
 	_removeLabelAt(int index) {
 		//setState((){
 			//if(offlineLabel.length > 1) {
-			crudObj.deleteLabel(offlineLabel[index].data['Label'].documentID);
+			crudObj.deleteLabel(offlineLabel[index].documentID);
+			crudObj.fetchData().then((result){
+				offlineLabel = result.documents;
 				_buildLabels(null);
 				setState(() {
-
 				});
+
+			});
 		//	} else {
 			//	_scaffoldKey.currentState.showSnackBar(
 				//		new SnackBar(
@@ -228,6 +233,9 @@ class LabelFormState extends State<LabelForm> {
 		setState(() {
 			if(_updateController.text.isNotEmpty){
 				offlineLabel[index].data['Label'] = _updateController.text;
+				Map <dynamic,dynamic> labelData = <String,dynamic>{"Label":_updateController.text};
+
+				crudObj.updatelabel(labelData, offlineLabel[index].documentID);
 				_updateController.clear();
 				_buildLabels(null);
 			} else {

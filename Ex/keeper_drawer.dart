@@ -25,7 +25,7 @@ class KeeperDrawer extends StatelessWidget {
 		Navigator.of(context).pop();
 		showDialog<Null>(
 			context: context,
-			child: new AlertDialog(
+			 	child: AlertDialog(
 				title: const Text('Account switching not implemented.'),
 				actions: <Widget>[
 					new FlatButton(

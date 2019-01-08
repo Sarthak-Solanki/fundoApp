@@ -58,7 +58,7 @@ class crudMethod{
       Firestore.instance.collection(LoginPageState.email).document('myData').collection('Archive').document(id).delete().catchError((e)=> print(e));
     }
     else{
-       var test = await Firestore.instance.document(
+      var test = await Firestore.instance.document(
           '${LoginPageState.email}/myData').collection('Note')
           .document(id)
           .get();
@@ -73,13 +73,19 @@ class crudMethod{
   }
   void addLabel(data){
     Firestore.instance.document('${LoginPageState.email}/myData').collection(
-          "Label").add(data).catchError((e)=> print(e));
+        "Label").add(data).catchError((e)=> print(e));
   }
   void deleteLabel(id){
     Firestore.instance.collection(LoginPageState.email).document('myData').collection('Label').document(id).delete().catchError((e)=> print(e));
-
   }
   fetchData() async{
-    return await Firestore.instance.collection(LoginPageState.email).document('myData').collection('Label').getDocuments();
+    return await Firestore.instance.collection('test@test.com').document('myData').collection('Label').getDocuments();
   }
+  updatelabel(newValues,id){
+     Firestore.instance.collection(LoginPageState.email).
+      document('myData').collection('Label').
+      document(id).updateData(newValues).catchError((e)=>print("Update error $e"));
+  }
+
+
 }

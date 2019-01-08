@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import 'crud.dart';
 import 'MainPage.dart';
 import 'package:share/share.dart';
+import 'LabelPage.dart';
 class TakeNotes extends StatefulWidget {
   final int index;
   String color;
@@ -242,6 +243,14 @@ class TakeNotesState extends State<TakeNotes> {
                             box.localToGlobal(Offset.zero) &
                             box.size);
                 }, icon: Icon(Icons.share), label: new Text("      Send",style: TextStyle(fontSize: 15.0),)),
+              ),
+              new Container(
+                alignment: Alignment.topLeft,
+                child: new FlatButton.icon(onPressed:(){
+                 Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>new LabelPage ()));
+
+                },
+                    icon: Icon(Icons.label), label: new Text("      Label",style: TextStyle(fontSize: 15.0),)),
               ),
               new SingleChildScrollView(
                 scrollDirection: Axis.horizontal,

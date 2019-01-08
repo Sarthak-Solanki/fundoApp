@@ -13,8 +13,26 @@ class MainPage extends StatefulWidget {
 class MainState extends State<MainPage>{
   crudMethod crudObj = new crudMethod();
   static QuerySnapshot QSlabels ;
-  static List labels;
+  List labels;
+  @override
+  void initState() {
+    crudObj.fetchData().then((result){
+      /*if(!result.hasData){
+        return new Center(
+          child: CircularProgressIndicator(),
+        );
+      }*/
+      QSlabels =result;
+      labels = QSlabels.documents;
+      if(labels==null){
+        labels.length==0;
+      }
+      setState(() {
 
+      });
+    });// TODO: implement initState
+    super.initState();
+  }
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   static List l;
   var snapshot =  Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').snapshots();
@@ -59,7 +77,7 @@ class MainState extends State<MainPage>{
         new Expanded(
           child: new TextField(
             controller: _searchview,
-            autofocus: true,
+            autofocus: false,
             // focusNode: ,
             decoration: InputDecoration(
               fillColor: Colors.black54,
@@ -101,7 +119,7 @@ class MainState extends State<MainPage>{
       ),
     );
   }
-  makeLabel(context){
+  /*makeLabel(context){
     return ListView.builder(
         itemCount: labels.length,
         itemBuilder: (context,index){
@@ -110,11 +128,13 @@ class MainState extends State<MainPage>{
           return FlatButton(onPressed: ()=>print("Nothing"), child: new Text(item));
 
         });
-  }
+  }*/
   drawer(context){
     crudObj.fetchData().then((result){
       QSlabels =result;
       labels = QSlabels.documents;
+      setState(() {
+      });
     });
     return new Drawer(
       child: new ListView(
@@ -158,7 +178,7 @@ class MainState extends State<MainPage>{
             new Container(
               child:  new  ListView.builder(
                   shrinkWrap: true,
-                  itemCount: labels.length,
+                  itemCount: labels==null?0:labels.length,
                   itemBuilder: (context,index){
                     final item = labels[index].data['Label'];
                     return  new ListTile(
@@ -172,7 +192,7 @@ class MainState extends State<MainPage>{
               leading: new Icon(Icons.add),
               title: new Text('Create new label'),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => LabelForm(labels: labels,)));
+                Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => AddLabels(labels: labels,)));
               },
             ),
             new Divider(),
@@ -199,7 +219,8 @@ class MainState extends State<MainPage>{
                 }
             ),
           ]
-      ),);
+      ),
+    );
   }
   bottomNaviBar(context){
     return BottomAppBar(
@@ -292,7 +313,6 @@ class MainState extends State<MainPage>{
   }
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Colors.white,

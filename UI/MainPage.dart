@@ -104,7 +104,7 @@ class MainState extends State<MainPage>{
           setState(() {
           });
         }),
-        new IconButton(icon: new Icon(Icons.arrow_left,color: Colors.black,semanticLabel:"Logout"), onPressed: signOut),
+      //  new IconButton(icon: new Icon(Icons.arrow_left,color: Colors.black,semanticLabel:"Logout"), onPressed: signOut),
       ],
     );
   }
@@ -217,6 +217,13 @@ class MainState extends State<MainPage>{
                   });
                   Navigator.pop(context);
                 }
+            ),
+            new ListTile(
+              leading: new Icon(Icons.power_settings_new),
+              title: new Text("Sign Out"),
+              onTap: (){
+                signOut();
+              },
             ),
           ]
       ),

@@ -5,12 +5,14 @@ import 'crud.dart';
 import 'MainPage.dart';
 import 'package:share/share.dart';
 import 'LabelPage.dart';
+
 class TakeNotes extends StatefulWidget {
   final int index;
   String color;
   bool isPin ;
   bool isArchive;
   List l;
+  //List selectedLabel;
   TakeNotes({Key key,this.l,this.index,this.color,this.isPin,this.isArchive}):super(key:key);
   @override
   State<StatefulWidget> createState() {
@@ -38,6 +40,7 @@ List<ColorSelect> choices = <ColorSelect>[
   new ColorSelect(colorselect: Colors.yellowAccent.shade200,icon: new Icon(Icons.radio_button_unchecked,color: Colors.deepPurple.shade200,)),
 ];
 class TakeNotesState extends State<TakeNotes> {
+  LabelPageState lb = new LabelPageState();
   crudMethod crudObj = new crudMethod();
   static String Title;
   static String Note;
@@ -46,6 +49,8 @@ class TakeNotesState extends State<TakeNotes> {
   static Color color;
   static File clickimage;
   static File Galleryimage;
+  // static List selectedLabel;
+  List labelData;
   Icon pinIcon = Icon(Icons.pined);
   Icon archiveIcon = Icon(Icons.archive);
   DateTime _date = new DateTime.now();
@@ -57,10 +62,20 @@ class TakeNotesState extends State<TakeNotes> {
   static TextEditingController _noteController;
 
   void initState(){
-    super.initState();
-    String valueString = widget.color.split('(0x')[1].split(')')[0]; // kind of hacky..
-    int value = int.parse(valueString, radix: 16);
-    color = new Color(value);
+    print("abc");
+    crudObj.fetchNoteData().then((result){
+      print("hjds");
+      widget.l = result.documents;
+      convertLabel();
+      setState(() {
+
+      });
+    });
+    if(widget.color!=null){
+      String valueString = widget.color.split('(0x')[1].split(')')[0]; // kind of hacky..
+      int value = int.parse(valueString, radix: 16);
+      color = new Color(value);
+    }
     _showPersBottomSheetCallBack = _showBottomSheet;
     _showPlusButtonCallBack = _showPlusBottomSheet;
     if(widget.index!=-1)
@@ -78,6 +93,17 @@ class TakeNotesState extends State<TakeNotes> {
     }
     else{
       _noteController = new TextEditingController(text: "");
+    }
+    super.initState();
+
+  }
+  convertLabel(){
+    if(widget.l[widget.index].data['Label']!=null){
+      String st = widget.l[widget.index].data['Label'];
+      labelData = st.split(",");
+      setState(() {
+
+      });
     }
   }
   appBar(context) {
@@ -238,17 +264,16 @@ class TakeNotesState extends State<TakeNotes> {
                 alignment: Alignment.topLeft,
                 child: new FlatButton.icon(onPressed:Note.isEmpty?null: (){
                   final RenderBox box = context.findRenderObject();
-                        Share.share(Note,
-                            sharePositionOrigin:
-                            box.localToGlobal(Offset.zero) &
-                            box.size);
+                  Share.share(Note,
+                      sharePositionOrigin:
+                      box.localToGlobal(Offset.zero) &
+                      box.size);
                 }, icon: Icon(Icons.share), label: new Text("      Send",style: TextStyle(fontSize: 15.0),)),
               ),
               new Container(
                 alignment: Alignment.topLeft,
                 child: new FlatButton.icon(onPressed:(){
-                 Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>new LabelPage ()));
-
+                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>new LabelPage (l:widget.l,index:widget.index,color: color.toString())));
                 },
                     icon: Icon(Icons.label), label: new Text("      Label",style: TextStyle(fontSize: 15.0),)),
               ),
@@ -259,8 +284,9 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: () {
                         color = choices[0].icon.color;
-                        _select(color) ;
-
+                        _select() ;
+                        Navigator.of(context).pop();
+                        _showBottomSheet();
                       },
                       child: new Container(
                         width: 35.0,
@@ -275,7 +301,9 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: () {
                         color = choices[1].icon.color;
-                        _select(color);
+                        _select();
+                        Navigator.of(context).pop();
+                        _showBottomSheet();
                       },
                       child: new Container(
                         width: 40.0,
@@ -290,7 +318,10 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: () {
                         color = choices[2].icon.color;
-                        _select(color) ;
+
+                        _select() ;
+                        Navigator.of(context).pop();
+                        _showBottomSheet();
                       },
                       child: new Container(
                         width: 40.0,
@@ -305,7 +336,9 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: (){
                         color = choices[3].icon.color;
-                        //_select(value) ;
+                        _select() ;
+                        Navigator.of(context).pop();
+                        _showBottomSheet();
                       },
                       child: new Container(
                         width: 40.0,
@@ -320,7 +353,9 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: () {
                         color = choices[4].icon.color;
-                        //_select(value) ;
+                        _select() ;
+                        Navigator.of(context).pop();
+                        _showBottomSheet();
                       },
                       child: new Container(
                         width: 40.0,
@@ -335,7 +370,9 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: () {
                         color= choices[5].icon.color;
-                        //_select(value) ;
+                        _select() ;
+                        Navigator.of(context).pop();
+                        _showBottomSheet();
                       },
                       child: new Container(
                         width: 40.0,
@@ -350,7 +387,9 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: (){
                         color = choices[6].icon.color;
-                        //_select(value) ;
+                        _select() ;
+                        Navigator.of(context).pop();
+                        _showBottomSheet();
                       },
                       child: new Container(
                         width: 40.0,
@@ -365,6 +404,9 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: (){
                         color = choices[7].icon.color;
+                        _select();
+                        Navigator.of(context).pop();
+                        _showBottomSheet();
                       },
                       child: new Container(
                         width: 40.0,
@@ -379,6 +421,9 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: () {
                         color = choices[8].icon.color;
+                        _select();
+                        Navigator.of(context).pop();
+                        _showBottomSheet();
                       },
                       child: new Container(
                         width: 40.0,
@@ -392,6 +437,9 @@ class TakeNotesState extends State<TakeNotes> {
                     ),new InkWell(
                       onTap: (){
                         color = choices[9].icon.color;
+                        _select();
+                        Navigator.of(context).pop();
+                        _showBottomSheet();
                       },
                       child: new Container(
                         width:40.0,
@@ -406,7 +454,9 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: () {
                         color= choices[10].icon.color;
-                        //_select(value) ;
+                        _select() ;
+                        Navigator.of(context).pop();
+                        _showBottomSheet();
                       },
                       child: new Container(
                         width: 40.0,
@@ -425,11 +475,13 @@ class TakeNotesState extends State<TakeNotes> {
           ));
     });
   }
-  void _select(Color choice){
+  void _select(){
     setState(() {
-      // _selectedChoice = choice;
     });
   }
+  /*static labelsUpdate(selectedLabels){
+    selectedLabel = selectedLabels;
+  }*/
   Body() {
     return new Column(
       children: <Widget>[
@@ -469,7 +521,40 @@ class TakeNotesState extends State<TakeNotes> {
               contentPadding: EdgeInsets.all(10.0),
             ),
           ),
-        ),
+        ),/*
+        new Wrap(
+          children: <Widget>[*/
+        new Container(
+            height: 24.0,
+            child:  new ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: labelData==null?0:labelData.length,
+                itemBuilder: (context,index){
+                  return new Row(
+                    children: <Widget>[
+                      new Container(
+                        width: 3.0,
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(40.0),
+                        child: Container(
+                          color: Colors.grey.shade200,
+                          child: Center(
+                            child: new RaisedButton(
+                                onPressed:(){
+                                  //LabelPageState.news();
+                                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>new LabelPage (l:widget.l,index:widget.index)));
+                                },
+                                child:new Text(labelData[index])),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                })),
+        /* ],
+        ),*/
+
       ],
     );
   }

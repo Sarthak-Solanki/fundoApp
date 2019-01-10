@@ -63,6 +63,7 @@ class MainState extends State<MainPage>{
       }
     });
   }
+
   appBar(context){
     return new AppBar(
       backgroundColor: Colors.white,
@@ -83,6 +84,9 @@ class MainState extends State<MainPage>{
               fillColor: Colors.black54,
               hintText: "Search Your Notes",
               hintStyle: new TextStyle(color: Colors.grey),
+              border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white)
+              ),
             ),
             textAlign: TextAlign.center,
           ),
@@ -104,7 +108,7 @@ class MainState extends State<MainPage>{
           setState(() {
           });
         }),
-      //  new IconButton(icon: new Icon(Icons.arrow_left,color: Colors.black,semanticLabel:"Logout"), onPressed: signOut),
+        //  new IconButton(icon: new Icon(Icons.arrow_left,color: Colors.black,semanticLabel:"Logout"), onPressed: signOut),
       ],
     );
   }
@@ -119,16 +123,7 @@ class MainState extends State<MainPage>{
       ),
     );
   }
-  /*makeLabel(context){
-    return ListView.builder(
-        itemCount: labels.length,
-        itemBuilder: (context,index){
-          final item = labels[index];
 
-          return FlatButton(onPressed: ()=>print("Nothing"), child: new Text(item));
-
-        });
-  }*/
   drawer(context){
     crudObj.fetchData().then((result){
       QSlabels =result;
@@ -140,6 +135,8 @@ class MainState extends State<MainPage>{
       child: new ListView(
           padding: const EdgeInsets.only(top: 0.0),
           children: <Widget>[
+            new Container(height: 12.0,),
+            new Text("Fundoo Notes",style: new TextStyle(color: Colors.yellow,fontSize: 24.4), ),
             new UserAccountsDrawerHeader(
                 accountName: Text(""),
                 accountEmail: Text(LoginPageState.email),
@@ -247,11 +244,12 @@ class MainState extends State<MainPage>{
     String valueString = l[index].data["Color"].split('(0x')[1].split(')')[0]; // kind of hacky..
     int value = int.parse(valueString, radix: 16);
     Color color = new Color(value);
+    if(color==null){
+      color  = Colors.white;
+    }
     return color;
   }
-
   createStaggered(context,l){
-
     return new StaggeredGridView.countBuilder(
       crossAxisCount: 4,
       itemCount: l.length,
@@ -388,3 +386,44 @@ class MainState extends State<MainPage>{
     }).catchError((e)=>print(e));
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*makeLabel(context){
+    return ListView.builder(
+        itemCount: labels.length,
+        itemBuilder: (context,index){
+          final item = labels[index];
+
+          return FlatButton(onPressed: ()=>print("Nothing"), child: new Text(item));
+
+        });
+  }*/

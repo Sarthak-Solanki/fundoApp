@@ -112,7 +112,7 @@ class LabelPageState extends State<LabelPage>{
           //TakeNotesState.labelsUpdate(tempLabels);
           Navigator.of(context).pop();
           Navigator.of(context).pop();
-
+          Navigator.of(context).pop();
           String st ="";
           for(int i = 0;i<tempLabels.length;i++){
             st = st +tempLabels[i].data['Label'];

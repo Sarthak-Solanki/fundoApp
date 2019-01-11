@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'Login_Page.dart';
 import 'TakeNotes.dart';
 import 'AddLabel.dart';
 import 'crud.dart';
+import 'dart:io';
 class MainPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new MainState();
@@ -16,6 +18,8 @@ class MainState extends State<MainPage>{
   List labels;
   @override
   void initState() {
+    print("abc");
+
     crudObj.fetchData().then((result){
       /*if(!result.hasData){
         return new Center(
@@ -181,7 +185,38 @@ class MainState extends State<MainPage>{
                     return  new ListTile(
                       leading: new Icon(Icons.label),
                       title: new Text(item),
-                      onTap: () => print("s"),
+                      onTap: () {
+                        Firestore.instance.collection(LoginPageState.email).document('myData').collection('TempData').getDocuments().then((snapshot){
+                          for(DocumentSnapshot ds in snapshot.documents){
+                            ds.reference.delete();
+                          }
+                        });
+                        var snap =  Firestore.instance.collection('test@test.com').document('myData').collection(MainState.directory).getDocuments().then((result){
+                          List z = result.documents;
+                          List n = new List();
+                          print(index);
+                          for(int i = 0;i<z.length;i++){
+                            //print("z ${z[i].data['Label']}");
+                            //print(" label ${labels[i].data['Label']}");
+                            if(z[i].data['Label'].contains(labels[index].data['Label'])){
+                              n.add(z[i]);
+                            }
+                          }
+                          l =null;
+                          l =new List();
+                          l = n;
+                          for(int i = 0;i<l.length;i++){
+                            Map <dynamic,dynamic> keepData = <String,dynamic>{"Note" : l[i].data['Note'], "Title": l[i].data['Title'],"Color":l[i].data['Color'],"Pin":l[i].data['Color'],"isArchive":l[i].data['isArchive']};
+                            Firestore.instance.document('${LoginPageState.email}/myData').collection("TempData").add(keepData).catchError((e)=> print(e));
+                          }
+                          snapshot = Firestore.instance.collection(LoginPageState.email).document('myData').collection('TempData').snapshots();
+                          setState(() {
+
+                          });
+                          Navigator.of(context).pop();
+                        });
+
+                      },
                     );
                   }),
             ),
@@ -304,6 +339,7 @@ class MainState extends State<MainPage>{
 
 
     );
+
   }
   Widget _performSearch(context,l) {
     _filterList = new List();
@@ -316,9 +352,58 @@ class MainState extends State<MainPage>{
     }
     return createStaggered(context,_filterList);
   }
+   Future<bool> _showDialog(context) {
+    // flutter defined function
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: new Text("Are you sure you want to close this app?"),
+          content: new Text("Alert Dialog body"),
+          actions: <Widget>[
+            // usually buttons at the bottom of the dialog
+            new FlatButton(onPressed: (){
+              return  SystemNavigator.pop();
+
+            }, child: new Text("Yes")),
+            new FlatButton(
+              child: new Text("No"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+  Future<bool> _onWillPop() {
+    return showDialog(
+      context: context,
+      builder: (context) => new AlertDialog(
+        title: new Text('Are you sure?'),
+        content: new Text('Do you want to exit FunDoNotes'),
+        actions: <Widget>[
+          new FlatButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: new Text('No'),
+          ),
+          new FlatButton(
+            onPressed: () => SystemNavigator.pop(),
+            child: new Text('Yes'),
+          ),
+        ],
+      ),
+    ) ?? false;
+  }
+
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+   return WillPopScope(
+          onWillPop: _onWillPop,
+          child: new Scaffold(
       key: _scaffoldKey,
       backgroundColor: Colors.white,
       drawer: drawer(context),
@@ -338,8 +423,9 @@ class MainState extends State<MainPage>{
               ),
           ),
         padding: EdgeInsets.all(2.0),
-        child:*/ new StreamBuilder<QuerySnapshot>(
-          stream: snapshot,
+        child:*/
+        new StreamBuilder<QuerySnapshot>(
+      stream: snapshot,
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
               return new Center(
@@ -374,11 +460,13 @@ class MainState extends State<MainPage>{
             }
           }
       ),
-      //),),
+    //
+    // ),
 
-      bottomNavigationBar:bottomNaviBar(context),
-    );
-  }
+    bottomNavigationBar:bottomNaviBar(context),
+    ),
+   );
+    }
   Future <Login_Page> signOut()  async{
     await FirebaseAuth.instance.signOut().then((_){
       Navigator.of(context).pop();

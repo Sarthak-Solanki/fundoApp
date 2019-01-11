@@ -62,11 +62,23 @@ class TakeNotesState extends State<TakeNotes> {
   static TextEditingController _noteController;
 
   void initState(){
-    print("abc");
+    if(widget.index!=-1){
     crudObj.fetchNoteData().then((result){
       print("hjds");
       widget.l = result.documents;
       convertLabel();
+      if(widget.index!=-1)
+      {
+        print("bbmb");
+        _titleController = new TextEditingController(text: widget.l[widget.index].data['Title']);
+        Title = widget.l[widget.index].data['Title'];
+      }
+      if(widget.index!=-1)
+      {
+        _noteController = new TextEditingController(text: widget.l[widget.index].data['Note']);
+        Note = widget.l[widget.index].data['Note'];
+      }
+
       setState(() {
 
       });
@@ -78,21 +90,11 @@ class TakeNotesState extends State<TakeNotes> {
     }
     _showPersBottomSheetCallBack = _showBottomSheet;
     _showPlusButtonCallBack = _showPlusBottomSheet;
-    if(widget.index!=-1)
-    {
-      _titleController = new TextEditingController(text: widget.l[widget.index].data['Title']);
-      Title = widget.l[widget.index].data['Title'];
     }
     else{
       _titleController = new TextEditingController(text: "");
-    }
-    if(widget.index!=-1)
-    {
-      _noteController = new TextEditingController(text: widget.l[widget.index].data['Note']);
-      Note = widget.l[widget.index].data['Note'];
-    }
-    else{
       _noteController = new TextEditingController(text: "");
+
     }
     super.initState();
 

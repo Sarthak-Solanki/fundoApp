@@ -63,33 +63,31 @@ class TakeNotesState extends State<TakeNotes> {
 
   void initState(){
     if(widget.index!=-1){
-    crudObj.fetchNoteData().then((result){
-      print("hjds");
-      widget.l = result.documents;
-      convertLabel();
-      if(widget.index!=-1)
-      {
-        print("bbmb");
-        _titleController = new TextEditingController(text: widget.l[widget.index].data['Title']);
-        Title = widget.l[widget.index].data['Title'];
-      }
-      if(widget.index!=-1)
-      {
-        _noteController = new TextEditingController(text: widget.l[widget.index].data['Note']);
-        Note = widget.l[widget.index].data['Note'];
-      }
+      crudObj.fetchNoteData().then((result){
+        widget.l = result.documents;
+        convertLabel();
+        if(widget.index!=-1)
+        {
+          _titleController = new TextEditingController(text: widget.l[widget.index].data['Title']);
+          Title = widget.l[widget.index].data['Title'];
+        }
+        if(widget.index!=-1)
+        {
+          _noteController = new TextEditingController(text: widget.l[widget.index].data['Note']);
+          Note = widget.l[widget.index].data['Note'];
+        }
 
-      setState(() {
+        setState(() {
 
+        });
       });
-    });
-    if(widget.color!=null){
-      String valueString = widget.color.split('(0x')[1].split(')')[0]; // kind of hacky..
-      int value = int.parse(valueString, radix: 16);
-      color = new Color(value);
-    }
-    _showPersBottomSheetCallBack = _showBottomSheet;
-    _showPlusButtonCallBack = _showPlusBottomSheet;
+      if(widget.color!=null){
+        String valueString = widget.color.split('(0x')[1].split(')')[0]; // kind of hacky..
+        int value = int.parse(valueString, radix: 16);
+        color = new Color(value);
+      }
+      _showPersBottomSheetCallBack = _showBottomSheet;
+      _showPlusButtonCallBack = _showPlusBottomSheet;
     }
     else{
       _titleController = new TextEditingController(text: "");
@@ -260,7 +258,9 @@ class TakeNotesState extends State<TakeNotes> {
                     crudObj.deleteData(widget.l[widget.index].documentID);
                     Navigator.of(context).pop();
                     Navigator.of(context).pop();
-                  }, icon: Icon(Icons.delete_outline), label: new Text("      Delete",style:TextStyle(fontSize: 15.0,),))
+                  }, icon: Icon(
+                      MainState.directory!="Delete"? Icons.delete_outline:Icons.restore_from_trash
+                  ), label: new Text("      Delete",style:TextStyle(fontSize: 15.0,),))
               ),
               new Container(
                 alignment: Alignment.topLeft,
@@ -320,7 +320,6 @@ class TakeNotesState extends State<TakeNotes> {
                     new InkWell(
                       onTap: () {
                         color = choices[2].icon.color;
-
                         _select() ;
                         Navigator.of(context).pop();
                         _showBottomSheet();
@@ -547,7 +546,7 @@ class TakeNotesState extends State<TakeNotes> {
                                   //LabelPageState.news();
                                   Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>new LabelPage (l:widget.l,index:widget.index)));
                                 },
-                                child:new Text(labelData[index])),
+                                child:labelData[index]!=""?new Text(labelData[index]):null,)
                           ),
                         ),
                       ),
@@ -585,7 +584,7 @@ class TakeNotesState extends State<TakeNotes> {
     return new Scaffold(
       key: _scaffoldKey,
       backgroundColor:color,//color as Color,
-      appBar: appBar(context),
+      appBar: MainState.directory!="Delete"?appBar(context):new AppBar(elevation: 0.0,backgroundColor: color,iconTheme: IconThemeData(color:Colors.black),),
       body: Body(),
       bottomNavigationBar: BottomAppBar(
         color:color,
@@ -593,13 +592,43 @@ class TakeNotesState extends State<TakeNotes> {
         child:new Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            new IconButton(icon: Icon(Icons.add_box),
+            MainState.directory!="Delete"? new IconButton(icon: Icon(Icons.add_box),
               onPressed: _showPlusButtonCallBack,
-            ),
-            new IconButton(
+            ):new Icon(Icons.add_box,color: Colors.grey.shade300,),
+            MainState.directory!="Delete"?new IconButton(
               icon: Icon(Icons.more_vert),
               onPressed: _showPersBottomSheetCallBack,
-            ),
+            ):new IconButton(icon: Icon(Icons.more_vert), onPressed: (){
+              showModalBottomSheet(context: context, builder:(builder){
+                return new Container(
+                    color: color, //Color(0xffef9a9a) as Color,
+                    //  color,
+                    height: 150.0,
+                    width: 400.0,
+                    child: new Column(
+                      children: <Widget>[
+                        new Container(
+                            alignment: Alignment.topLeft,
+                            child: new FlatButton.icon(onPressed: (){
+                              crudObj.deleteData(widget.l[widget.index].documentID);
+                              Navigator.of(context).pop();
+                              Navigator.of(context).pop();
+                            }, icon: Icon(Icons.delete_outline
+                            ), label: new Text("      Delete",style:TextStyle(fontSize: 15.0,),))
+                        ),
+                        new Container(
+                          alignment: Alignment.topLeft,
+                          child: new FlatButton.icon(onPressed:(){
+                            crudObj.restoreData(widget.l[widget.index].documentID);
+                            Navigator.of(context).pop();
+                            Navigator.of(context).pop();
+                          },
+                              icon: Icon(Icons.restore), label: new Text("      Restore",style: TextStyle(fontSize: 15.0),)),
+                        ),
+                      ],
+                    ));
+              });
+            })
           ],
         ),
       ),

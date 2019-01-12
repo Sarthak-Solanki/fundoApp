@@ -1,12 +1,13 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-62:12
-INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-62:12
-INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-62:12
-INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-62:12
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-68:12
+INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-68:12
+INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-68:12
+INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-68:12
 MERGED from [com.android.support:multidex:1.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/5a2b55538a9fb1f4559ff55792e4a14e/AndroidManifest.xml:17:1-22:12
 MERGED from [:google_sign_in] /Users/bridgeit/Desktop/fun_do_note_app/build/google_sign_in/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:flutter_facebook_login] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_facebook_login/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
+MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-23:12
 MERGED from [:path_provider] /Users/bridgeit/Desktop/fun_do_note_app/build/path_provider/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_local_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_local_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:cloud_firestore] /Users/bridgeit/Desktop/fun_do_note_app/build/cloud_firestore/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
@@ -56,20 +57,20 @@ MERGED from [android.arch.core:runtime:1.1.1] /Users/bridgeit/.gradle/caches/tra
 MERGED from [com.android.support:cardview-v7:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.1.aar/726d2356283723c5ecfc68e7e0f06a06/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:protolite-well-known-types:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/protolite-well-known-types-16.0.0.aar/b52bcbb4dfe52898d97b46e067bbe7c4/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.3.aar/bc3677c717c69b01d400b2fcf10cedee/AndroidManifest.xml:2:1-9:12
-INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-62:12
-INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-62:12
-INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-62:12
+INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-68:12
+INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-68:12
+INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-68:12
 	package
 		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:2:5-42
 		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-62:12
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-68:12
 		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-62:12
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-68:12
 		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:11-69
@@ -93,14 +94,138 @@ MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/bridgeit/.gradle/ca
 		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:8:22-64
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:9:5-80
+MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
+MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
 	android:name
 		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:9:22-78
 uses-permission#android.permission.VIBRATE
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:10:5-66
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:11:5-66
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:10:22-63
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:11:22-63
+uses-sdk
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:18:5-20:40
+INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:18:5-20:40
+INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:18:5-20:40
+MERGED from [com.android.support:multidex:1.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/5a2b55538a9fb1f4559ff55792e4a14e/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/5a2b55538a9fb1f4559ff55792e4a14e/AndroidManifest.xml:20:5-43
+MERGED from [:google_sign_in] /Users/bridgeit/Desktop/fun_do_note_app/build/google_sign_in/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:google_sign_in] /Users/bridgeit/Desktop/fun_do_note_app/build/google_sign_in/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_facebook_login] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_facebook_login/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_facebook_login] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_facebook_login/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:path_provider] /Users/bridgeit/Desktop/fun_do_note_app/build/path_provider/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:path_provider] /Users/bridgeit/Desktop/fun_do_note_app/build/path_provider/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_local_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_local_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:flutter_local_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_local_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] /Users/bridgeit/Desktop/fun_do_note_app/build/cloud_firestore/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:cloud_firestore] /Users/bridgeit/Desktop/fun_do_note_app/build/cloud_firestore/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_database] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_database/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_database] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_database/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:share] /Users/bridgeit/Desktop/fun_do_note_app/build/share/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:share] /Users/bridgeit/Desktop/fun_do_note_app/build/share/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_core/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_core] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_core/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_auth/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_auth] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_auth/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-core:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.4.aar/c721556828f3729bc3e35181dcf04050/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-core:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.4.aar/c721556828f3729bc3e35181dcf04050/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-auth-16.0.1.aar/d5a41825388f82ff0274125898b6d9bd/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-auth-16.0.1.aar/d5a41825388f82ff0274125898b6d9bd/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-firestore:17.1.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.1.1.aar/a58c913f8e85aa2efeb5fdb52ff8a92c/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-firestore:17.1.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.1.1.aar/a58c913f8e85aa2efeb5fdb52ff8a92c/AndroidManifest.xml:6:5-8:41
+MERGED from [com.facebook.android:facebook-login:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-login-4.29.0.aar/f3968a37ffe0b74d1dfb1a9b854dae01/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-login:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-login-4.29.0.aar/f3968a37ffe0b74d1dfb1a9b854dae01/AndroidManifest.xml:24:5-26:41
+MERGED from [com.google.firebase:firebase-database:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-database-16.0.3.aar/0f04b9724d403dfc83e4c6ba2a83a427/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-database:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-database-16.0.3.aar/0f04b9724d403dfc83e4c6ba2a83a427/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-auth:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.0.4.aar/e23e0cd0b4f4350128c4ef3637f0a152/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.0.4.aar/e23e0cd0b4f4350128c4ef3637f0a152/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-16.0.0.aar/387a7ac438f8fd4bd2feb7fbdf72aed2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-16.0.0.aar/387a7ac438f8fd4bd2feb7fbdf72aed2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-16.0.0.aar/d1d41e1f1ba9861a7841da3bf2512160/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-16.0.0.aar/d1d41e1f1ba9861a7841da3bf2512160/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-auth-interop-16.0.1.aar/7593e1eb19bf2f6fe7d38748e1ad430f/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-auth-interop-16.0.1.aar/7593e1eb19bf2f6fe7d38748e1ad430f/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-flags-16.0.1.aar/1fc1b110b5de5fad02cf33ffc8f116c7/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-flags-16.0.1.aar/1fc1b110b5de5fad02cf33ffc8f116c7/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.2] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-17.0.2.aar/d1147dfd3c3cd2053619b235d87adfeb/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.2] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-17.0.2.aar/d1147dfd3c3cd2053619b235d87adfeb/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.4.aar/004a4189d63b07608aa20dceb867adfa/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.4.aar/004a4189d63b07608aa20dceb867adfa/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:16.0.2] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-16.0.2.aar/5b2444e1e501c7c949a1d56e2f092e03/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:16.0.2] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-16.0.2.aar/5b2444e1e501c7c949a1d56e2f092e03/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:16.2.2] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-16.2.2.aar/e602c75356ae70913746382106eb67d3/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:16.2.2] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-16.2.2.aar/e602c75356ae70913746382106eb67d3/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-iid-17.0.3.aar/6de36fabf0c8792334c314d6778a57b6/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-iid-17.0.3.aar/6de36fabf0c8792334c314d6778a57b6/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.1.aar/f54bf54d5e12daf0e55b3b84ce33b730/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.1.aar/f54bf54d5e12daf0e55b3b84ce33b730/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/9885b7ef088044746f7b2aed0c543ed7/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/9885b7ef088044746f7b2aed0c543ed7/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/02406bbd9dfa4d4ee8fd749af1409a34/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-common:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/02406bbd9dfa4d4ee8fd749af1409a34/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/a5284d857b28cceb130007c49be59690/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/a5284d857b28cceb130007c49be59690/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.0.aar/76c86aae4f2805c6740325a54b2b341e/AndroidManifest.xml:6:5-44
+MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.0.aar/76c86aae4f2805c6740325a54b2b341e/AndroidManifest.xml:6:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/023447fa9473eb6aa168835a06acc093/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/023447fa9473eb6aa168835a06acc093/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-17.0.1.aar/93e9ba1ad4087c4e48f9f850cc4df5b9/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-17.0.1.aar/93e9ba1ad4087c4e48f9f850cc4df5b9/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-16.0.0.aar/854f54a35d95fa458615815cea4e8c17/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-16.0.0.aar/854f54a35d95fa458615815cea4e8c17/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/230f1d15473dfe7813ba6bb1df3c844d/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/230f1d15473dfe7813ba6bb1df3c844d/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.android:facebook-common:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-common-4.29.0.aar/a16adeba3daec552c53aebed6c76b781/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-common:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-common-4.29.0.aar/a16adeba3daec552c53aebed6c76b781/AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:support-v4:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.1.aar/c4cc1a2ba0622a806ed08ba1bcf9dda4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.1.aar/c4cc1a2ba0622a806ed08ba1bcf9dda4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.1.aar/0f91452b3984b86dd0a52879d5278a4a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.1.aar/0f91452b3984b86dd0a52879d5278a4a/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.android:facebook-core:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-core-4.29.0.aar/8a31869c6b607a51e0965102dd24c2e3/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-core:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-core-4.29.0.aar/8a31869c6b607a51e0965102dd24c2e3/AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:appcompat-v7:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/3b35a46221482e3e1f2d81ddc963840d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/3b35a46221482e3e1f2d81ddc963840d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.1.aar/c26c009328192559c345cd61a3e82a10/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.1.aar/c26c009328192559c345cd61a3e82a10/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.1.aar/e56273ea56a216179c308ac745b9331f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.1.aar/e56273ea56a216179c308ac745b9331f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.1.aar/4a3cc2b5fa11bef5589cad6c708996aa/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.1.aar/4a3cc2b5fa11bef5589cad6c708996aa/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.1.aar/116dd95c3dd910477bc46d718ae20baf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.1.aar/116dd95c3dd910477bc46d718ae20baf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/customtabs-27.0.1.aar/dcd11b22c4ff9c017e9a09294d5aed2a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/customtabs-27.0.1.aar/dcd11b22c4ff9c017e9a09294d5aed2a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.1.aar/a7f2881f7673ca23387020cbc7e3d295/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.1.aar/a7f2881f7673ca23387020cbc7e3d295/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/6a1e41374dc54ebd26cd0319a9023e5c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/6a1e41374dc54ebd26cd0319a9023e5c/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0c1c5411f30832887d8e6c46ad88850e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0c1c5411f30832887d8e6c46ad88850e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/223ba0af1c8a6ec14bae8f8563b591e4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/223ba0af1c8a6ec14bae8f8563b591e4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.1.aar/726d2356283723c5ecfc68e7e0f06a06/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.1.aar/726d2356283723c5ecfc68e7e0f06a06/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:protolite-well-known-types:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/protolite-well-known-types-16.0.0.aar/b52bcbb4dfe52898d97b46e067bbe7c4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/protolite-well-known-types-16.0.0.aar/b52bcbb4dfe52898d97b46e067bbe7c4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.3.aar/bc3677c717c69b01d400b2fcf10cedee/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.3.aar/bc3677c717c69b01d400b2fcf10cedee/AndroidManifest.xml:5:5-44
+INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:18:5-20:40
+INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:18:5-20:40
+	android:targetSdkVersion
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:20:9-38
+		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:19:9-35
+		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
 application
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:16:5-61:19
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:22:5-67:19
+MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-21:19
+MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-21:19
 MERGED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-21:19
 MERGED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-21:19
 MERGED from [com.google.firebase:firebase-core:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.4.aar/c721556828f3729bc3e35181dcf04050/AndroidManifest.xml:7:5-20
@@ -150,218 +275,108 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] /User
 	android:supportsRtl
 		ADDED from [com.facebook.android:facebook-login:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-login-4.29.0.aar/f3968a37ffe0b74d1dfb1a9b854dae01/AndroidManifest.xml:28:18-44
 	android:label
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:18:9-40
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:24:9-40
 	android:icon
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:19:9-43
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:25:9-43
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:17:9-57
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:23:9-57
 activity#com.bridgelabz.fundonoteapp.MainActivity
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:20:9-38:20
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:26:9-44:20
 	android:launchMode
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:22:13-43
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:28:13-43
 	android:hardwareAccelerated
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:25:13-47
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:31:13-47
 	android:windowSoftInputMode
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:26:13-55
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:32:13-55
 	android:configChanges
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:24:13-137
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:30:13-137
 	android:theme
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:23:13-47
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:29:13-47
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:21:13-41
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:27:13-41
 meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:31:13-33:40
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:37:13-39:40
 	android:value
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:33:17-37
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:39:17-37
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:32:17-82
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:38:17-82
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:34:13-37:29
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:40:13-43:29
 action#android.intent.action.MAIN
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:35:17-68
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:41:17-68
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:35:25-66
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:41:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:36:17-76
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:42:17-76
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:36:27-74
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:42:27-74
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:39:9-40:54
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:45:9-46:54
 	android:value
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:40:13-52
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:46:13-52
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:39:20-65
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:45:20-65
 receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:41:9-106
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:47:9-106
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:41:19-103
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:47:19-103
 receiver#com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:42:9-46:20
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:48:9-52:20
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:42:19-107
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:48:19-107
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:43:13-45:29
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:49:13-51:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:44:17-86
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:50:17-86
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:44:25-76
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:50:25-76
 activity#com.facebook.FacebookActivity
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:47:9-50:48
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:53:9-56:48
 MERGED from [com.facebook.android:facebook-common:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-common-4.29.0.aar/a16adeba3daec552c53aebed6c76b781/AndroidManifest.xml:29:9-32:66
 MERGED from [com.facebook.android:facebook-common:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-common-4.29.0.aar/a16adeba3daec552c53aebed6c76b781/AndroidManifest.xml:29:9-32:66
 	android:label
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:50:13-45
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:56:13-45
 	android:configChanges
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:48:13-113
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:54:13-113
 	android:theme
 		ADDED from [com.facebook.android:facebook-common:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-common-4.29.0.aar/a16adeba3daec552c53aebed6c76b781/AndroidManifest.xml:32:13-63
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:47:19-63
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:53:19-63
 activity#com.facebook.CustomTabActivity
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:51:9-60:20
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:57:9-66:20
 	android:exported
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:53:13-36
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:59:13-36
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:52:13-58
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:58:13-58
 intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:@string/fb_login_protocol_scheme
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:54:13-59:29
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:60:13-65:29
 action#android.intent.action.VIEW
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:55:17-69
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:61:17-69
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:55:25-66
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:61:25-66
 category#android.intent.category.DEFAULT
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:56:17-76
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:62:17-76
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:56:27-73
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:62:27-73
 category#android.intent.category.BROWSABLE
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:57:17-78
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:63:17-78
 	android:name
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:57:27-75
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:63:27-75
 data
-ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:58:17-75
+ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:64:17-75
 	android:scheme
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:58:23-72
-uses-sdk
-INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
-MERGED from [com.android.support:multidex:1.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/5a2b55538a9fb1f4559ff55792e4a14e/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/multidex-1.0.3.aar/5a2b55538a9fb1f4559ff55792e4a14e/AndroidManifest.xml:20:5-43
-MERGED from [:google_sign_in] /Users/bridgeit/Desktop/fun_do_note_app/build/google_sign_in/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:google_sign_in] /Users/bridgeit/Desktop/fun_do_note_app/build/google_sign_in/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_facebook_login] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_facebook_login/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_facebook_login] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_facebook_login/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] /Users/bridgeit/Desktop/fun_do_note_app/build/path_provider/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:path_provider] /Users/bridgeit/Desktop/fun_do_note_app/build/path_provider/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_local_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_local_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:flutter_local_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_local_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:cloud_firestore] /Users/bridgeit/Desktop/fun_do_note_app/build/cloud_firestore/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:cloud_firestore] /Users/bridgeit/Desktop/fun_do_note_app/build/cloud_firestore/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_database] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_database/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_database] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_database/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:share] /Users/bridgeit/Desktop/fun_do_note_app/build/share/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:share] /Users/bridgeit/Desktop/fun_do_note_app/build/share/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_core] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_core/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_core] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_core/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_auth] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_auth/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:firebase_auth] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_auth/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-core:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.4.aar/c721556828f3729bc3e35181dcf04050/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-core:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.4.aar/c721556828f3729bc3e35181dcf04050/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-auth-16.0.1.aar/d5a41825388f82ff0274125898b6d9bd/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-auth-16.0.1.aar/d5a41825388f82ff0274125898b6d9bd/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-firestore:17.1.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.1.1.aar/a58c913f8e85aa2efeb5fdb52ff8a92c/AndroidManifest.xml:6:5-8:41
-MERGED from [com.google.firebase:firebase-firestore:17.1.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-firestore-17.1.1.aar/a58c913f8e85aa2efeb5fdb52ff8a92c/AndroidManifest.xml:6:5-8:41
-MERGED from [com.facebook.android:facebook-login:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-login-4.29.0.aar/f3968a37ffe0b74d1dfb1a9b854dae01/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-login:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-login-4.29.0.aar/f3968a37ffe0b74d1dfb1a9b854dae01/AndroidManifest.xml:24:5-26:41
-MERGED from [com.google.firebase:firebase-database:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-database-16.0.3.aar/0f04b9724d403dfc83e4c6ba2a83a427/AndroidManifest.xml:18:5-20:41
-MERGED from [com.google.firebase:firebase-database:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-database-16.0.3.aar/0f04b9724d403dfc83e4c6ba2a83a427/AndroidManifest.xml:18:5-20:41
-MERGED from [com.google.firebase:firebase-auth:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.0.4.aar/e23e0cd0b4f4350128c4ef3637f0a152/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-auth:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-auth-16.0.4.aar/e23e0cd0b4f4350128c4ef3637f0a152/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-16.0.0.aar/387a7ac438f8fd4bd2feb7fbdf72aed2/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-16.0.0.aar/387a7ac438f8fd4bd2feb7fbdf72aed2/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-16.0.0.aar/d1d41e1f1ba9861a7841da3bf2512160/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-16.0.0.aar/d1d41e1f1ba9861a7841da3bf2512160/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-auth-interop-16.0.1.aar/7593e1eb19bf2f6fe7d38748e1ad430f/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-auth-interop:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-auth-interop-16.0.1.aar/7593e1eb19bf2f6fe7d38748e1ad430f/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-flags-16.0.1.aar/1fc1b110b5de5fad02cf33ffc8f116c7/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-flags:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-flags-16.0.1.aar/1fc1b110b5de5fad02cf33ffc8f116c7/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.2] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-17.0.2.aar/d1147dfd3c3cd2053619b235d87adfeb/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-measurement-connector-impl:17.0.2] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-17.0.2.aar/d1147dfd3c3cd2053619b235d87adfeb/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.4.aar/004a4189d63b07608aa20dceb867adfa/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.4.aar/004a4189d63b07608aa20dceb867adfa/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-api:16.0.2] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-16.0.2.aar/5b2444e1e501c7c949a1d56e2f092e03/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-measurement-api:16.0.2] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-measurement-api-16.0.2.aar/5b2444e1e501c7c949a1d56e2f092e03/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics-impl:16.2.2] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-16.2.2.aar/e602c75356ae70913746382106eb67d3/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics-impl:16.2.2] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-16.2.2.aar/e602c75356ae70913746382106eb67d3/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-iid-17.0.3.aar/6de36fabf0c8792334c314d6778a57b6/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-iid-17.0.3.aar/6de36fabf0c8792334c314d6778a57b6/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.1.aar/f54bf54d5e12daf0e55b3b84ce33b730/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.1.aar/f54bf54d5e12daf0e55b3b84ce33b730/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/9885b7ef088044746f7b2aed0c543ed7/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/9885b7ef088044746f7b2aed0c543ed7/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-common:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/02406bbd9dfa4d4ee8fd749af1409a34/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.firebase:firebase-common:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-common-16.0.3.aar/02406bbd9dfa4d4ee8fd749af1409a34/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/a5284d857b28cceb130007c49be59690/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/a5284d857b28cceb130007c49be59690/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.0.aar/76c86aae4f2805c6740325a54b2b341e/AndroidManifest.xml:6:5-44
-MERGED from [com.google.firebase:firebase-database-collection:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.0.aar/76c86aae4f2805c6740325a54b2b341e/AndroidManifest.xml:6:5-44
-MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/023447fa9473eb6aa168835a06acc093/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/023447fa9473eb6aa168835a06acc093/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-17.0.1.aar/93e9ba1ad4087c4e48f9f850cc4df5b9/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-17.0.1.aar/93e9ba1ad4087c4e48f9f850cc4df5b9/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-16.0.0.aar/854f54a35d95fa458615815cea4e8c17/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-ads-identifier-16.0.0.aar/854f54a35d95fa458615815cea4e8c17/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/230f1d15473dfe7813ba6bb1df3c844d/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/230f1d15473dfe7813ba6bb1df3c844d/AndroidManifest.xml:20:5-44
-MERGED from [com.facebook.android:facebook-common:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-common-4.29.0.aar/a16adeba3daec552c53aebed6c76b781/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-common:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-common-4.29.0.aar/a16adeba3daec552c53aebed6c76b781/AndroidManifest.xml:24:5-26:41
-MERGED from [com.android.support:support-v4:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.1.aar/c4cc1a2ba0622a806ed08ba1bcf9dda4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.1.aar/c4cc1a2ba0622a806ed08ba1bcf9dda4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.1.aar/0f91452b3984b86dd0a52879d5278a4a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.1.aar/0f91452b3984b86dd0a52879d5278a4a/AndroidManifest.xml:20:5-44
-MERGED from [com.facebook.android:facebook-core:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-core-4.29.0.aar/8a31869c6b607a51e0965102dd24c2e3/AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-core:4.29.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/facebook-core-4.29.0.aar/8a31869c6b607a51e0965102dd24c2e3/AndroidManifest.xml:24:5-26:41
-MERGED from [com.android.support:appcompat-v7:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/3b35a46221482e3e1f2d81ddc963840d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.1.aar/3b35a46221482e3e1f2d81ddc963840d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.1.aar/c26c009328192559c345cd61a3e82a10/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.1.aar/c26c009328192559c345cd61a3e82a10/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.1.aar/e56273ea56a216179c308ac745b9331f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.1.aar/e56273ea56a216179c308ac745b9331f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.1.aar/4a3cc2b5fa11bef5589cad6c708996aa/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.1.aar/4a3cc2b5fa11bef5589cad6c708996aa/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.1.aar/116dd95c3dd910477bc46d718ae20baf/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.1.aar/116dd95c3dd910477bc46d718ae20baf/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customtabs:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/customtabs-27.0.1.aar/dcd11b22c4ff9c017e9a09294d5aed2a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customtabs:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/customtabs-27.0.1.aar/dcd11b22c4ff9c017e9a09294d5aed2a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.1.aar/a7f2881f7673ca23387020cbc7e3d295/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.1.aar/a7f2881f7673ca23387020cbc7e3d295/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/6a1e41374dc54ebd26cd0319a9023e5c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.1.aar/6a1e41374dc54ebd26cd0319a9023e5c/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0c1c5411f30832887d8e6c46ad88850e/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/0c1c5411f30832887d8e6c46ad88850e/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/223ba0af1c8a6ec14bae8f8563b591e4/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/223ba0af1c8a6ec14bae8f8563b591e4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.1.aar/726d2356283723c5ecfc68e7e0f06a06/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:27.0.1] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.0.1.aar/726d2356283723c5ecfc68e7e0f06a06/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:protolite-well-known-types:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/protolite-well-known-types-16.0.0.aar/b52bcbb4dfe52898d97b46e067bbe7c4/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.firebase:protolite-well-known-types:16.0.0] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/protolite-well-known-types-16.0.0.aar/b52bcbb4dfe52898d97b46e067bbe7c4/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.3.aar/bc3677c717c69b01d400b2fcf10cedee/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-measurement-base-16.0.3.aar/bc3677c717c69b01d400b2fcf10cedee/AndroidManifest.xml:5:5-44
-INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
-	android:targetSdkVersion
-		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
-	android:minSdkVersion
-		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:64:23-72
+receiver#dk.kjeldsen.scheduled_notifications.OnRebootReceiver
+ADDED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:14:9-18:20
+	android:name
+		ADDED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:14:19-86
+service#dk.kjeldsen.scheduled_notifications.ScheduleNotificationsService
+ADDED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:20:9-100
+	android:name
+		ADDED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:20:18-97
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-80
-IMPLIED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-62:12 reason: io.flutter.plugins.imagepicker requested WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-68:12 reason: io.flutter.plugins.imagepicker requested WRITE_EXTERNAL_STORAGE
 	android:name
 		ADDED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:7:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE

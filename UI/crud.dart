@@ -17,8 +17,8 @@ class crudMethod{
       Firestore.instance.collection(LoginPageState.email).
       document('myData').collection(MainState.directory).
       document(id).updateData(newValues).catchError((e)=>print("Update error $e"));}
-      else{
-       Firestore.instance.collection(LoginPageState.email).
+    else{
+      Firestore.instance.collection(LoginPageState.email).
       document('myData').collection('Note').
       document(id).updateData(newValues).catchError((e)=>print("Update error $e"));
     }
@@ -39,7 +39,6 @@ class crudMethod{
   }
   Future<void> deleteData(id) async{
     if(MainState.directory=='Note') {
-      print("Note");
       var test = await Firestore.instance.document(
           '${LoginPageState.email}/myData').collection('Note')
           .document(id)
@@ -76,6 +75,13 @@ class crudMethod{
 
     }
   }
+  void restoreData(id) async{
+    var test =  await Firestore.instance.document('${LoginPageState.email}/myData').collection('Delete').document(id).get();
+    Map m = test.data;
+    Firestore.instance.collection(LoginPageState.email).document('myData').collection('Delete').document(id).delete().catchError((e)=> print(e));
+    Firestore.instance.collection(LoginPageState.email).document('myData').collection('Note').add(m).catchError((e)=> print(e));
+
+  }
   void addLabel(data){
     Firestore.instance.document('${LoginPageState.email}/myData').collection(
         "Label").add(data).catchError((e)=> print(e));
@@ -93,9 +99,9 @@ class crudMethod{
     return await Firestore.instance.collection('test@test.com').document('myData').collection(MainState.directory).getDocuments();
   }
   updatelabel(newValues,id){
-     Firestore.instance.collection(LoginPageState.email).
-      document('myData').collection('Label').
-      document(id).updateData(newValues).catchError((e)=>print("Update error $e"));
+    Firestore.instance.collection(LoginPageState.email).
+    document('myData').collection('Label').
+    document(id).updateData(newValues).catchError((e)=>print("Update error $e"));
   }
 
 

@@ -5,6 +5,7 @@ import 'crud.dart';
 import 'MainPage.dart';
 import 'package:share/share.dart';
 import 'LabelPage.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class TakeNotes extends StatefulWidget {
   final int index;
@@ -49,6 +50,9 @@ class TakeNotesState extends State<TakeNotes> {
   static Color color;
   static File clickimage;
   static File Galleryimage;
+  var imageUrl;
+  String downloadUrl;
+  StorageReference ref = FirebaseStorage.instance.ref().child('Noteimge.jpg');
   // static List selectedLabel;
   List labelData;
   Icon pinIcon = Icon(Icons.pined);
@@ -63,6 +67,8 @@ class TakeNotesState extends State<TakeNotes> {
 
   void initState(){
     if(widget.index!=-1){
+      if(widget.l[widget.index].data['Url']!=null)
+        downloadUrl = widget.l[widget.index].data['Url'];
       crudObj.fetchNoteData().then((result){
         widget.l = result.documents;
         convertLabel();
@@ -175,7 +181,7 @@ class TakeNotesState extends State<TakeNotes> {
           );
         }),
         new IconButton(icon: Icon(Icons.save), onPressed: (){
-          Map <dynamic,dynamic> keepData = <String,dynamic>{"Note" : Note, "Title": Title,"Color":color.toString(),"Pin":widget.isPin,"isArchive":widget.isArchive};
+          Map <dynamic,dynamic> keepData = <String,dynamic>{"Note" : Note,"Url":downloadUrl ,"Title": Title,"Color":color.toString(),"Pin":widget.isPin,"isArchive":widget.isArchive};
           if(widget.index==-1){
             crudObj.addData(keepData).then((result){
               Navigator.of(context).pop();
@@ -216,9 +222,26 @@ class TakeNotesState extends State<TakeNotes> {
     print("picker is called");
     Galleryimage  = await ImagePicker.pickImage(source: ImageSource.gallery);
     _image = Galleryimage;
+    _image!=null?uploadImage(_image):Dialog(child: new Text("No image is selected"),);
     setState(() {
     });
 
+  }
+  uploadImage(image) async{
+    StorageUploadTask uploadTask = ref.putFile(image);
+    StorageTaskSnapshot takeSnapShot = await uploadTask.onComplete.then((img){
+      setState(() {
+
+      });
+      imgUrl();
+    });
+  }
+  Future imgUrl() async{
+    String downloadAdd = await ref.getDownloadURL().then((img){
+      downloadUrl = img;
+      setState(() {
+      });
+    });
   }
   camera() async{
     clickimage =  await ImagePicker.pickImage(source: ImageSource.camera);
@@ -500,12 +523,16 @@ class TakeNotesState extends State<TakeNotes> {
               contentPadding: EdgeInsets.all(10.0)),
         ),
 
-        new Container(
-          child: new Center(
-            child: _image == null ? new Text(""): new Image.file(_image),
-            //    ),)],
-          ),
-        ),
+        // new Expanded(
+        /*new Container(
+            height:image==null&&_image==null?0.0:300.0,
+            child: new Center(
+              child: _image == null ? new Text(""): new Image.file(_image),
+              //    ),)],
+            ),
+          ),*/
+        //),
+        downloadUrl==null?Container():Container(height:300.0,child: Image.network(downloadUrl)),
         new Expanded(
           child: new TextField(
             controller: TakeNotesState._noteController,
@@ -527,7 +554,7 @@ class TakeNotesState extends State<TakeNotes> {
           children: <Widget>[*/
         new Container(
             height: 24.0,
-            child:  new ListView.builder(
+            child: new ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: labelData==null?0:labelData.length,
                 itemBuilder: (context,index){
@@ -541,7 +568,7 @@ class TakeNotesState extends State<TakeNotes> {
                         child: Container(
                           color: Colors.grey.shade200,
                           child: Center(
-                            child: new RaisedButton(
+                              child: new RaisedButton(
                                 onPressed:(){
                                   //LabelPageState.news();
                                   Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>new LabelPage (l:widget.l,index:widget.index)));

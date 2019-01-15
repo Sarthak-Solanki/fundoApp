@@ -24,6 +24,7 @@ dependencies:
   cloud_firestore: ^0.8.2+3
   flutter_local_notifications:
   share:
+  firebase_storage:
   material_search:
   flutter_list_drag_and_drop:
   scheduled_notifications: ^1.0.0

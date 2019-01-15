@@ -2,6 +2,7 @@ cloud_firestore=/Users/bridgeit/Downloads/flutter/.pub-cache/hosted/pub.dartlang
 firebase_auth=/Users/bridgeit/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.6.6/
 firebase_core=/Users/bridgeit/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.2.5+1/
 firebase_database=/Users/bridgeit/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-1.0.5/
+firebase_storage=/Users/bridgeit/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-1.0.4/
 flutter_facebook_login=/Users/bridgeit/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_facebook_login-1.1.1/
 flutter_local_notifications=/Users/bridgeit/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications-0.4.3/
 google_sign_in=/Users/bridgeit/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-3.2.4/

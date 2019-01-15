@@ -7,7 +7,8 @@ import 'Login_Page.dart';
 import 'TakeNotes.dart';
 import 'AddLabel.dart';
 import 'crud.dart';
-import 'dart:io';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:image_picker/image_picker.dart';
 class MainPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new MainState();
@@ -16,10 +17,14 @@ class MainState extends State<MainPage>{
   crudMethod crudObj = new crudMethod();
   static QuerySnapshot QSlabels ;
   List labels;
+  List ls;
+  var Galleryimage;
+  String downloadUrl;
+  StorageReference ref = FirebaseStorage.instance.ref().child('profileImg.jpg');
+  var _image;
   @override
   void initState() {
-    print("abc");
-
+    get();
     crudObj.fetchData().then((result){
       /*if(!result.hasData){
         return new Center(
@@ -36,6 +41,57 @@ class MainState extends State<MainPage>{
       });
     });// TODO: implement initState
     super.initState();
+  }
+  get() async{
+    QuerySnapshot ds = await Firestore.instance.document('${LoginPageState.email}/myData').collection("profileImg").getDocuments().then((reg){
+      if(reg.documents.length!=0){
+        ls = reg.documents;
+        // if(ls!=null)
+        downloadUrl = ls[0].data["Url"];
+      }
+    });
+
+  }
+  gallery() async{
+    print("picker is called");
+    get();
+    Galleryimage  = await ImagePicker.pickImage(source: ImageSource.gallery);
+    _image = Galleryimage;
+    if(_image!=null&&ls!=null){
+      delete(ls[0].documentID);
+    }
+    _image!=null?uploadImage(_image):Dialog(child: new Text("No image is selected"),);
+
+    setState(() {
+    });
+
+  }
+  delete(id){
+    Firestore.instance.document('${LoginPageState.email}/myData').collection('profileImg').document(id).delete();
+  }
+  save(downloadUrl){
+    Map <dynamic,dynamic> keepData = <String,dynamic>{"Url":downloadUrl };
+    Firestore.instance.document('${LoginPageState.email}/myData').collection("profileImg").add(keepData).catchError((e)=> print(e));
+  }
+  uploadImage(image) async{
+    StorageUploadTask uploadTask = ref.putFile(image);
+    StorageTaskSnapshot takeSnapShot = await uploadTask.onComplete.then((img){
+      setState(() {
+      });
+      imgUrl();
+    });
+  }
+  Future imgUrl() async{
+    String downloadAdd = await ref.getDownloadURL().then((img){
+      downloadUrl = img;
+      if(ls!=null){
+        delete(ls[0].documentID);
+      }
+      save(downloadUrl);
+      //downloadUrl = "";
+      setState(() {
+      });
+    });
   }
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   static List l;
@@ -147,21 +203,20 @@ class MainState extends State<MainPage>{
                 decoration: BoxDecoration(
                   color: Colors.grey.shade400,
                 ),
-                currentAccountPicture: new CircleAvatar(
-                  backgroundColor: Colors.brown,
-                  child: new Text(""),
+                currentAccountPicture: new GestureDetector(
+                  onTap:(){
+                    gallery();
+                  },
+                  child: new Container(
+                    decoration: new BoxDecoration(
+                      shape: BoxShape.circle,
+                      color:Colors.white,
+                    ),
+                    height: 500.0,
+                    child: downloadUrl!=null?Image.network(downloadUrl):new Container(child:new CircularProgressIndicator()),
+                  ),
                 ),
                 otherAccountsPictures: <Widget>[
-                  new GestureDetector(
-                    onTap: () => print(""),
-                    child: new Semantics(
-                      label: 'Switch Account',
-                      child: new CircleAvatar(
-                        backgroundColor: Colors.brown,
-                        child: new Text('SA'),
-                      ),
-                    ),
-                  )
                 ]
             ),
             new ListTile(
@@ -276,6 +331,9 @@ class MainState extends State<MainPage>{
     );
   }
   getColor(int index){
+    if(l[index].data["Color"]=="null"){
+      l[index].data["Color"]= Colors.white.toString();
+    }
     String valueString = l[index].data["Color"].split('(0x')[1].split(')')[0]; // kind of hacky..
     int value = int.parse(valueString, radix: 16);
     Color color = new Color(value);
@@ -352,7 +410,7 @@ class MainState extends State<MainPage>{
     }
     return createStaggered(context,_filterList);
   }
-   Future<bool> _showDialog(context) {
+  Future<bool> _showDialog(context) {
     // flutter defined function
     return showDialog(
       context: context,
@@ -401,15 +459,15 @@ class MainState extends State<MainPage>{
 
   @override
   Widget build(BuildContext context) {
-   return WillPopScope(
-          onWillPop: _onWillPop,
-          child: new Scaffold(
-      key: _scaffoldKey,
-      backgroundColor: Colors.white,
-      drawer: drawer(context),
-      appBar: appBar(context),
-      body:
-      /* new Container(
+    return WillPopScope(
+      onWillPop: _onWillPop,
+      child: new Scaffold(
+        key: _scaffoldKey,
+        backgroundColor: Colors.white,
+        drawer: drawer(context),
+        appBar: appBar(context),
+        body:
+        /* new Container(
         color: Colors.white,
         padding: EdgeInsets.all(8.0),
         child: new Container(
@@ -425,51 +483,51 @@ class MainState extends State<MainPage>{
         padding: EdgeInsets.all(2.0),
         child:*/
         new StreamBuilder<QuerySnapshot>(
-      stream: snapshot,
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) {
-              return new Center(
-                child: CircularProgressIndicator(),);
-            }else {
-              l = snapshot.data.documents; //data.documents;
-              List z = l;
-              l = null;
-              List pList = new List();
-              List unpList = new List();
-              for (int i = 0; i < z.length; i++) {
-                if (z[i].data['Pin'] == true) {
-                  pList.add(z[i]);
+            stream: snapshot,
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) {
+                return new Center(
+                  child: CircularProgressIndicator(),);
+              }else {
+                l = snapshot.data.documents; //data.documents;
+                List z = l;
+                l = null;
+                List pList = new List();
+                List unpList = new List();
+                for (int i = 0; i < z.length; i++) {
+                  if (z[i].data['Pin'] == true) {
+                    pList.add(z[i]);
+                  }
+                  else {
+                    unpList.add(z[i]);
+                  }
                 }
-                else {
-                  unpList.add(z[i]);
+                // Tags Pinned = new Tags();
+                if(pList.isEmpty==false){
+                  pList.insert(0,"Pinned");
+                  unpList.insert(0,"Other");
+                  l = pList +unpList;
                 }
+                else{
+                  l = z;
+                }
+                //l.add("Pinned");
+                return new Container(
+                  child:  _firstSearch ? createStaggered(context, l) : _performSearch(context,l),
+                );
               }
-              // Tags Pinned = new Tags();
-              if(pList.isEmpty==false){
-                pList.insert(0,"Pinned");
-                unpList.insert(0,"Other");
-                l = pList +unpList;
-              }
-              else{
-                l = z;
-              }
-              //l.add("Pinned");
-              return new Container(
-                child:  _firstSearch ? createStaggered(context, l) : _performSearch(context,l),
-              );
             }
-          }
-      ),
-    //
-    // ),
+        ),
+        //
+        // ),
 
-    bottomNavigationBar:bottomNaviBar(context),
-    ),
-   );
-    }
+        bottomNavigationBar:bottomNaviBar(context),
+      ),
+    );
+  }
   Future <Login_Page> signOut()  async{
     await FirebaseAuth.instance.signOut().then((_){
-      Navigator.of(context).pop();
+      // Navigator.of(context).pop();
       Navigator.of(context).pushReplacementNamed('/LandingPage');
     }).catchError((e)=>print(e));
   }

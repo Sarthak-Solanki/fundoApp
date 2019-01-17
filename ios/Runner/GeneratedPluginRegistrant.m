@@ -13,7 +13,6 @@
 #import <google_sign_in/GoogleSignInPlugin.h>
 #import <image_picker/ImagePickerPlugin.h>
 #import <path_provider/PathProviderPlugin.h>
-#import <scheduled_notifications/ScheduledNotificationsPlugin.h>
 #import <share/SharePlugin.h>
 
 @implementation GeneratedPluginRegistrant
@@ -29,7 +28,6 @@
   [FLTGoogleSignInPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTGoogleSignInPlugin"]];
   [FLTImagePickerPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTImagePickerPlugin"]];
   [FLTPathProviderPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTPathProviderPlugin"]];
-  [ScheduledNotificationsPlugin registerWithRegistrar:[registry registrarForPlugin:@"ScheduledNotificationsPlugin"]];
   [FLTSharePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTSharePlugin"]];
 }
 

@@ -91,14 +91,6 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="dk.kjeldsen.scheduled_notifications.OnRebootReceiver" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
-        <service android:name="dk.kjeldsen.scheduled_notifications.ScheduleNotificationsService" />
-
         <provider
             android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
             android:authorities="com.bridgelabz.fundonoteapp.flutter.image_provider"

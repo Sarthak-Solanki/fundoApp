@@ -6,7 +6,8 @@ import 'MainPage.dart';
 import 'package:share/share.dart';
 import 'LabelPage.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-
+import 'package:flushbar/flushbar.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 class TakeNotes extends StatefulWidget {
   final int index;
   String color;
@@ -57,20 +58,52 @@ class TakeNotesState extends State<TakeNotes> {
   List labelData;
   Icon pinIcon = Icon(Icons.pined);
   Icon archiveIcon = Icon(Icons.archive);
-  DateTime _date = new DateTime.now();
-  TimeOfDay _time = new TimeOfDay.now();
   final _scaffoldKey  = new GlobalKey<ScaffoldState>();
   VoidCallback _showPersBottomSheetCallBack;
   VoidCallback _showPlusButtonCallBack;
   static TextEditingController _titleController;
   static TextEditingController _noteController;
+//var _scaffoldKey = new GlobalKey<ScaffoldState>();
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
 
+  DateTime _date = new DateTime.now();
+  TimeOfDay _time = new TimeOfDay.now();
+  List v;
   void initState(){
+    flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+    var android = AndroidInitializationSettings('@mipmap/ic_launcher');
+    var iOS = IOSInitializationSettings();
+    var initSettings = InitializationSettings(android, iOS);
+    flutterLocalNotificationsPlugin.initialize(initSettings,
+        onSelectNotification: onSelectNotification);
+
     if(widget.index!=-1){
       if(widget.l[widget.index].data['Url']!=null)
         downloadUrl = widget.l[widget.index].data['Url'];
       crudObj.fetchNoteData().then((result){
         widget.l = result.documents;
+        List z = widget.l;
+        widget.l = null;
+        List pList = new List();
+        List unpList = new List();
+        for (int i = 0; i < z.length; i++) {
+          if (z[i].data['Pin'] == true) {
+            pList.add(z[i]);
+          }
+          else {
+            unpList.add(z[i]);
+          }
+        }
+        // Tags Pinned = new Tags();
+        if(pList.isEmpty==false){
+          pList.insert(0,"Pinned");
+          unpList.insert(0,"Other");
+          widget.l = pList +unpList;
+        }
+        else{
+          widget.l = z;
+        }
+
         convertLabel();
         if(widget.index!=-1)
         {
@@ -103,14 +136,98 @@ class TakeNotesState extends State<TakeNotes> {
     super.initState();
 
   }
-  convertLabel(){
-    if(widget.l[widget.index].data['Label']!=null){
-      String st = widget.l[widget.index].data['Label'];
-      labelData = st.split(",");
+  _selectDate(context) async{
+    final DateTime picked = await showDatePicker(
+      context: context,
+      firstDate:DateTime.now(),
+      initialDate: DateTime.now(),
+      lastDate:DateTime(3000),
+    );
+    if(picked!=null&&picked!=_date){
+      // String _date;
       setState(() {
-
+        _date = picked;
+      });
+      //print('Date Selected$_date');
+    }
+  }
+  diff(){
+    var get = new DateTime(_date.year,_date.month,_date.day,_time.hour,_time.minute);
+    var remaining = get.difference(DateTime.now());
+    final days = remaining.inDays;
+    final hours = remaining.inHours - remaining.inDays * 24;
+    final minutes = remaining.inMinutes - remaining.inHours * 60;
+    final seconds = remaining.inSeconds - remaining.inMinutes * 60;
+    List s = new List();
+    s.add(days);
+    s.add(hours);
+    s.add(minutes);
+    return s;
+  }
+  _selectTime(context) async{
+    final TimeOfDay picked = await showTimePicker(context: context, initialTime:TimeOfDay.now());
+    if(picked!=null&& picked!=_time){
+      setState(() {
+        _time = picked;
       });
     }
+  }
+  Future onSelectNotification(String payload) {
+    showDialog(
+        context: context,
+        builder: (_)=> AlertDialog(
+          title: Text("ALERT"),
+          content: Text("CONTENT: $payload"),
+        ));
+  }
+  showNotification(v) async {
+    var android = AndroidNotificationDetails(
+        'channel id', 'channel name', 'channel description');
+    var iOS = IOSNotificationDetails();
+    var platform = NotificationDetails(android, iOS);
+    var scheduledNotificationDateTime =
+    new DateTime.now().add(Duration(days: v[0],hours: v[1],minutes: v[2]));
+    await flutterLocalNotificationsPlugin.schedule(0, Title, Note, scheduledNotificationDateTime, platform);
+  }
+
+  Future<bool> saveNupdate(){
+    Map <dynamic,dynamic> keepData = <String,dynamic>{"Note" : Note,"Url":downloadUrl ,"Title": Title,"Color":color.toString(),"Pin":widget.isPin,"isArchive":widget.isArchive};
+    if(widget.index==-1){
+      crudObj.addData(keepData).then((result){
+        Navigator.of(context).pop();
+        Flushbar()
+          ..shadowColor = Colors.grey.shade300
+          ..backgroundColor = Colors.white
+          ..messageText = new Text("Note Created",style: TextStyle(color: Colors.black),)
+          ..duration = Duration(seconds: 2)
+          ..leftBarIndicatorColor = Colors.blue[300]
+          ..show(context);
+      }).catchError((e){
+        print(e);
+      });
+    }
+    else{
+      crudObj.updateData(widget.l[widget.index].documentID, keepData);
+      Navigator.of(context).pop();
+      Flushbar()
+        ..shadowColor = Colors.grey.shade300
+        ..backgroundColor = Colors.white
+        ..messageText = new Text("Note updated",style: TextStyle(color: Colors.black),)
+        ..duration = Duration(seconds: 2)
+        ..leftBarIndicatorColor = Colors.blue[300]
+        ..show(context);
+    }
+
+  }
+  convertLabel(){
+    if(widget.l!=null){
+      if(widget.l[widget.index].data['Label']!=null){
+        String st = widget.l[widget.index].data['Label'];
+        labelData = st.split(",");
+        setState(() {
+
+        });
+      }}
   }
   appBar(context) {
     if(widget.isPin==true){
@@ -172,6 +289,8 @@ class TakeNotesState extends State<TakeNotes> {
                   FlatButton(
                     child: Text('Regret'),
                     onPressed: () {
+                      v = diff();
+                          showNotification(v);
                       Navigator.of(context).pop();
                     },
                   ),
@@ -180,21 +299,30 @@ class TakeNotesState extends State<TakeNotes> {
             },
           );
         }),
-        new IconButton(icon: Icon(Icons.save), onPressed: (){
+        /*new IconButton(icon: Icon(Icons.save), onPressed: (){
           Map <dynamic,dynamic> keepData = <String,dynamic>{"Note" : Note,"Url":downloadUrl ,"Title": Title,"Color":color.toString(),"Pin":widget.isPin,"isArchive":widget.isArchive};
           if(widget.index==-1){
             crudObj.addData(keepData).then((result){
-              Navigator.of(context).pop();
+              //Navigator.of(context).pop();
+
+              final snackbar = SnackBar(
+                content: Text('Note is added!'),
+              );
+              _scaffoldKey.currentState.showSnackBar(snackbar);
+
             }).catchError((e){
               print(e);
+               Navigator.of(context).pop();
+
             });
           }
           else{
             crudObj.updateData(widget.l[widget.index].documentID, keepData);
             Navigator.of(context).pop();
+
           }
         },),
-        new IconButton(icon: archiveIcon,
+        */new IconButton(icon: archiveIcon,
             onPressed: (){
               if(MainState.directory=="Archive"){
                 widget.isArchive = false;
@@ -203,6 +331,13 @@ class TakeNotesState extends State<TakeNotes> {
                 crudObj.updateData(widget.l[widget.index].documentID, keepData);
                 crudObj.unArchive(widget.l[widget.index].documentID);
                 Navigator.of(context).pop();
+                Flushbar()
+                  ..shadowColor = Colors.grey.shade300
+                  ..backgroundColor = Colors.white
+                  ..messageText = new Text("Note unArchive!!",style: TextStyle(color: Colors.black),)
+                  ..duration = Duration(seconds: 2)
+                  ..leftBarIndicatorColor = Colors.blue[300]
+                  ..show(context);
               }
               else {
                 widget.isArchive = true;
@@ -212,6 +347,13 @@ class TakeNotesState extends State<TakeNotes> {
                 crudObj.toArchive(widget.l[widget.index].documentID);
                 // Navigator.of(context).pop();
                 Navigator.of(context).pushReplacementNamed('/MainPage');
+                Flushbar()
+                  ..shadowColor = Colors.grey.shade300
+                  ..backgroundColor = Colors.white
+                  ..messageText = new Text("Note archived!!",style: TextStyle(color: Colors.black),)
+                  ..duration = Duration(seconds: 2)
+                  ..leftBarIndicatorColor = Colors.blue[300]
+                  ..show(context);
               }
             }
         ),
@@ -281,6 +423,13 @@ class TakeNotesState extends State<TakeNotes> {
                     crudObj.deleteData(widget.l[widget.index].documentID);
                     Navigator.of(context).pop();
                     Navigator.of(context).pop();
+                    Flushbar()
+                      ..shadowColor = Colors.grey.shade300
+                      ..backgroundColor = Colors.white
+                      ..messageText = new Text("Note deleted",style: TextStyle(color: Colors.black),)
+                      ..duration = Duration(seconds: 2)
+                      ..leftBarIndicatorColor = Colors.blue[300]
+                      ..show(context);
                   }, icon: Icon(
                       MainState.directory!="Delete"? Icons.delete_outline:Icons.restore_from_trash
                   ), label: new Text("      Delete",style:TextStyle(fontSize: 15.0,),))
@@ -532,7 +681,12 @@ class TakeNotesState extends State<TakeNotes> {
             ),
           ),*/
         //),
-        downloadUrl==null?Container():Container(height:300.0,child: Image.network(downloadUrl)),
+        downloadUrl==null?Container():Container(height:300.0,child: GestureDetector(
+          onLongPress:(
+              downloadUrl = null
+          ),
+          child: Image.network(downloadUrl),
+        )),
         new Expanded(
           child: new TextField(
             controller: TakeNotesState._noteController,
@@ -608,83 +762,71 @@ class TakeNotesState extends State<TakeNotes> {
   }
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      key: _scaffoldKey,
-      backgroundColor:color,//color as Color,
-      appBar: MainState.directory!="Delete"?appBar(context):new AppBar(elevation: 0.0,backgroundColor: color,iconTheme: IconThemeData(color:Colors.black),),
-      body: Body(),
-      bottomNavigationBar: BottomAppBar(
-        color:color,
-        elevation: 0.0,
-        child:new Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            MainState.directory!="Delete"? new IconButton(icon: Icon(Icons.add_box),
-              onPressed: _showPlusButtonCallBack,
-            ):new Icon(Icons.add_box,color: Colors.grey.shade300,),
-            MainState.directory!="Delete"?new IconButton(
-              icon: Icon(Icons.more_vert),
-              onPressed: _showPersBottomSheetCallBack,
-            ):new IconButton(icon: Icon(Icons.more_vert), onPressed: (){
-              showModalBottomSheet(context: context, builder:(builder){
-                return new Container(
-                    color: color, //Color(0xffef9a9a) as Color,
-                    //  color,
-                    height: 150.0,
-                    width: 400.0,
-                    child: new Column(
-                      children: <Widget>[
-                        new Container(
+
+    return WillPopScope(
+      onWillPop: saveNupdate,
+      child: new Scaffold(
+        key: _scaffoldKey,
+        backgroundColor:color,//color as Color,
+        appBar: MainState.directory!="Delete"?appBar(context):new AppBar(elevation: 0.0,backgroundColor: color,iconTheme: IconThemeData(color:Colors.black),),
+        body: Body(),
+        bottomNavigationBar: BottomAppBar(
+          color:color,
+          elevation: 0.0,
+          child:new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              MainState.directory!="Delete"? new IconButton(icon: Icon(Icons.add_box),
+                onPressed: _showPlusButtonCallBack,
+              ):new Icon(Icons.add_box,color: Colors.grey.shade300,),
+              MainState.directory!="Delete"?new IconButton(
+                icon: Icon(Icons.more_vert),
+                onPressed: _showPersBottomSheetCallBack,
+              ):new IconButton(icon: Icon(Icons.more_vert), onPressed: (){
+                showModalBottomSheet(context: context, builder:(builder){
+                  return new Container(
+                      color: color, //Color(0xffef9a9a) as Color,
+                      //  color,
+                      height: 150.0,
+                      width: 400.0,
+                      child: new Column(
+                        children: <Widget>[
+                          new Container(
+                              alignment: Alignment.topLeft,
+                              child: new FlatButton.icon(onPressed: (){
+                                crudObj.deleteData(widget.l[widget.index].documentID);
+                                Navigator.of(context).pop();
+                                Navigator.of(context).pop();
+                                Flushbar()
+                                  ..shadowColor = Colors.grey.shade300
+                                  ..backgroundColor = Colors.white
+                                  ..messageText = new Text("Note added to trash",style: TextStyle(color: Colors.black),)
+                                  ..duration = Duration(seconds: 2)
+                                  ..leftBarIndicatorColor = Colors.blue[300]
+                                  ..show(context);
+                              }, icon: Icon(Icons.delete_outline
+                              ), label: new Text("      Delete",style:TextStyle(fontSize: 15.0,),))
+                          ),
+                          new Container(
                             alignment: Alignment.topLeft,
-                            child: new FlatButton.icon(onPressed: (){
-                              crudObj.deleteData(widget.l[widget.index].documentID);
+                            child: new FlatButton.icon(onPressed:(){
+                              crudObj.restoreData(widget.l[widget.index].documentID);
                               Navigator.of(context).pop();
                               Navigator.of(context).pop();
-                            }, icon: Icon(Icons.delete_outline
-                            ), label: new Text("      Delete",style:TextStyle(fontSize: 15.0,),))
-                        ),
-                        new Container(
-                          alignment: Alignment.topLeft,
-                          child: new FlatButton.icon(onPressed:(){
-                            crudObj.restoreData(widget.l[widget.index].documentID);
-                            Navigator.of(context).pop();
-                            Navigator.of(context).pop();
-                          },
-                              icon: Icon(Icons.restore), label: new Text("      Restore",style: TextStyle(fontSize: 15.0),)),
-                        ),
-                      ],
-                    ));
-              });
-            })
-          ],
+                            },
+                                icon: Icon(Icons.restore), label: new Text("      Restore",style: TextStyle(fontSize: 15.0),)),
+                          ),
+                        ],
+                      ));
+                });
+              })
+            ],
+          ),
         ),
       ),
     );
   }
-  Future<Null> _selectDate(context) async{
-    final DateTime picked = await showDatePicker(
-      context: context,
-      firstDate:DateTime.now(),
-      initialDate: DateTime.now(),
-      lastDate:DateTime(3000),
-    );
-    if(picked!=null&&picked!=_date){
-      // String _date;
-      setState(() {
-        _date = picked;
-
-      });
-      print('Date Selected$_date');
-    }
   }
-  Future<Null>  _selectTime(BuildContext context) async{
-    final TimeOfDay picked = await showTimePicker(context: context, initialTime:TimeOfDay.now());
-    if(picked!=null&& picked!=_time){
-      setState(() {
-        _time = picked;
-      });
-    }
-  }}
 /*
 class Test extends StatelessWidget {
   @override

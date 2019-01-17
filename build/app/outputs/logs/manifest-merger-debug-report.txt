@@ -8,7 +8,6 @@ MERGED from [com.android.support:multidex:1.0.3] /Users/bridgeit/.gradle/caches/
 MERGED from [:google_sign_in] /Users/bridgeit/Desktop/fun_do_note_app/build/google_sign_in/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:firebase_storage] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_storage/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_facebook_login] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_facebook_login/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
-MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-23:12
 MERGED from [:path_provider] /Users/bridgeit/Desktop/fun_do_note_app/build/path_provider/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_local_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_local_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:cloud_firestore] /Users/bridgeit/Desktop/fun_do_note_app/build/cloud_firestore/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-7:12
@@ -98,8 +97,6 @@ MERGED from [com.google.firebase:firebase-iid:17.0.3] /Users/bridgeit/.gradle/ca
 		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:8:22-64
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:9:5-80
-MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
-MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
 	android:name
 		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:9:22-78
 uses-permission#android.permission.VIBRATE
@@ -118,8 +115,6 @@ MERGED from [:firebase_storage] /Users/bridgeit/Desktop/fun_do_note_app/build/fi
 MERGED from [:firebase_storage] /Users/bridgeit/Desktop/fun_do_note_app/build/firebase_storage/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
 MERGED from [:flutter_facebook_login] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_facebook_login/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
 MERGED from [:flutter_facebook_login] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_facebook_login/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
-MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:path_provider] /Users/bridgeit/Desktop/fun_do_note_app/build/path_provider/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] /Users/bridgeit/Desktop/fun_do_note_app/build/path_provider/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
 MERGED from [:flutter_local_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/flutter_local_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-44
@@ -232,8 +227,6 @@ INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/Andro
 		INJECTED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml
 application
 ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:22:5-67:19
-MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-21:19
-MERGED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:13:5-21:19
 MERGED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-21:19
 MERGED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-21:19
 MERGED from [com.google.firebase:firebase-core:16.0.4] /Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.4.aar/c721556828f3729bc3e35181dcf04050/AndroidManifest.xml:7:5-20
@@ -374,14 +367,6 @@ data
 ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:64:17-75
 	android:scheme
 		ADDED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:64:23-72
-receiver#dk.kjeldsen.scheduled_notifications.OnRebootReceiver
-ADDED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:14:9-18:20
-	android:name
-		ADDED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:14:19-86
-service#dk.kjeldsen.scheduled_notifications.ScheduleNotificationsService
-ADDED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:20:9-100
-	android:name
-		ADDED from [:scheduled_notifications] /Users/bridgeit/Desktop/fun_do_note_app/build/scheduled_notifications/intermediates/manifests/full/debug/AndroidManifest.xml:20:18-97
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from [:image_picker] /Users/bridgeit/Desktop/fun_do_note_app/build/image_picker/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-80
 IMPLIED from /Users/bridgeit/Desktop/fun_do_note_app/android/app/src/main/AndroidManifest.xml:1:1-68:12 reason: io.flutter.plugins.imagepicker requested WRITE_EXTERNAL_STORAGE

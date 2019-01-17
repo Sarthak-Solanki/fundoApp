@@ -15,6 +15,7 @@ class MainPage extends StatefulWidget {
 }
 class MainState extends State<MainPage>{
   crudMethod crudObj = new crudMethod();
+  static  final scaffoldKey  = new GlobalKey<ScaffoldState>();
   static QuerySnapshot QSlabels ;
   List labels;
   List ls;
@@ -64,6 +65,13 @@ class MainState extends State<MainPage>{
 
     setState(() {
     });
+
+  }
+  static showSnackbar(s){
+    final snackbar = SnackBar(
+      content: Text(s),
+    );
+    scaffoldKey.currentState.showSnackBar(snackbar);
 
   }
   delete(id){
@@ -213,7 +221,17 @@ class MainState extends State<MainPage>{
                       color:Colors.white,
                     ),
                     height: 500.0,
-                    child: downloadUrl!=null?Image.network(downloadUrl):new Container(child:new CircularProgressIndicator()),
+                    child: downloadUrl!=null?new Container(decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image:NetworkImage(downloadUrl),
+                            fit:BoxFit.cover),
+                        borderRadius: BorderRadius.all(Radius.circular(75.0)),
+                        boxShadow: [
+                          BoxShadow(blurRadius: 7.0,color:Colors.black)
+                        ]
+                    )
+
+                    ):  new CircularProgressIndicator(),
                   ),
                 ),
                 otherAccountsPictures: <Widget>[
@@ -467,59 +485,59 @@ class MainState extends State<MainPage>{
         drawer: drawer(context),
         appBar: appBar(context),
         body:
-        /* new Container(
-        color: Colors.white,
-        padding: EdgeInsets.all(8.0),
-        child: new Container(
-          decoration: new BoxDecoration(
-              border: new Border.all(color: Colors.grey,width: 0.5),
-              borderRadius: new BorderRadius.only(
+        new Container(
+            color: Colors.white,
+            padding: EdgeInsets.all(8.0),
+            child: new Container(
+              decoration: new BoxDecoration(
+                border: new Border.all(color: Colors.grey,width: 0.5),
+                borderRadius: new BorderRadius.only(
                   topLeft:  const  Radius.circular(10.0),
                   topRight: const  Radius.circular(10.0),
-                bottomLeft: const  Radius.circular(10.0),
-                bottomRight: const  Radius.circular(10.0),
+                  bottomLeft: const  Radius.circular(10.0),
+                  bottomRight: const  Radius.circular(10.0),
+                ),
               ),
-          ),
-        padding: EdgeInsets.all(2.0),
-        child:*/
-        new StreamBuilder<QuerySnapshot>(
-            stream: snapshot,
-            builder: (context, snapshot) {
-              if (!snapshot.hasData) {
-                return new Center(
-                  child: CircularProgressIndicator(),);
-              }else {
-                l = snapshot.data.documents; //data.documents;
-                List z = l;
-                l = null;
-                List pList = new List();
-                List unpList = new List();
-                for (int i = 0; i < z.length; i++) {
-                  if (z[i].data['Pin'] == true) {
-                    pList.add(z[i]);
+              padding: EdgeInsets.all(2.0),
+              child:
+              new StreamBuilder<QuerySnapshot>(
+                  stream: snapshot,
+                  builder: (context, snapshot) {
+                    if (!snapshot.hasData) {
+                      return new Center(
+                        child: CircularProgressIndicator(),);
+                    }else {
+                      l = snapshot.data.documents; //data.documents;
+                      List z = l;
+                      l = null;
+                      List pList = new List();
+                      List unpList = new List();
+                      for (int i = 0; i < z.length; i++) {
+                        if (z[i].data['Pin'] == true) {
+                          pList.add(z[i]);
+                        }
+                        else {
+                          unpList.add(z[i]);
+                        }
+                      }
+                      // Tags Pinned = new Tags();
+                      if(pList.isEmpty==false){
+                        pList.insert(0,"Pinned");
+                        unpList.insert(0,"Other");
+                        l = pList +unpList;
+                      }
+                      else{
+                        l = z;
+                      }
+                      //l.add("Pinned");
+                      return new Container(
+                        child:  _firstSearch ? createStaggered(context, l) : _performSearch(context,l),
+                      );
+                    }
                   }
-                  else {
-                    unpList.add(z[i]);
-                  }
-                }
-                // Tags Pinned = new Tags();
-                if(pList.isEmpty==false){
-                  pList.insert(0,"Pinned");
-                  unpList.insert(0,"Other");
-                  l = pList +unpList;
-                }
-                else{
-                  l = z;
-                }
-                //l.add("Pinned");
-                return new Container(
-                  child:  _firstSearch ? createStaggered(context, l) : _performSearch(context,l),
-                );
-              }
-            }
-        ),
-        //
-        // ),
+              ),
+              //
+            )),
 
         bottomNavigationBar:bottomNaviBar(context),
       ),

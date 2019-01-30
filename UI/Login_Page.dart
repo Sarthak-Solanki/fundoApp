@@ -5,11 +5,14 @@ import 'SignUpPage.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'MainPage.dart';
 import 'crud.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+
 class Login_Page extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new LoginPageState();
 }
 class LoginPageState extends State<Login_Page> {
+
   static crudMethod crudObj = new crudMethod();
   static String email;
   static String _password;
@@ -117,7 +120,6 @@ class LoginPageState extends State<Login_Page> {
         onPressed: () => Navigator.push(context,
             MaterialPageRoute(builder: (BuildContext context) => SignUpPage())),
       );
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

@@ -577,6 +577,7 @@
     <string name="default_web_client_id" translatable="false">188219766773-4r8jhmgec3ku0741ini7ti04jfplrfe6.apps.googleusercontent.com</string>
     <string name="facebook_app_id">196615554550088</string>
     <string name="fb_login_protocol_scheme">fb196615554550088</string>
+    <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
     <string name="firebase_database_url" translatable="false">https://fundoonotes-f6d37.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">188219766773</string>
     <string name="google_api_key" translatable="false">AIzaSyABOrBTRwPLXCGFdJgk2Te-9K1DjwOG-w0</string>

@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "/Users/bridgeit/.gradle/caches/transforms-1/files-1.1/firebase-messaging-17.3.3.aar/26db3f4e9912e0b06f8071e75a00c7bc/res/values-or/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "205",
+                        "endColumns": "102",
+                        "endOffsets": "307"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2883",
+                        "endColumns": "106",
+                        "endOffsets": "2985"
+                    }
+                },
+                {
                     "source": "/Users/bridgeit/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/9885b7ef088044746f7b2aed0c543ed7/res/values-or/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",

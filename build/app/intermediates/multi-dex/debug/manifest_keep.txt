@@ -1,3 +1,3 @@
-# Referenced at /Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/manifests/full/debug/AndroidManifest.xml:34
+# Referenced at /Users/bridgeit/Desktop/fun_do_note_app/build/app/intermediates/manifests/full/debug/AndroidManifest.xml:33
 -keep class io.flutter.app.FlutterApplication { <init>(...); }
 

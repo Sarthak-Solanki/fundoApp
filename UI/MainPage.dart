@@ -9,6 +9,7 @@ import 'AddLabel.dart';
 import 'crud.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 class MainPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new MainState();
@@ -25,7 +26,12 @@ class MainState extends State<MainPage>{
   var _image;
   @override
   void initState() {
+
+
     get();
+
+
+
     crudObj.fetchData().then((result){
       /*if(!result.hasData){
         return new Center(
@@ -67,13 +73,12 @@ class MainState extends State<MainPage>{
     });
 
   }
-  static showSnackbar(s){
+  /*static showSnackbar(s){
     final snackbar = SnackBar(
       content: Text(s),
     );
     scaffoldKey.currentState.showSnackBar(snackbar);
-
-  }
+  }*/
   delete(id){
     Firestore.instance.document('${LoginPageState.email}/myData').collection('profileImg').document(id).delete();
   }
@@ -248,6 +253,7 @@ class MainState extends State<MainPage>{
                   Navigator.pop(context);
                 }
             ),
+
             new Divider(),
             new Container(
               child:  new  ListView.builder(
@@ -269,8 +275,6 @@ class MainState extends State<MainPage>{
                           List n = new List();
                           print(index);
                           for(int i = 0;i<z.length;i++){
-                            //print("z ${z[i].data['Label']}");
-                            //print(" label ${labels[i].data['Label']}");
                             if(z[i].data['Label'].contains(labels[index].data['Label'])){
                               n.add(z[i]);
                             }

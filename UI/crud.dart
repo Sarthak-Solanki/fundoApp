@@ -90,13 +90,13 @@ class crudMethod{
     Firestore.instance.collection(LoginPageState.email).document('myData').collection('Label').document(id).delete().catchError((e)=> print(e));
   }
   fetchData() async{
-    return await Firestore.instance.collection('test@test.com').document('myData').collection('Label').getDocuments();
+    return await Firestore.instance.collection(LoginPageState.email).document('myData').collection('Label').getDocuments();
   }
   fetchNoteData() async{
     if(MainState.directory==null){
       MainState.directory='Note';
     }
-    return await Firestore.instance.collection('test@test.com').document('myData').collection(MainState.directory).getDocuments();
+    return await Firestore.instance.collection(LoginPageState.email).document('myData').collection(MainState.directory).getDocuments();
   }
   updatelabel(newValues,id){
     Firestore.instance.collection(LoginPageState.email).
@@ -106,3 +106,5 @@ class crudMethod{
 
 
 }
+
+
